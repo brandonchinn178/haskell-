@@ -1,0 +1,201 @@
+-- SYNTAX TEST "Haskell++.sublime-syntax"
+
+import Foo.Bar
+-- <- keyword.control.import.haskell
+--^^^^^^^^^^^^ meta.import.haskell
+--     ^^^^^^^ entity.name.namespace.haskell
+
+-- check that it works across multiple lines
+import
+    Foo.Bar
+--  ^^^^^^^ meta.import.haskell
+    (asdf)
+--  ^^^^^^ meta.import.haskell
+
+{--------------------------------------------------------------------------------
+  Import lists
+--------------------------------------------------------------------------------}
+
+import Foo.Bar ()
+--     ^^^^^^^ entity.name.namespace.haskell
+--             ^ punctuation.section.parens.begin.haskell
+--              ^ punctuation.section.parens.end.haskell
+
+import Foo.Bar (
+--     ^^^^^^^ entity.name.namespace.haskell
+--             ^ punctuation.section.parens.begin.haskell
+  Test,
+--^^^^ variable.other.import.type.haskell
+--    ^ punctuation.separator.haskell
+  Test2 (..),
+--^^^^^ variable.other.import.type.haskell
+--      ^^^^ meta.import.type-members.haskell
+--      ^ punctuation.section.parens.begin.haskell
+--       ^^ keyword.operator.import.wildcard.haskell
+--         ^ punctuation.section.parens.end.haskell
+--          ^ punctuation.separator.haskell
+  Test3 (Test3, a, b, c),
+--^^^^^ variable.other.import.type.haskell
+--      ^^^^^^^^^^^^^^^^ meta.import.type-members.haskell
+--      ^ punctuation.section.parens.begin.haskell
+--       ^^^^^ variable.other.import.type.haskell
+--            ^ punctuation.separator.haskell
+--              ^ variable.other.import.function.haskell
+--               ^ punctuation.separator.haskell
+--                 ^ variable.other.import.function.haskell
+--                  ^ punctuation.separator.haskell
+--                    ^ variable.other.import.function.haskell
+--                     ^ punctuation.section.parens.end.haskell
+--                      ^ punctuation.separator.haskell
+  NonEmpty ((:|)),
+--^^^^^^^^ variable.other.import.type.haskell
+--         ^^^^^^ meta.import.type-members.haskell
+--         ^ punctuation.section.parens.begin.haskell
+--          ^^^^ variable.other.import.operator.haskell
+--              ^ punctuation.section.parens.end.haskell
+--               ^ punctuation.separator.haskell
+  a,
+--^ variable.other.import.function.haskell
+  (++),
+--^^^^ variable.other.import.operator.haskell
+  type (++),
+--^^^^ keyword.other.import.haskell
+--     ^^^^ variable.other.import.operator.haskell
+  pattern HELP,
+--^^^^^^^ keyword.other.import.haskell
+--        ^^^^ variable.other.import.type.haskell
+ )
+ -- <- punctuation.section.parens.end.haskell
+
+{--------------------------------------------------------------------------------
+  Test matrix of:
+    - Explicit import (without, with, hiding)
+    - As (without, with)
+    - Qualified (without, pre, post)
+--------------------------------------------------------------------------------}
+
+import Foo
+--     ^^^ entity.name.namespace.haskell
+
+import Foo (asdf)
+--     ^^^ entity.name.namespace.haskell
+--         ^ punctuation.section.parens.begin.haskell
+--          ^^^^ variable.other.import.function.haskell
+--              ^ punctuation.section.parens.end.haskell
+
+import Foo hiding (asdf)
+--     ^^^ entity.name.namespace.haskell
+--         ^^^^^^ keyword.control.import.modifiers.haskell
+--                ^ punctuation.section.parens.begin.haskell
+--                 ^^^^ variable.other.import.function.haskell
+--                     ^ punctuation.section.parens.end.haskell
+
+import Foo as F
+--     ^^^ entity.name.namespace.haskell
+--         ^^ keyword.control.import.modifiers.haskell
+--            ^ entity.name.namespace.haskell
+
+import Foo as F (asdf)
+--     ^^^ entity.name.namespace.haskell
+--         ^^ keyword.control.import.modifiers.haskell
+--            ^ entity.name.namespace.haskell
+--              ^ punctuation.section.parens.begin.haskell
+--               ^^^^ variable.other.import.function.haskell
+--                   ^ punctuation.section.parens.end.haskell
+
+import Foo as F hiding (asdf)
+--     ^^^ entity.name.namespace.haskell
+--         ^^ keyword.control.import.modifiers.haskell
+--            ^ entity.name.namespace.haskell
+--              ^^^^^^ keyword.control.import.modifiers.haskell
+--                     ^ punctuation.section.parens.begin.haskell
+--                      ^^^^ variable.other.import.function.haskell
+--                          ^ punctuation.section.parens.end.haskell
+
+import qualified Foo
+--     ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--               ^^^ entity.name.namespace.haskell
+
+import qualified Foo (asdf)
+--     ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--               ^^^ entity.name.namespace.haskell
+--                   ^ punctuation.section.parens.begin.haskell
+--                    ^^^^ variable.other.import.function.haskell
+--                        ^ punctuation.section.parens.end.haskell
+
+import qualified Foo hiding (asdf)
+--     ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--               ^^^ entity.name.namespace.haskell
+--                   ^^^^^^ keyword.control.import.modifiers.haskell
+--                          ^ punctuation.section.parens.begin.haskell
+--                           ^^^^ variable.other.import.function.haskell
+--                               ^ punctuation.section.parens.end.haskell
+
+import qualified Foo as F
+--     ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--               ^^^ entity.name.namespace.haskell
+--                   ^^ keyword.control.import.modifiers.haskell
+--                      ^ entity.name.namespace.haskell
+
+import qualified Foo as F (asdf)
+--     ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--               ^^^ entity.name.namespace.haskell
+--                   ^^ keyword.control.import.modifiers.haskell
+--                      ^ entity.name.namespace.haskell
+--                        ^ punctuation.section.parens.begin.haskell
+--                         ^^^^ variable.other.import.function.haskell
+--                             ^ punctuation.section.parens.end.haskell
+
+import qualified Foo as F hiding (asdf)
+--     ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--               ^^^ entity.name.namespace.haskell
+--                   ^^ keyword.control.import.modifiers.haskell
+--                      ^ entity.name.namespace.haskell
+--                        ^^^^^^ keyword.control.import.modifiers.haskell
+--                               ^ punctuation.section.parens.begin.haskell
+--                                ^^^^ variable.other.import.function.haskell
+--                                    ^ punctuation.section.parens.end.haskell
+
+import Foo qualified
+--     ^^^ entity.name.namespace.haskell
+--         ^^^^^^^^^ keyword.control.import.modifiers.haskell
+
+import Foo qualified (asdf)
+--     ^^^ entity.name.namespace.haskell
+--         ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--                   ^ punctuation.section.parens.begin.haskell
+--                    ^^^^ variable.other.import.function.haskell
+--                        ^ punctuation.section.parens.end.haskell
+
+import Foo qualified hiding (asdf)
+--     ^^^ entity.name.namespace.haskell
+--         ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--                   ^^^^^^ keyword.control.import.modifiers.haskell
+--                          ^ punctuation.section.parens.begin.haskell
+--                           ^^^^ variable.other.import.function.haskell
+--                               ^ punctuation.section.parens.end.haskell
+
+import Foo qualified as F
+--     ^^^ entity.name.namespace.haskell
+--         ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--                   ^^ keyword.control.import.modifiers.haskell
+--                      ^ entity.name.namespace.haskell
+
+import Foo qualified as F (asdf)
+--     ^^^ entity.name.namespace.haskell
+--         ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--                   ^^ keyword.control.import.modifiers.haskell
+--                      ^ entity.name.namespace.haskell
+--                        ^ punctuation.section.parens.begin.haskell
+--                         ^^^^ variable.other.import.function.haskell
+--                             ^ punctuation.section.parens.end.haskell
+
+import Foo qualified as F hiding (asdf)
+--     ^^^ entity.name.namespace.haskell
+--         ^^^^^^^^^ keyword.control.import.modifiers.haskell
+--                   ^^ keyword.control.import.modifiers.haskell
+--                      ^ entity.name.namespace.haskell
+--                        ^^^^^^ keyword.control.import.modifiers.haskell
+--                               ^ punctuation.section.parens.begin.haskell
+--                                ^^^^ variable.other.import.function.haskell
+--                                    ^ punctuation.section.parens.end.haskell

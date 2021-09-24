@@ -1,0 +1,26 @@
+-- SYNTAX TEST "Haskell++.sublime-syntax"
+
+-- This is a comment
+-- <- comment.line.haskell
+
+{- This is a comment -}
+-- <- comment.block.haskell
+
+{-
+-- <- comment.block.haskell
+This is a
+-- <- comment.block.haskell
+multiline
+-- <- comment.block.haskell
+comment
+-- <- comment.block.haskell
+-}
+-- <- comment.block.haskell
+
+{-
+This is a comment within a comment:
+  {- Test -}
+Test test test
+-- <- comment.block.haskell
+-}
+-- <- comment.block.haskell

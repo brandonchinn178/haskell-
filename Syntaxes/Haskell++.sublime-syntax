@@ -1,0 +1,117 @@
+%YAML 1.2
+---
+name: Haskell++
+file_extensions: [hs]
+scope: source.haskell
+
+variables:
+  # Identifiers and Operators
+  # https://www.haskell.org/onlinereport/lexemes.html#sect2.4
+  lower_ident: '[a-z][\w'']*'
+  upper_ident: '[A-Z][\w'']*'
+  operator: '(?!:)[!#$%&*+./<=>?@\^|-~:]+'
+
+contexts:
+  prototype:
+    - include: comments
+
+  main:
+    - include: imports
+
+  ### Comments ###
+
+  comments:
+    - include: comments-line
+    - include: comments-block
+
+  comments-line:
+    - match: --
+      push: comments-line-body
+
+  comments-line-body:
+    - meta_include_prototype: false
+    - meta_scope: comment.line.haskell
+    - match: \n
+      pop: true
+
+  comments-block:
+    - match: '{-'
+      push: comments-block-body
+
+  comments-block-body:
+    - meta_include_prototype: false
+    - meta_scope: comment.block.haskell
+    - match: '{-'
+      push: comments-block
+    - match: '-}'
+      pop: true
+
+  ### Imports ###
+
+  imports:
+    - match: ^(\s*)(import)\b
+      captures:
+        2: keyword.control.import.haskell
+      push: imports-line
+
+  imports-line:
+    - meta_scope: meta.import.haskell
+    - match: '^(?!\1\s)'
+      pop: true
+    - match: \b(qualified|as|hiding)\b
+      scope: keyword.control.import.modifiers.haskell
+    - include: module_name
+    - match: \(
+      scope: punctuation.section.parens.begin.haskell
+      push: imports-list
+
+  # import UnliftIO (UnliftIO, withRunInIO)
+  #                  ^^^^^^^^^^^^^^^^^^^^^
+  imports-list:
+    - match: \)
+      scope: punctuation.section.parens.end.haskell
+      pop: true
+    - match: \b(type|pattern)\b
+      scope: keyword.other.import.haskell
+    - # explicitly check for `(..)`
+      match: |-
+        (?x)
+          (\()
+          (\.\.)
+          (\))
+      scope: meta.import.type-members.haskell
+      captures:
+        1: punctuation.section.parens.begin.haskell
+        2: keyword.operator.import.wildcard.haskell
+        3: punctuation.section.parens.end.haskell
+    - match: \({{operator}}\)
+      scope: variable.other.import.operator.haskell
+    - match: \(
+      scope: punctuation.section.parens.begin.haskell
+      push: imports-list-type-members
+    - include: imports-list-common
+
+  # import GHC.Exts (IsList (Item, fromList))
+  #                          ^^^^^^^^^^^^^^
+  imports-list-type-members:
+    - meta_scope: meta.import.type-members.haskell
+    - match: \)
+      scope: punctuation.section.parens.end.haskell
+      pop: true
+    - include: imports-list-common
+    - match: \(:{{operator}}\)
+      scope: variable.other.import.operator.haskell
+
+  imports-list-common:
+    - match: '{{upper_ident}}'
+      scope: variable.other.import.type.haskell
+    - match: '{{lower_ident}}'
+      scope: variable.other.import.function.haskell
+    - match: ','
+      scope: punctuation.separator.haskell
+
+  ### Identifiers ###
+
+  module_name:
+    - match: '({{upper_ident}}\.)*({{upper_ident}})'
+      scope: entity.name.namespace.haskell
