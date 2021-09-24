@@ -18,14 +18,22 @@ contexts:
   main:
     - include: imports
 
+  ### Identifiers ###
+
+  module_name:
+    - match: '({{upper_ident}}\.)*({{upper_ident}})'
+      scope: entity.name.namespace.haskell
+
   ### Comments ###
 
   comments:
+    - include: pragmas
     - include: comments-line
     - include: comments-block
 
   comments-line:
     - match: --
+      scope: punctuation.definition.comment
       push: comments-line-body
 
   comments-line-body:
@@ -34,16 +42,65 @@ contexts:
     - match: \n
       pop: true
 
+  pragmas:
+    - match: '{-#'
+      scope: punctuation.definition.comment
+      push: pragmas-body
+
+  pragmas-body:
+    - meta_include_prototype: false
+    - meta_scope: comment.block.pragma.haskell
+    - match: '#-}'
+      scope: punctuation.definition.comment
+      pop: true
+    - match: (?i)ANN
+      scope: keyword.other.pragma.haskell
+      embed: pragmas-annotation
+      escape: '(?=#-})'
+    - match: |-
+        (?ix)
+            LANGUAGE
+          | OPTIONS_GHC
+          | INCLUDE
+          | WARNING
+          | DEPRECATED
+          | MINIMAL
+          | INLINE
+          | NOINLINE
+          | INLINABLE
+          | CONLIKE
+          | LINE
+          | COLUMN
+          | RULES
+          | SPECIALIZE
+          | SPECIALICE
+          | UNPACK
+          | NOUNPACK
+          | SOURCE
+          | COMPLETE
+          | OVERLAPPING
+          | OVERLAPPABLE
+          | OVERLAPS
+          | INCOHERENT
+      scope: keyword.other.pragma.haskell
+
+  pragmas-annotation:
+    - match: \b(type|module)\b
+      scope: keyword.other.annotation.haskell
+    - include: expressions
+
   comments-block:
     - match: '{-'
+      scope: punctuation.definition.comment
       push: comments-block-body
 
   comments-block-body:
     - meta_include_prototype: false
     - meta_scope: comment.block.haskell
     - match: '{-'
-      push: comments-block
+      push: comments-block-body
     - match: '-}'
+      scope: punctuation.definition.comment
       pop: true
 
   ### Imports ###
@@ -110,8 +167,18 @@ contexts:
     - match: ','
       scope: punctuation.separator.haskell
 
-  ### Identifiers ###
+  ### Expressions ###
 
-  module_name:
-    - match: '({{upper_ident}}\.)*({{upper_ident}})'
-      scope: entity.name.namespace.haskell
+  expressions:
+    - match: '{{lower_ident}}'
+      scope: variable.other.function.haskell
+    - match: '{{upper_ident}}'
+      scope: variable.other.type.haskell
+    - match: '"'
+      push: expressions-string-body
+
+  expressions-string-body:
+    - meta_include_prototype: false
+    - meta_scope: string.quoted.double.haskell
+    - match: '"'
+      pop: true
