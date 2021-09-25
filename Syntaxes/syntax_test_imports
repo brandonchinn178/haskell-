@@ -24,9 +24,11 @@ import Foo.Bar ()
 import Foo.Bar (
 --     ^^^^^^^ entity.name.namespace.haskell
 --             ^ punctuation.section.parens.begin.haskell
+
   Test,
 --^^^^ variable.other.import.type.haskell
 --    ^ punctuation.separator.haskell
+
   Test2 (..),
 --^^^^^ variable.other.import.type.haskell
 --      ^^^^ meta.import.type-members.haskell
@@ -34,6 +36,7 @@ import Foo.Bar (
 --       ^^ keyword.operator.import.wildcard.haskell
 --         ^ punctuation.section.parens.end.haskell
 --          ^ punctuation.separator.haskell
+
   Test3 (Test3, a, b, c),
 --^^^^^ variable.other.import.type.haskell
 --      ^^^^^^^^^^^^^^^^ meta.import.type-members.haskell
@@ -47,23 +50,37 @@ import Foo.Bar (
 --                    ^ variable.other.import.function.haskell
 --                     ^ punctuation.section.parens.end.haskell
 --                      ^ punctuation.separator.haskell
+
   NonEmpty ((:|)),
 --^^^^^^^^ variable.other.import.type.haskell
 --         ^^^^^^ meta.import.type-members.haskell
 --         ^ punctuation.section.parens.begin.haskell
---          ^^^^ variable.other.import.operator.haskell
+--          ^^^^ variable.other.import.type.operator.haskell
 --              ^ punctuation.section.parens.end.haskell
 --               ^ punctuation.separator.haskell
+
+  Addable ((+>)),
+--^^^^^^^ variable.other.import.type.haskell
+--        ^^^^^^ meta.import.type-members.haskell
+--        ^ punctuation.section.parens.begin.haskell
+--         ^^^^ variable.other.import.operator.haskell
+--             ^ punctuation.section.parens.end.haskell
+--              ^ punctuation.separator.haskell
+
   a,
 --^ variable.other.import.function.haskell
+
   (++),
 --^^^^ variable.other.import.operator.haskell
+
   type (++),
 --^^^^ keyword.other.import.haskell
---     ^^^^ variable.other.import.operator.haskell
+--     ^^^^ variable.other.import.type.operator.haskell
+
   pattern HELP,
 --^^^^^^^ keyword.other.import.haskell
---        ^^^^ variable.other.import.type.haskell
+--        ^^^^ variable.other.import.type.pattern.haskell
+
  )
  -- <- punctuation.section.parens.end.haskell
 

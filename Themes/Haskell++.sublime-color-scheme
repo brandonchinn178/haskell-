@@ -4,8 +4,12 @@
     "black": "#2b2a27",
     "gray": "#7f7f7f",
     "white": "#ede0ce",
+
+    "cyan": "#2fbfbf",
+    "gold": "#bfa72f",
+    "green": "#8dbc2f",
     "red": "#bf472f",
-    "green": "#a6e22e",
+    "teal": "color(var(cyan) blend(var(green) 50%))",
     "yellow": "#e6db74",
   },
   "globals": {
@@ -21,11 +25,56 @@
 
     // Selection
     "selection": "var(red)",
+    "selection_foreground": "var(white)",
     "selection_border": "var(black)",
   },
   "rules": [
     { "scope": "comment", "foreground": "var(gray)" },
     { "scope": "keyword", "foreground": "var(red)" },
     { "scope": "invalid", "foreground": "var(red)" },
+
+    // Imports
+    {
+      "scope": "keyword.control.import, keyword.other.import",
+      "foreground": "color(var(gold) blend(var(red) 50%))",
+    },
+    {
+      "scope": "meta.import punctuation - comment",
+      "foreground": "var(gold)",
+    },
+    {
+      "scope": "variable.other.import",
+      "foreground": "var(green)",
+    },
+    {
+      "scope": "variable.other.import.type",
+      "foreground": "var(cyan)",
+    },
+    {
+      "scope": "variable.other.import.type.operator",
+      "foreground": "var(teal)",
+    },
+    {
+      "scope": "variable.other.import.type.pattern",
+      "foreground": "var(teal)",
+    },
+    {
+      "scope": "keyword.operator.import.wildcard",
+      "foreground": "var(green)",
+    },
+    {
+      "scope": "meta.import.type-members punctuation.separator, meta.import.type-members punctuation.section",
+      "foreground": "var(green)",
+    },
+    {
+      "scope": "meta.import.type-members variable.other.import.type",
+      "foreground": "var(teal)",
+    },
+
+    // Modules
+    {
+      "scope": "entity.name.namespace",
+      "foreground": "var(gold)",
+    },
   ],
 }

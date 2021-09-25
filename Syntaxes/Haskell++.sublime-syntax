@@ -128,8 +128,14 @@ contexts:
     - match: \)
       scope: punctuation.section.parens.end.haskell
       pop: true
-    - match: \b(type|pattern)\b
-      scope: keyword.other.import.haskell
+    - match: \b(type) (\({{operator}}\))
+      captures:
+        1: keyword.other.import.haskell
+        2: variable.other.import.type.operator.haskell
+    - match: \b(pattern) ({{upper_ident}})
+      captures:
+        1: keyword.other.import.haskell
+        2: variable.other.import.type.pattern.haskell
     - # explicitly check for `(..)`
       match: |-
         (?x)
@@ -157,6 +163,8 @@ contexts:
       pop: true
     - include: imports-list-common
     - match: \(:{{operator}}\)
+      scope: variable.other.import.type.operator.haskell
+    - match: \({{operator}}\)
       scope: variable.other.import.operator.haskell
 
   imports-list-common:
