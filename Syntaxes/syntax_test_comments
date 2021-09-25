@@ -60,8 +60,6 @@ Test test test
 {-# ANN test "foo" #-}
 -- <- comment.block.pragma.haskell punctuation.definition.comment
  -- <- comment.block.pragma.haskell punctuation.definition.comment
---^^^^^^^^^^^^^^^^^^^^ comment.block.pragma.haskell
---  ^^^^^^^^^^^^^^ comment.block.pragma.annotation.haskell
 --^ punctuation.definition.comment
 --  ^^^ keyword.other.pragma.haskell
 --      ^^^^ variable.other.function.haskell
@@ -71,8 +69,6 @@ Test test test
 {-# ANN module "foo" #-}
 -- <- comment.block.pragma.haskell punctuation.definition.comment
  -- <- comment.block.pragma.haskell punctuation.definition.comment
---^^^^^^^^^^^^^^^^^^^^^^ comment.block.pragma.haskell
---  ^^^^^^^^^^^^^^^^ comment.block.pragma.annotation.haskell
 --^ punctuation.definition.comment
 --  ^^^ keyword.other.pragma.haskell
 --      ^^^^^^ keyword.other.annotation.haskell
@@ -82,8 +78,6 @@ Test test test
 {-# ANN type MyList "foo" #-}
 -- <- comment.block.pragma.haskell punctuation.definition.comment
  -- <- comment.block.pragma.haskell punctuation.definition.comment
---^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.pragma.haskell
---  ^^^^^^^^^^^^^^^^^^^^^ comment.block.pragma.annotation.haskell
 --^ punctuation.definition.comment
 --  ^^^ keyword.other.pragma.haskell
 --      ^^^^ keyword.other.annotation.haskell
@@ -94,8 +88,6 @@ Test test test
 {-# ANN Nil "foo" #-}
 -- <- comment.block.pragma.haskell punctuation.definition.comment
  -- <- comment.block.pragma.haskell punctuation.definition.comment
---^^^^^^^^^^^^^^^^^^^ comment.block.pragma.haskell
---  ^^^^^^^^^^^^^ comment.block.pragma.annotation.haskell
 --^ punctuation.definition.comment
 --  ^^^ keyword.other.pragma.haskell
 --      ^^^ variable.other.type.haskell

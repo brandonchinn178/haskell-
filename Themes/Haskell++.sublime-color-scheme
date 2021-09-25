@@ -32,17 +32,13 @@
   "rules": [
     { "scope": "comment", "foreground": "var(gray)" },
     { "scope": "keyword", "foreground": "var(red)" },
+    { "scope": "string", "foreground": "var(yellow)" },
     { "scope": "invalid", "foreground": "var(red)" },
 
     // Pragmas
     {
       "scope": "comment.block.pragma",
       "foreground": "var(purple)",
-    },
-    {
-      "scope": "comment.block.pragma.annotation",
-      // TODO: cancel comment style and let normal expression colors work
-      "foreground": "var(gold)",
     },
     {
       "scope": "keyword.other.annotation",

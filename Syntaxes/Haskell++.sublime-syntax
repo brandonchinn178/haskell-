@@ -85,7 +85,8 @@ contexts:
       scope: keyword.other.pragma.haskell
 
   pragmas-annotation:
-    - meta_scope: comment.block.pragma.annotation.haskell
+    - clear_scopes: true
+    - meta_scope: meta.annotation.haskell
     - match: \b(type|module)\b
       scope: keyword.other.annotation.haskell
     - include: expressions
