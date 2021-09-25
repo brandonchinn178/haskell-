@@ -41,7 +41,7 @@ import Foo.Bar (
 
   Test2 (..),
 --^^^^^ storage.type.haskell
---      ^^^^ meta.import.type-members.haskell
+--      ^^^^ meta.import.type_members.haskell
 --      ^ punctuation.section.parens.begin.haskell
 --       ^^ keyword.operator.import.wildcard.haskell
 --         ^ punctuation.section.parens.end.haskell
@@ -49,7 +49,7 @@ import Foo.Bar (
 
   Test3 (Test3, a, b, c),
 --^^^^^ storage.type.haskell
---      ^^^^^^^^^^^^^^^^ meta.import.type-members.haskell
+--      ^^^^^^^^^^^^^^^^ meta.import.type_members.haskell
 --      ^ punctuation.section.parens.begin.haskell
 --       ^^^^^ variable.function.constructor.haskell
 --            ^ punctuation.separator.haskell
@@ -63,7 +63,7 @@ import Foo.Bar (
 
   NonEmpty ((:|)),
 --^^^^^^^^ storage.type.haskell
---         ^^^^^^ meta.import.type-members.haskell
+--         ^^^^^^ meta.import.type_members.haskell
 --         ^ punctuation.section.parens.begin.haskell
 --          ^^^^ keyword.operator.haskell
 --              ^ punctuation.section.parens.end.haskell
@@ -71,7 +71,7 @@ import Foo.Bar (
 
   Addable ((+>)),
 --^^^^^^^ storage.type.haskell
---        ^^^^^^ meta.import.type-members.haskell
+--        ^^^^^^ meta.import.type_members.haskell
 --        ^ punctuation.section.parens.begin.haskell
 --         ^^^^ keyword.operator.haskell
 --             ^ punctuation.section.parens.end.haskell
@@ -79,7 +79,7 @@ import Foo.Bar (
 
   Named ((:::)),
 --^^^^^ storage.type.haskell
---      ^^^^^^^ meta.import.type-members.haskell
+--      ^^^^^^^ meta.import.type_members.haskell
 --      ^ punctuation.section.parens.begin.haskell
 --       ^^^^^ keyword.operator.haskell
 --            ^ punctuation.section.parens.end.haskell

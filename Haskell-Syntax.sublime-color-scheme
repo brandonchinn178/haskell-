@@ -80,11 +80,11 @@
       "foreground": "var(green)",
     },
     {
-      "scope": "(meta.import.type-members, meta.export.type-members) & punctuation - comment",
+      "scope": "(meta.import.type_members, meta.export.type_members) & punctuation - comment",
       "foreground": "var(green)",
     },
     {
-      "scope": "(meta.import.type-members, meta.export.type-members) & storage",
+      "scope": "(meta.import.type_members, meta.export.type_members) & storage",
       "foreground": "var(constructors)",
     },
 

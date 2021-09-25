@@ -18,18 +18,18 @@ contexts:
     - include: comments
 
   main:
-    - include: module-header
+    - include: module_header
     - include: imports
 
   ### Identifiers ###
 
-  module-name:
+  module_name:
     - match: '({{upper_ident}}\.)*({{upper_ident}})'
       scope: entity.name.namespace.haskell
 
   ### Utilities ###
 
-  pop-when-deindent:
+  pop_when_deindent:
     - match: '^(?!\1\s)'
       pop: true
 
@@ -37,15 +37,15 @@ contexts:
 
   comments:
     - include: pragmas
-    - include: comments-line
-    - include: comments-block
+    - include: comments_line
+    - include: comments_block
 
-  comments-line:
+  comments_line:
     - match: --
       scope: punctuation.definition.comment
-      push: comments-line-body
+      push: comments_line_body
 
-  comments-line-body:
+  comments_line_body:
     - meta_include_prototype: false
     - meta_scope: comment.line.haskell
     - match: \n
@@ -54,9 +54,9 @@ contexts:
   pragmas:
     - match: '{-#'
       scope: punctuation.definition.comment
-      push: pragmas-body
+      push: pragmas_body
 
-  pragmas-body:
+  pragmas_body:
     - meta_include_prototype: false
     - meta_scope: comment.block.pragma.haskell
     - match: '#-}'
@@ -64,7 +64,7 @@ contexts:
       pop: true
     - match: (?i)ANN
       scope: keyword.other.pragma.haskell
-      push: pragmas-annotation
+      push: pragmas_annotation
     - match: |-
         (?ix)
             LANGUAGE
@@ -92,7 +92,7 @@ contexts:
           | INCOHERENT
       scope: keyword.other.pragma.haskell
 
-  pragmas-annotation:
+  pragmas_annotation:
     - clear_scopes: true
     - meta_scope: meta.annotation.haskell
     - match: '(?=#-})'
@@ -101,39 +101,39 @@ contexts:
       scope: keyword.other.annotation.haskell
     - include: expressions
 
-  comments-block:
+  comments_block:
     - match: '{-'
       scope: punctuation.definition.comment
-      push: comments-block-body
+      push: comments_block_body
 
-  comments-block-body:
+  comments_block_body:
     - meta_include_prototype: false
     - meta_scope: comment.block.haskell
     - match: '{-'
-      push: comments-block-body
+      push: comments_block_body
     - match: '-}'
       scope: punctuation.definition.comment
       pop: true
 
   ### Module header ##
 
-  module-header:
+  module_header:
     - match: ^(\s*)(module)\b
       captures:
         2: keyword.declaration.namespace.haskell
-      push: module-header-line
+      push: module_header_line
 
-  module-header-line:
+  module_header_line:
     - meta_scope: meta.declaration.module.haskell
-    - include: module-name
+    - include: module_name
     - match: \(
       scope: punctuation.section.parens.begin.haskell
-      push: module-header-exports-list
+      push: module_header_exports_list
     - match: \b(where)\b
       scope: keyword.control.context.haskell
       pop: true
 
-  module-header-exports-list:
+  module_header_exports_list:
     - meta_scope: meta.declaration.exports.haskell
     - match: \)
       scope: punctuation.section.parens.end.haskell
@@ -152,7 +152,7 @@ contexts:
           (\()
           (\.\.)
           (\))
-      scope: meta.export.type-members.haskell
+      scope: meta.export.type_members.haskell
       captures:
         1: punctuation.section.parens.begin.haskell
         2: keyword.operator.export.wildcard.haskell
@@ -161,7 +161,7 @@ contexts:
       scope: keyword.operator.haskell
     - match: \(
       scope: punctuation.section.parens.begin.haskell
-      push: imports-list-type-members
+      push: imports_list_type_members
     - match: '{{upper_ident}}'
       scope: storage.type.haskell
     - match: '{{lower_ident}}'
@@ -175,21 +175,21 @@ contexts:
     - match: ^(\s*)(import)\b
       captures:
         2: keyword.control.import.haskell
-      push: imports-line
+      push: imports_line
 
-  imports-line:
+  imports_line:
     - meta_scope: meta.import.haskell
-    - include: pop-when-deindent
+    - include: pop_when_deindent
     - match: \b(qualified|as|hiding)\b
       scope: keyword.control.import.modifiers.haskell
-    - include: module-name
+    - include: module_name
     - match: \(
       scope: punctuation.section.parens.begin.haskell
-      push: imports-list
+      push: imports_list
 
   # import UnliftIO (UnliftIO, withRunInIO)
   #                  ^^^^^^^^^^^^^^^^^^^^^
-  imports-list:
+  imports_list:
     - meta_scope: meta.declaration.imports.haskell
     - match: \)
       scope: punctuation.section.parens.end.haskell
@@ -208,7 +208,7 @@ contexts:
           (\()
           (\.\.)
           (\))
-      scope: meta.import.type-members.haskell
+      scope: meta.import.type_members.haskell
       captures:
         1: punctuation.section.parens.begin.haskell
         2: keyword.operator.import.wildcard.haskell
@@ -217,7 +217,7 @@ contexts:
       scope: keyword.operator.haskell
     - match: \(
       scope: punctuation.section.parens.begin.haskell
-      push: imports-list-type-members
+      push: imports_list_type_members
     - match: '{{upper_ident}}'
       scope: storage.type.haskell
     - match: '{{lower_ident}}'
@@ -227,8 +227,8 @@ contexts:
 
   # import GHC.Exts (IsList (Item, fromList))
   #                          ^^^^^^^^^^^^^^
-  imports-list-type-members:
-    - meta_scope: meta.import.type-members.haskell
+  imports_list_type_members:
+    - meta_scope: meta.import.type_members.haskell
     - match: \)
       scope: punctuation.section.parens.end.haskell
       pop: true
@@ -251,9 +251,9 @@ contexts:
     - match: '{{upper_ident}}'
       scope: variable.other.type.haskell
     - match: '"'
-      push: expressions-string-body
+      push: expressions_string_body
 
-  expressions-string-body:
+  expressions_string_body:
     - meta_include_prototype: false
     - meta_scope: string.quoted.double.haskell
     - match: '"'
