@@ -24,6 +24,12 @@ contexts:
     - match: '({{upper_ident}}\.)*({{upper_ident}})'
       scope: entity.name.namespace.haskell
 
+  ### Utilities ###
+
+  pop_when_deindent:
+    - match: '^(?!\1\s)'
+      pop: true
+
   ### Comments ###
 
   comments:
@@ -116,8 +122,7 @@ contexts:
 
   imports-line:
     - meta_scope: meta.import.haskell
-    - match: '^(?!\1\s)'
-      pop: true
+    - include: pop_when_deindent
     - match: \b(qualified|as|hiding)\b
       scope: keyword.control.import.modifiers.haskell
     - include: module_name
