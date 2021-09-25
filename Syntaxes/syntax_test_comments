@@ -4,92 +4,78 @@
   Comments
 --------------------------------------------------------------------------------}
 
--- This is a comment
--- <- comment.line.haskell punctuation.definition.comment
- -- <- comment.line.haskell punctuation.definition.comment
---^^^^^^^^^^^^^^^^^^ comment.line.haskell
+  -- This is a comment
+--^^^^^^^^^^^^^^^^^^^^ comment.line.haskell
+--^^ comment.line.haskell punctuation.definition.comment
 
-{- This is a comment -}
--- <- comment.block.haskell punctuation.definition.comment
- -- <- comment.block.haskell punctuation.definition.comment
---^^^^^^^^^^^^^^^^^^^^^ comment.block.haskell
---                   ^^ punctuation.definition.comment
+  {- This is a comment -}
+--^^^^^^^^^^^^^^^^^^^^^^^ comment.block.haskell
+--^^ punctuation.definition.comment
+--                     ^^ punctuation.definition.comment
 
-{-
--- <- comment.block.haskell
-This is a
--- <- comment.block.haskell
-multiline
--- <- comment.block.haskell
-comment
--- <- comment.block.haskell
--}
--- <- comment.block.haskell
+  {-
+--^^ comment.block.haskell
+  This is a
+--^^ comment.block.haskell
+  multiline
+--^^ comment.block.haskell
+  comment
+--^^ comment.block.haskell
+  -}
+--^^ comment.block.haskell
 
-{-
-This is a comment within a comment:
-  {- Test -}
-Test test test
--- <- comment.block.haskell
--}
--- <- comment.block.haskell
+  {-
+  This is a comment within a comment:
+    {- Test -}
+  Test test test
+--^^ comment.block.haskell
+  -}
+--^^ comment.block.haskell
 
 {--------------------------------------------------------------------------------
   Pragmas
 --------------------------------------------------------------------------------}
 
-{-# LANGUAGE RecordWildCards #-}
--- <- comment.block.pragma.haskell punctuation.definition.comment
- -- <- comment.block.pragma.haskell punctuation.definition.comment
---^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.pragma.haskell
---^ punctuation.definition.comment
---  ^^^^^^^^ keyword.other.pragma.haskell
---                           ^^^ punctuation.definition.comment
+  {-# LANGUAGE RecordWildCards #-}
+--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.pragma.haskell
+--^^^ punctuation.definition.comment
+--    ^^^^^^^^ keyword.other.pragma.haskell
+--                             ^^^ punctuation.definition.comment
 
-{-# oPTioNs_GHc -Wno-orphans #-}
--- <- comment.block.pragma.haskell punctuation.definition.comment
- -- <- comment.block.pragma.haskell punctuation.definition.comment
---^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.pragma.haskell
---^ punctuation.definition.comment
---  ^^^^^^^^^^ keyword.other.pragma.haskell
---                           ^^^ punctuation.definition.comment
+  {-# oPTioNs_GHc -Wno-orphans #-}
+--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.pragma.haskell
+--^^^ punctuation.definition.comment
+--    ^^^^^^^^^^ keyword.other.pragma.haskell
+--                             ^^^ punctuation.definition.comment
 
 -- should not be a pragma keyword
 {-# unknown_pragma #-}
 
-{-# ANN test "foo" #-}
--- <- comment.block.pragma.haskell punctuation.definition.comment
- -- <- comment.block.pragma.haskell punctuation.definition.comment
---^ punctuation.definition.comment
---  ^^^ keyword.other.pragma.haskell
---      ^^^^ variable.other.function.haskell
---           ^^^^^ string.quoted.double.haskell
---                 ^^^ punctuation.definition.comment
-
-{-# ANN module "foo" #-}
--- <- comment.block.pragma.haskell punctuation.definition.comment
- -- <- comment.block.pragma.haskell punctuation.definition.comment
---^ punctuation.definition.comment
---  ^^^ keyword.other.pragma.haskell
---      ^^^^^^ keyword.other.annotation.haskell
+  {-# ANN test "foo" #-}
+--^^^ punctuation.definition.comment
+--    ^^^ keyword.other.pragma.haskell
+--        ^^^^ variable.other.function.haskell
 --             ^^^^^ string.quoted.double.haskell
 --                   ^^^ punctuation.definition.comment
 
-{-# ANN type MyList "foo" #-}
--- <- comment.block.pragma.haskell punctuation.definition.comment
- -- <- comment.block.pragma.haskell punctuation.definition.comment
---^ punctuation.definition.comment
---  ^^^ keyword.other.pragma.haskell
---      ^^^^ keyword.other.annotation.haskell
---           ^^^^^^ variable.other.type.haskell
---                  ^^^^^ string.quoted.double.haskell
---                        ^^^ punctuation.definition.comment
+  {-# ANN module "foo" #-}
+--^^^ punctuation.definition.comment
+--    ^^^ keyword.other.pragma.haskell
+--        ^^^^^^ keyword.other.annotation.haskell
+--               ^^^^^ string.quoted.double.haskell
+--                     ^^^ punctuation.definition.comment
 
-{-# ANN Nil "foo" #-}
--- <- comment.block.pragma.haskell punctuation.definition.comment
- -- <- comment.block.pragma.haskell punctuation.definition.comment
---^ punctuation.definition.comment
---  ^^^ keyword.other.pragma.haskell
---      ^^^ variable.other.type.haskell
---          ^^^^^ string.quoted.double.haskell
---                ^^^ punctuation.definition.comment
+  {-# ANN type MyList "foo" #-}
+--^^^ punctuation.definition.comment
+--    ^^^ keyword.other.pragma.haskell
+--        ^^^^ keyword.other.annotation.haskell
+--             ^^^^^^ variable.other.type.haskell
+--                    ^^^^^ string.quoted.double.haskell
+--                          ^^^ punctuation.definition.comment
+
+  {-# ANN Nil "foo" #-}
+--^^^ punctuation.definition.comment
+--    ^^^ keyword.other.pragma.haskell
+--        ^^^ variable.other.type.haskell
+--            ^^^^^ string.quoted.double.haskell
+--                  ^^^ punctuation.definition.comment
