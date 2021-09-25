@@ -1,0 +1,31 @@
+{
+  "name": "Haskell++",
+  "variables": {
+    "black": "#2b2a27",
+    "gray": "#7f7f7f",
+    "white": "#ede0ce",
+    "red": "#bf472f",
+    "green": "#a6e22e",
+    "yellow": "#e6db74",
+  },
+  "globals": {
+    "background": "var(black)",
+    "foreground": "var(white)",
+    "caret": "var(white)",
+    "line_highlight": "color(var(white) alpha(0.1))",
+
+    // Diff
+    "line_diff_added": "var(green)",
+    "line_diff_modified": "var(yellow)",
+    "line_diff_deleted": "var(red)",
+
+    // Selection
+    "selection": "var(red)",
+    "selection_border": "var(black)",
+  },
+  "rules": [
+    { "scope": "comment", "foreground": "var(gray)" },
+    { "scope": "keyword", "foreground": "var(red)" },
+    { "scope": "invalid", "foreground": "var(red)" },
+  ],
+}
