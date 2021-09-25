@@ -8,6 +8,7 @@
     "cyan": "#2fbfbf",
     "gold": "#bfa72f",
     "green": "#8dbc2f",
+    "purple": "#ac5ebc",
     "red": "#bf472f",
     "teal": "color(var(cyan) blend(var(green) 50%))",
     "yellow": "#e6db74",
@@ -32,6 +33,21 @@
     { "scope": "comment", "foreground": "var(gray)" },
     { "scope": "keyword", "foreground": "var(red)" },
     { "scope": "invalid", "foreground": "var(red)" },
+
+    // Pragmas
+    {
+      "scope": "comment.block.pragma",
+      "foreground": "var(purple)",
+    },
+    {
+      "scope": "comment.block.pragma.annotation",
+      // TODO: cancel comment style and let normal expression colors work
+      "foreground": "var(gold)",
+    },
+    {
+      "scope": "keyword.other.annotation",
+      "foreground": "color(var(purple) blend(var(red) 50%))",
+    },
 
     // Imports
     {
