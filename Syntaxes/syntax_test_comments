@@ -79,3 +79,7 @@
 --        ^^^ variable.other.type.haskell
 --            ^^^^^ string.quoted.double.haskell
 --                  ^^^ punctuation.definition.comment
+
+  {-# ANN foo "asdf #-}" #-}
+--            ^^^^^^^^^^ string.quoted.double.haskell
+--                       ^^^ punctuation.definition.comment
