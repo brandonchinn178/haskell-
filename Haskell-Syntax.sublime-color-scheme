@@ -58,33 +58,33 @@
       "foreground": "color(var(purple) blend(var(red) 50%))",
     },
 
-    // Imports
+    // Imports + exports
     {
-      "scope": "keyword.control.import, keyword.other.import",
+      "scope": "(meta.import, meta.declaration.module) & keyword",
       "foreground": "color(var(gold) blend(var(red) 50%))",
     },
     {
-      "scope": "keyword.other.import",
+      "scope": "keyword.other.import, keyword.other.export",
       "font_style": "italic",
     },
     {
-      "scope": "meta.import punctuation - comment",
+      "scope": "(meta.import, meta.declaration.module) & punctuation - comment",
       "foreground": "var(gold)",
     },
     {
-      "scope": "meta.import keyword.operator.type",
+      "scope": "(meta.import, meta.declaration.module) & keyword.operator.type",
       "foreground": "var(type_operators)",
     },
     {
-      "scope": "keyword.operator.import.wildcard",
+      "scope": "keyword.operator.import.wildcard, keyword.operator.export.wildcard",
       "foreground": "var(green)",
     },
     {
-      "scope": "meta.import.type-members punctuation - comment",
+      "scope": "(meta.import.type-members, meta.export.type-members) & punctuation - comment",
       "foreground": "var(green)",
     },
     {
-      "scope": "meta.import.type-members storage",
+      "scope": "(meta.import.type-members, meta.export.type-members) & storage",
       "foreground": "var(constructors)",
     },
 

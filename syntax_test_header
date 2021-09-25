@@ -1,0 +1,38 @@
+-- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
+
+  module Foo.Bar (foo, bar) where
+--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.declaration.module.haskell
+--               ^^^^^^^^^^ meta.declaration.exports.haskell
+
+  module Foo (
+--^^^^^^ keyword.declaration.namespace.haskell
+--       ^^^ entity.name.namespace.haskell
+--           ^ punctuation.section.parens.begin.haskell
+
+    Foo (..),
+--  ^^^ storage.type.haskell
+--       ^^ keyword.operator.export.wildcard.haskell
+
+    Bar (Bar, (:>), a),
+--  ^^^ storage.type.haskell
+--       ^^^ variable.function.constructor.haskell
+--            ^^^^ keyword.operator.haskell
+--                  ^ variable.function.haskell
+
+    (++),
+--  ^^^^ keyword.operator.haskell
+
+    type (++),
+--  ^^^^ keyword.other.export.haskell
+--       ^^^^ keyword.operator.type.haskell
+
+    pattern ASDF,
+--  ^^^^^^^ keyword.other.export.haskell
+--          ^^^^ variable.function.pattern.haskell
+
+    someFunc,
+--  ^^^^^^^^ variable.function.haskell
+
+  ) where
+--^ punctuation.section.parens.end.haskell
+--  ^^^^^ keyword.control.context.haskell

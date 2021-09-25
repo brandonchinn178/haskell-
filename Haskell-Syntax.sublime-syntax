@@ -18,17 +18,18 @@ contexts:
     - include: comments
 
   main:
+    - include: module-header
     - include: imports
 
   ### Identifiers ###
 
-  module_name:
+  module-name:
     - match: '({{upper_ident}}\.)*({{upper_ident}})'
       scope: entity.name.namespace.haskell
 
   ### Utilities ###
 
-  pop_when_deindent:
+  pop-when-deindent:
     - match: '^(?!\1\s)'
       pop: true
 
@@ -114,6 +115,60 @@ contexts:
       scope: punctuation.definition.comment
       pop: true
 
+  ### Module header ##
+
+  module-header:
+    - match: ^(\s*)(module)\b
+      captures:
+        2: keyword.declaration.namespace.haskell
+      push: module-header-line
+
+  module-header-line:
+    - meta_scope: meta.declaration.module.haskell
+    - include: module-name
+    - match: \(
+      scope: punctuation.section.parens.begin.haskell
+      push: module-header-exports-list
+    - match: \b(where)\b
+      scope: keyword.control.context.haskell
+      pop: true
+
+  module-header-exports-list:
+    - meta_scope: meta.declaration.exports.haskell
+    - match: \)
+      scope: punctuation.section.parens.end.haskell
+      pop: true
+    - match: \b(type) (\({{operator}}\))
+      captures:
+        1: keyword.other.export.haskell
+        2: keyword.operator.type.haskell
+    - match: \b(pattern) ({{upper_ident}})
+      captures:
+        1: keyword.other.export.haskell
+        2: variable.function.pattern.haskell
+    - # explicitly check for `(..)`
+      match: |-
+        (?x)
+          (\()
+          (\.\.)
+          (\))
+      scope: meta.export.type-members.haskell
+      captures:
+        1: punctuation.section.parens.begin.haskell
+        2: keyword.operator.export.wildcard.haskell
+        3: punctuation.section.parens.end.haskell
+    - match: \({{operator}}\)
+      scope: keyword.operator.haskell
+    - match: \(
+      scope: punctuation.section.parens.begin.haskell
+      push: imports-list-type-members
+    - match: '{{upper_ident}}'
+      scope: storage.type.haskell
+    - match: '{{lower_ident}}'
+      scope: variable.function.haskell
+    - match: ','
+      scope: punctuation.separator.haskell
+
   ### Imports ###
 
   imports:
@@ -124,10 +179,10 @@ contexts:
 
   imports-line:
     - meta_scope: meta.import.haskell
-    - include: pop_when_deindent
+    - include: pop-when-deindent
     - match: \b(qualified|as|hiding)\b
       scope: keyword.control.import.modifiers.haskell
-    - include: module_name
+    - include: module-name
     - match: \(
       scope: punctuation.section.parens.begin.haskell
       push: imports-list
@@ -135,6 +190,7 @@ contexts:
   # import UnliftIO (UnliftIO, withRunInIO)
   #                  ^^^^^^^^^^^^^^^^^^^^^
   imports-list:
+    - meta_scope: meta.declaration.imports.haskell
     - match: \)
       scope: punctuation.section.parens.end.haskell
       pop: true
