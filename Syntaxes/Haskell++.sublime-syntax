@@ -9,7 +9,9 @@ variables:
   # https://www.haskell.org/onlinereport/lexemes.html#sect2.4
   lower_ident: '[a-z][\w'']*'
   upper_ident: '[A-Z][\w'']*'
-  operator: '(?!:)[!#$%&*+./<=>?@\^|-~:]+'
+  symbol_char: '[!#$%&*+./<=>?@\^|-~:]'
+  operator: '(?!:){{symbol_char}}+'
+  operator_con: ':{{symbol_char}}*'
 
 contexts:
   prototype:
@@ -180,8 +182,8 @@ contexts:
       scope: variable.function.haskell
     - match: ','
       scope: punctuation.separator.haskell
-    - match: \(:{{operator}}\)
-      scope: keyword.operator.type.haskell
+    - match: \({{operator_con}}\)
+      scope: keyword.operator.haskell
     - match: \({{operator}}\)
       scope: keyword.operator.haskell #variable.other.import.operator.haskell
 

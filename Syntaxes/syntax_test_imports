@@ -65,7 +65,7 @@ import Foo.Bar (
 --^^^^^^^^ storage.type.haskell
 --         ^^^^^^ meta.import.type-members.haskell
 --         ^ punctuation.section.parens.begin.haskell
---          ^^^^ keyword.operator.type.haskell
+--          ^^^^ keyword.operator.haskell
 --              ^ punctuation.section.parens.end.haskell
 --               ^ punctuation.separator.haskell
 
@@ -76,6 +76,14 @@ import Foo.Bar (
 --         ^^^^ keyword.operator.haskell
 --             ^ punctuation.section.parens.end.haskell
 --              ^ punctuation.separator.haskell
+
+  Named ((:::)),
+--^^^^^ storage.type.haskell
+--      ^^^^^^^ meta.import.type-members.haskell
+--      ^ punctuation.section.parens.begin.haskell
+--       ^^^^^ keyword.operator.haskell
+--            ^ punctuation.section.parens.end.haskell
+--             ^ punctuation.separator.haskell
 
   a,
 --^ variable.function.haskell

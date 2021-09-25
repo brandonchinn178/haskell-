@@ -12,6 +12,15 @@
     "red": "#bf472f",
     "teal": "color(var(cyan) blend(var(green) 50%))",
     "yellow": "#e6db74",
+
+    // type-level identifiers
+    "types": "var(cyan)",
+    "type_operators": "color(var(cyan) blend(var(purple) 30%) lightness(+ 20%))",
+
+    // value-level identifiers
+    "constructors": "var(teal)",
+    "variables": "var(green)",
+    "operators": "var(red)",
   },
   "globals": {
     "background": "var(black)",
@@ -33,8 +42,9 @@
     // Top-level
     { "scope": "comment", "foreground": "var(gray)" },
     { "scope": "keyword", "foreground": "var(red)" },
-    { "scope": "variable", "foreground": "var(green)" },
-    { "scope": "storage", "foreground": "var(cyan)" },
+    { "scope": "keyword.operator", "foreground": "var(operators)" },
+    { "scope": "variable", "foreground": "var(variables)" },
+    { "scope": "storage", "foreground": "var(types)" },
     { "scope": "string", "foreground": "var(yellow)" },
     { "scope": "invalid", "foreground": "var(red)" },
 
@@ -63,7 +73,7 @@
     },
     {
       "scope": "meta.import keyword.operator.type",
-      "foreground": "var(teal)",
+      "foreground": "var(type_operators)",
     },
     {
       "scope": "keyword.operator.import.wildcard",
@@ -75,7 +85,7 @@
     },
     {
       "scope": "meta.import.type-members storage",
-      "foreground": "var(teal)",
+      "foreground": "var(constructors)",
     },
 
     // Modules
@@ -87,7 +97,7 @@
     // Variables
     {
       "scope": "variable.function.constructor, variable.function.pattern",
-      "foreground": "var(teal)",
+      "foreground": "var(constructors)",
     },
   ],
 }
