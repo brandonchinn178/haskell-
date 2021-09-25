@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-name: Haskell++
+name: Haskell Syntax
 file_extensions: [hs]
 scope: source.haskell
 
