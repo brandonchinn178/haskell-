@@ -5,6 +5,16 @@ import Foo.Bar
 --^^^^^^^^^^^^ meta.import.haskell
 --     ^^^^^^^ entity.name.namespace.haskell
 
+separate_unindented_from_indented_import_lines
+
+  import Foo.Bar
+--^^^^^^ keyword.control.import.haskell
+    qualified
+--  ^^^^^^^^^ keyword.control.import.modifiers.haskell
+  qualified = undefined
+-- TODO: uncomment below test when functions are defined
+-- --^^^^^^^^^ variable.function.haskell
+
 -- check that it works across multiple lines
 import
     Foo.Bar
