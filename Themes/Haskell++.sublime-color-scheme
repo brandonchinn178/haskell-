@@ -30,8 +30,11 @@
     "selection_border": "var(black)",
   },
   "rules": [
+    // Top-level
     { "scope": "comment", "foreground": "var(gray)" },
     { "scope": "keyword", "foreground": "var(red)" },
+    { "scope": "variable", "foreground": "var(green)" },
+    { "scope": "storage", "foreground": "var(cyan)" },
     { "scope": "string", "foreground": "var(yellow)" },
     { "scope": "invalid", "foreground": "var(red)" },
 
@@ -51,23 +54,15 @@
       "foreground": "color(var(gold) blend(var(red) 50%))",
     },
     {
+      "scope": "keyword.other.import",
+      "font_style": "italic",
+    },
+    {
       "scope": "meta.import punctuation - comment",
       "foreground": "var(gold)",
     },
     {
-      "scope": "variable.other.import",
-      "foreground": "var(green)",
-    },
-    {
-      "scope": "variable.other.import.type",
-      "foreground": "var(cyan)",
-    },
-    {
-      "scope": "variable.other.import.type.operator",
-      "foreground": "var(teal)",
-    },
-    {
-      "scope": "variable.other.import.type.pattern",
+      "scope": "meta.import keyword.operator.type",
       "foreground": "var(teal)",
     },
     {
@@ -75,11 +70,11 @@
       "foreground": "var(green)",
     },
     {
-      "scope": "meta.import.type-members punctuation.separator, meta.import.type-members punctuation.section",
+      "scope": "meta.import.type-members punctuation - comment",
       "foreground": "var(green)",
     },
     {
-      "scope": "meta.import.type-members variable.other.import.type",
+      "scope": "meta.import.type-members storage",
       "foreground": "var(teal)",
     },
 
@@ -87,6 +82,12 @@
     {
       "scope": "entity.name.namespace",
       "foreground": "var(gold)",
+    },
+
+    // Variables
+    {
+      "scope": "variable.function.constructor, variable.function.pattern",
+      "foreground": "var(teal)",
     },
   ],
 }

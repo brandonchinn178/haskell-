@@ -26,11 +26,11 @@ import Foo.Bar (
 --             ^ punctuation.section.parens.begin.haskell
 
   Test,
---^^^^ variable.other.import.type.haskell
+--^^^^ storage.type.haskell
 --    ^ punctuation.separator.haskell
 
   Test2 (..),
---^^^^^ variable.other.import.type.haskell
+--^^^^^ storage.type.haskell
 --      ^^^^ meta.import.type-members.haskell
 --      ^ punctuation.section.parens.begin.haskell
 --       ^^ keyword.operator.import.wildcard.haskell
@@ -38,48 +38,48 @@ import Foo.Bar (
 --          ^ punctuation.separator.haskell
 
   Test3 (Test3, a, b, c),
---^^^^^ variable.other.import.type.haskell
+--^^^^^ storage.type.haskell
 --      ^^^^^^^^^^^^^^^^ meta.import.type-members.haskell
 --      ^ punctuation.section.parens.begin.haskell
---       ^^^^^ variable.other.import.type.haskell
+--       ^^^^^ variable.function.constructor.haskell
 --            ^ punctuation.separator.haskell
---              ^ variable.other.import.function.haskell
+--              ^ variable.function.haskell
 --               ^ punctuation.separator.haskell
---                 ^ variable.other.import.function.haskell
+--                 ^ variable.function.haskell
 --                  ^ punctuation.separator.haskell
---                    ^ variable.other.import.function.haskell
+--                    ^ variable.function.haskell
 --                     ^ punctuation.section.parens.end.haskell
 --                      ^ punctuation.separator.haskell
 
   NonEmpty ((:|)),
---^^^^^^^^ variable.other.import.type.haskell
+--^^^^^^^^ storage.type.haskell
 --         ^^^^^^ meta.import.type-members.haskell
 --         ^ punctuation.section.parens.begin.haskell
---          ^^^^ variable.other.import.type.operator.haskell
+--          ^^^^ keyword.operator.type.haskell
 --              ^ punctuation.section.parens.end.haskell
 --               ^ punctuation.separator.haskell
 
   Addable ((+>)),
---^^^^^^^ variable.other.import.type.haskell
+--^^^^^^^ storage.type.haskell
 --        ^^^^^^ meta.import.type-members.haskell
 --        ^ punctuation.section.parens.begin.haskell
---         ^^^^ variable.other.import.operator.haskell
+--         ^^^^ keyword.operator.haskell
 --             ^ punctuation.section.parens.end.haskell
 --              ^ punctuation.separator.haskell
 
   a,
---^ variable.other.import.function.haskell
+--^ variable.function.haskell
 
   (++),
---^^^^ variable.other.import.operator.haskell
+--^^^^ keyword.operator.haskell
 
   type (++),
 --^^^^ keyword.other.import.haskell
---     ^^^^ variable.other.import.type.operator.haskell
+--     ^^^^ keyword.operator.type.haskell
 
   pattern HELP,
 --^^^^^^^ keyword.other.import.haskell
---        ^^^^ variable.other.import.type.pattern.haskell
+--        ^^^^ variable.function.pattern.haskell
 
  )
  -- <- punctuation.section.parens.end.haskell
@@ -97,14 +97,14 @@ import Foo
 import Foo (asdf)
 --     ^^^ entity.name.namespace.haskell
 --         ^ punctuation.section.parens.begin.haskell
---          ^^^^ variable.other.import.function.haskell
+--          ^^^^ variable.function.haskell
 --              ^ punctuation.section.parens.end.haskell
 
 import Foo hiding (asdf)
 --     ^^^ entity.name.namespace.haskell
 --         ^^^^^^ keyword.control.import.modifiers.haskell
 --                ^ punctuation.section.parens.begin.haskell
---                 ^^^^ variable.other.import.function.haskell
+--                 ^^^^ variable.function.haskell
 --                     ^ punctuation.section.parens.end.haskell
 
 import Foo as F
@@ -117,7 +117,7 @@ import Foo as F (asdf)
 --         ^^ keyword.control.import.modifiers.haskell
 --            ^ entity.name.namespace.haskell
 --              ^ punctuation.section.parens.begin.haskell
---               ^^^^ variable.other.import.function.haskell
+--               ^^^^ variable.function.haskell
 --                   ^ punctuation.section.parens.end.haskell
 
 import Foo as F hiding (asdf)
@@ -126,7 +126,7 @@ import Foo as F hiding (asdf)
 --            ^ entity.name.namespace.haskell
 --              ^^^^^^ keyword.control.import.modifiers.haskell
 --                     ^ punctuation.section.parens.begin.haskell
---                      ^^^^ variable.other.import.function.haskell
+--                      ^^^^ variable.function.haskell
 --                          ^ punctuation.section.parens.end.haskell
 
 import qualified Foo
@@ -137,7 +137,7 @@ import qualified Foo (asdf)
 --     ^^^^^^^^^ keyword.control.import.modifiers.haskell
 --               ^^^ entity.name.namespace.haskell
 --                   ^ punctuation.section.parens.begin.haskell
---                    ^^^^ variable.other.import.function.haskell
+--                    ^^^^ variable.function.haskell
 --                        ^ punctuation.section.parens.end.haskell
 
 import qualified Foo hiding (asdf)
@@ -145,7 +145,7 @@ import qualified Foo hiding (asdf)
 --               ^^^ entity.name.namespace.haskell
 --                   ^^^^^^ keyword.control.import.modifiers.haskell
 --                          ^ punctuation.section.parens.begin.haskell
---                           ^^^^ variable.other.import.function.haskell
+--                           ^^^^ variable.function.haskell
 --                               ^ punctuation.section.parens.end.haskell
 
 import qualified Foo as F
@@ -160,7 +160,7 @@ import qualified Foo as F (asdf)
 --                   ^^ keyword.control.import.modifiers.haskell
 --                      ^ entity.name.namespace.haskell
 --                        ^ punctuation.section.parens.begin.haskell
---                         ^^^^ variable.other.import.function.haskell
+--                         ^^^^ variable.function.haskell
 --                             ^ punctuation.section.parens.end.haskell
 
 import qualified Foo as F hiding (asdf)
@@ -170,7 +170,7 @@ import qualified Foo as F hiding (asdf)
 --                      ^ entity.name.namespace.haskell
 --                        ^^^^^^ keyword.control.import.modifiers.haskell
 --                               ^ punctuation.section.parens.begin.haskell
---                                ^^^^ variable.other.import.function.haskell
+--                                ^^^^ variable.function.haskell
 --                                    ^ punctuation.section.parens.end.haskell
 
 import Foo qualified
@@ -181,7 +181,7 @@ import Foo qualified (asdf)
 --     ^^^ entity.name.namespace.haskell
 --         ^^^^^^^^^ keyword.control.import.modifiers.haskell
 --                   ^ punctuation.section.parens.begin.haskell
---                    ^^^^ variable.other.import.function.haskell
+--                    ^^^^ variable.function.haskell
 --                        ^ punctuation.section.parens.end.haskell
 
 import Foo qualified hiding (asdf)
@@ -189,7 +189,7 @@ import Foo qualified hiding (asdf)
 --         ^^^^^^^^^ keyword.control.import.modifiers.haskell
 --                   ^^^^^^ keyword.control.import.modifiers.haskell
 --                          ^ punctuation.section.parens.begin.haskell
---                           ^^^^ variable.other.import.function.haskell
+--                           ^^^^ variable.function.haskell
 --                               ^ punctuation.section.parens.end.haskell
 
 import Foo qualified as F
@@ -204,7 +204,7 @@ import Foo qualified as F (asdf)
 --                   ^^ keyword.control.import.modifiers.haskell
 --                      ^ entity.name.namespace.haskell
 --                        ^ punctuation.section.parens.begin.haskell
---                         ^^^^ variable.other.import.function.haskell
+--                         ^^^^ variable.function.haskell
 --                             ^ punctuation.section.parens.end.haskell
 
 import Foo qualified as F hiding (asdf)
@@ -214,5 +214,5 @@ import Foo qualified as F hiding (asdf)
 --                      ^ entity.name.namespace.haskell
 --                        ^^^^^^ keyword.control.import.modifiers.haskell
 --                               ^ punctuation.section.parens.begin.haskell
---                                ^^^^ variable.other.import.function.haskell
+--                                ^^^^ variable.function.haskell
 --                                    ^ punctuation.section.parens.end.haskell

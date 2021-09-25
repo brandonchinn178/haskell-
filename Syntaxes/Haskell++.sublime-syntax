@@ -133,11 +133,11 @@ contexts:
     - match: \b(type) (\({{operator}}\))
       captures:
         1: keyword.other.import.haskell
-        2: variable.other.import.type.operator.haskell
+        2: keyword.operator.type.haskell
     - match: \b(pattern) ({{upper_ident}})
       captures:
         1: keyword.other.import.haskell
-        2: variable.other.import.type.pattern.haskell
+        2: variable.function.pattern.haskell
     - # explicitly check for `(..)`
       match: |-
         (?x)
@@ -150,11 +150,16 @@ contexts:
         2: keyword.operator.import.wildcard.haskell
         3: punctuation.section.parens.end.haskell
     - match: \({{operator}}\)
-      scope: variable.other.import.operator.haskell
+      scope: keyword.operator.haskell
     - match: \(
       scope: punctuation.section.parens.begin.haskell
       push: imports-list-type-members
-    - include: imports-list-common
+    - match: '{{upper_ident}}'
+      scope: storage.type.haskell
+    - match: '{{lower_ident}}'
+      scope: variable.function.haskell
+    - match: ','
+      scope: punctuation.separator.haskell
 
   # import GHC.Exts (IsList (Item, fromList))
   #                          ^^^^^^^^^^^^^^
@@ -163,19 +168,16 @@ contexts:
     - match: \)
       scope: punctuation.section.parens.end.haskell
       pop: true
-    - include: imports-list-common
-    - match: \(:{{operator}}\)
-      scope: variable.other.import.type.operator.haskell
-    - match: \({{operator}}\)
-      scope: variable.other.import.operator.haskell
-
-  imports-list-common:
     - match: '{{upper_ident}}'
-      scope: variable.other.import.type.haskell
+      scope: variable.function.constructor.haskell
     - match: '{{lower_ident}}'
-      scope: variable.other.import.function.haskell
+      scope: variable.function.haskell
     - match: ','
       scope: punctuation.separator.haskell
+    - match: \(:{{operator}}\)
+      scope: keyword.operator.type.haskell
+    - match: \({{operator}}\)
+      scope: keyword.operator.haskell #variable.other.import.operator.haskell
 
   ### Expressions ###
 
