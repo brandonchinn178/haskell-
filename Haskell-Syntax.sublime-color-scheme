@@ -8,14 +8,15 @@
     "cyan": "#2fbfbf",
     "gold": "#bfa72f",
     "green": "#8dbc2f",
+    "periwinkle": "#c6b3ff",
     "purple": "#ac5ebc",
     "red": "#bf472f",
-    "teal": "color(var(cyan) blend(var(green) 50%))",
+    "teal": "#55c2a1",
     "yellow": "#e6db74",
 
     // type-level identifiers
     "types": "var(cyan)",
-    "type_operators": "color(var(cyan) blend(var(purple) 30%) lightness(+ 20%))",
+    "type_operators": "var(periwinkle)",
 
     // value-level identifiers
     "constructors": "var(teal)",
