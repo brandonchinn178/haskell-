@@ -54,7 +54,7 @@
   {-# ANN test "foo" #-}
 --^^^ punctuation.definition.comment
 --    ^^^ keyword.other.pragma.haskell
---        ^^^^ variable.other.function.haskell
+--        ^^^^ variable.other.haskell
 --             ^^^^^ string.quoted.double.haskell
 --                   ^^^ punctuation.definition.comment
 

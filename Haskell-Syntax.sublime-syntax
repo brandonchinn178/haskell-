@@ -7,8 +7,8 @@ scope: source.haskell
 variables:
   # Identifiers and Operators
   # https://www.haskell.org/onlinereport/lexemes.html#sect2.4
-  lower_ident: '[a-z][\w'']*'
-  upper_ident: '[A-Z][\w'']*'
+  lower_ident: '\b[a-z_][\w'']*\b'
+  upper_ident: '\b[A-Z][\w'']*\b'
   symbol_char: '[!#$%&*+./<=>?@\^|-~:]'
   operator: '(?!:){{symbol_char}}+'
   operator_con: ':{{symbol_char}}*'
@@ -20,12 +20,13 @@ contexts:
   main:
     - include: module_header
     - include: imports
+    - include: functions
 
   ### Identifiers ###
 
   module_name:
     - match: '({{upper_ident}}\.)*({{upper_ident}})'
-      scope: entity.name.namespace.haskell
+      scope: storage.module.haskell
 
   ### Utilities ###
 
@@ -125,7 +126,8 @@ contexts:
 
   module_header_line:
     - meta_scope: meta.declaration.module.haskell
-    - include: module_name
+    - match: '({{upper_ident}}\.)*({{upper_ident}})'
+      scope: entity.name.namespace.haskell
     - match: \(
       scope: punctuation.section.parens.begin.haskell
       push: module_header_exports_list
@@ -155,7 +157,7 @@ contexts:
       scope: meta.export.type_members.haskell
       captures:
         1: punctuation.section.parens.begin.haskell
-        2: keyword.operator.export.wildcard.haskell
+        2: keyword.other.wildcard.export.haskell
         3: punctuation.section.parens.end.haskell
     - match: \({{operator}}\)
       scope: keyword.operator.haskell
@@ -211,7 +213,7 @@ contexts:
       scope: meta.import.type_members.haskell
       captures:
         1: punctuation.section.parens.begin.haskell
-        2: keyword.operator.import.wildcard.haskell
+        2: keyword.other.wildcard.import.haskell
         3: punctuation.section.parens.end.haskell
     - match: \({{operator}}\)
       scope: keyword.operator.haskell
@@ -239,15 +241,55 @@ contexts:
     - match: ','
       scope: punctuation.separator.haskell
     - match: \({{operator_con}}\)
-      scope: keyword.operator.haskell
+      scope: keyword.operator.constructor.haskell
     - match: \({{operator}}\)
       scope: keyword.operator.haskell #variable.other.import.operator.haskell
+
+  ### Functions ###
+
+  functions:
+    - match: '^(\s*)({{lower_ident}})'
+      captures:
+        2: entity.name.function.haskell
+      branch_point: function
+      branch:
+        # try signature first, since it's easier to check if it fails
+        # (nothing can go between the identifier and the '::')
+        - function_signature
+        - function_definition
+
+  function_definition:
+    - meta_content_scope: |-
+        meta.function.parameters.haskell
+        meta.pattern.haskell
+    - include: pop_when_deindent
+    - match: '='
+      scope: keyword.other.function.definition.haskell
+      set: function_definition_body
+    - include: pattern_match
+
+  function_definition_body:
+    - include: pop_when_deindent
+    # TODO
+
+  function_signature:
+    - match: '\s(::)\s'
+      captures:
+        1: keyword.other.function.signature.haskell
+      set: function_signature_type
+    - include: pop_when_deindent
+    - match: '\S'
+      fail: function
+
+  function_signature_type:
+    - include: pop_when_deindent
+    # TODO
 
   ### Expressions ###
 
   expressions:
     - match: '{{lower_ident}}'
-      scope: variable.other.function.haskell
+      scope: variable.other.haskell
     - match: '{{upper_ident}}'
       scope: variable.other.type.haskell
     - match: '"'
@@ -258,3 +300,54 @@ contexts:
     - meta_scope: string.quoted.double.haskell
     - match: '"'
       pop: true
+
+  ### Pattern matching ###
+
+  pattern_match:
+    - match: '\b_\b'
+      scope: keyword.other.wildcard.haskell
+    - match: '{{lower_ident}}'
+      scope: variable.other.haskell
+    - match: '{{upper_ident}}'
+      scope: variable.other.type.haskell
+    - match: '@'
+      scope: keyword.other.as_pattern.haskell
+    - match: '\('
+      scope: punctuation.section.parens.begin.haskell
+    - match: '\)'
+      scope: punctuation.section.parens.end.haskell
+    - match: '\{'
+      scope: punctuation.section.braces.begin.haskell
+      push: pattern_match_record
+    - match: '{{operator_con}}'
+      scope: keyword.operator.constructor.haskell
+
+  pattern_match_record:
+    - meta_scope: meta.pattern.record.haskell
+    - match: '\}'
+      scope: punctuation.section.braces.end.haskell
+      pop: true
+    - # Person{boss = Just _, ..} (RecordWildCards)
+      #                       ^^
+      match: \.\.
+      scope: keyword.other.wildcard.record.haskell
+    - match: ','
+      scope: punctuation.separator.haskell
+    - # Person{boss = Just Person{name = name}}
+      #        ^^^^^^
+      match: '({{lower_ident}})\s*(=)'
+      captures:
+        1: variable.other.member.haskell
+        2: keyword.operator.haskell
+      push: pattern_match_record_nested
+    - # Person{boss} (NamedFieldPuns)
+      #        ^^^^
+      match: '{{lower_ident}}'
+      scope: variable.other.haskell
+
+  # Person{boss = Just Person{name = name}}
+  #               ^^^^^^^^^^^^^^^^^^^^^^^^
+  pattern_match_record_nested:
+    - match: '(?=[,}])'
+      pop: true
+    - include: pattern_match

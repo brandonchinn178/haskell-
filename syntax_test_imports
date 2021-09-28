@@ -3,17 +3,20 @@
 import Foo.Bar
 -- <- keyword.control.import.haskell
 --^^^^^^^^^^^^ meta.import.haskell
---     ^^^^^^^ entity.name.namespace.haskell
+--     ^^^^^^^ storage.module.haskell
 
-separate_unindented_from_indented_import_lines
+module Separate.Unindented.From.Indented.Import.Lines where
 
   import Foo.Bar
 --^^^^^^ keyword.control.import.haskell
     qualified
 --  ^^^^^^^^^ keyword.control.import.modifiers.haskell
+
+-- test that going back to the indentation of import breaks out
+-- of the import context. qualified here should be a function
+-- name, not an import-context keyword.
   qualified = undefined
--- TODO: uncomment below test when functions are defined
--- --^^^^^^^^^ variable.function.haskell
+--^^^^^^^^^ entity.name.function.haskell
 
 -- check that it works across multiple lines
 import
@@ -27,12 +30,12 @@ import
 --------------------------------------------------------------------------------}
 
 import Foo.Bar ()
---     ^^^^^^^ entity.name.namespace.haskell
+--     ^^^^^^^ storage.module.haskell
 --             ^ punctuation.section.parens.begin.haskell
 --              ^ punctuation.section.parens.end.haskell
 
 import Foo.Bar (
---     ^^^^^^^ entity.name.namespace.haskell
+--     ^^^^^^^ storage.module.haskell
 --             ^ punctuation.section.parens.begin.haskell
 
   Test,
@@ -43,7 +46,7 @@ import Foo.Bar (
 --^^^^^ storage.type.haskell
 --      ^^^^ meta.import.type_members.haskell
 --      ^ punctuation.section.parens.begin.haskell
---       ^^ keyword.operator.import.wildcard.haskell
+--       ^^ keyword.other.wildcard.import.haskell
 --         ^ punctuation.section.parens.end.haskell
 --          ^ punctuation.separator.haskell
 
@@ -65,7 +68,7 @@ import Foo.Bar (
 --^^^^^^^^ storage.type.haskell
 --         ^^^^^^ meta.import.type_members.haskell
 --         ^ punctuation.section.parens.begin.haskell
---          ^^^^ keyword.operator.haskell
+--          ^^^^ keyword.operator.constructor.haskell
 --              ^ punctuation.section.parens.end.haskell
 --               ^ punctuation.separator.haskell
 
@@ -81,7 +84,7 @@ import Foo.Bar (
 --^^^^^ storage.type.haskell
 --      ^^^^^^^ meta.import.type_members.haskell
 --      ^ punctuation.section.parens.begin.haskell
---       ^^^^^ keyword.operator.haskell
+--       ^^^^^ keyword.operator.constructor.haskell
 --            ^ punctuation.section.parens.end.haskell
 --             ^ punctuation.separator.haskell
 
@@ -110,38 +113,38 @@ import Foo.Bar (
 --------------------------------------------------------------------------------}
 
 import Foo
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 
 import Foo (asdf)
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^ punctuation.section.parens.begin.haskell
 --          ^^^^ variable.function.haskell
 --              ^ punctuation.section.parens.end.haskell
 
 import Foo hiding (asdf)
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^^^^^ keyword.control.import.modifiers.haskell
 --                ^ punctuation.section.parens.begin.haskell
 --                 ^^^^ variable.function.haskell
 --                     ^ punctuation.section.parens.end.haskell
 
 import Foo as F
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^ keyword.control.import.modifiers.haskell
---            ^ entity.name.namespace.haskell
+--            ^ storage.module.haskell
 
 import Foo as F (asdf)
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^ keyword.control.import.modifiers.haskell
---            ^ entity.name.namespace.haskell
+--            ^ storage.module.haskell
 --              ^ punctuation.section.parens.begin.haskell
 --               ^^^^ variable.function.haskell
 --                   ^ punctuation.section.parens.end.haskell
 
 import Foo as F hiding (asdf)
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^ keyword.control.import.modifiers.haskell
---            ^ entity.name.namespace.haskell
+--            ^ storage.module.haskell
 --              ^^^^^^ keyword.control.import.modifiers.haskell
 --                     ^ punctuation.section.parens.begin.haskell
 --                      ^^^^ variable.function.haskell
@@ -149,18 +152,18 @@ import Foo as F hiding (asdf)
 
 import qualified Foo
 --     ^^^^^^^^^ keyword.control.import.modifiers.haskell
---               ^^^ entity.name.namespace.haskell
+--               ^^^ storage.module.haskell
 
 import qualified Foo (asdf)
 --     ^^^^^^^^^ keyword.control.import.modifiers.haskell
---               ^^^ entity.name.namespace.haskell
+--               ^^^ storage.module.haskell
 --                   ^ punctuation.section.parens.begin.haskell
 --                    ^^^^ variable.function.haskell
 --                        ^ punctuation.section.parens.end.haskell
 
 import qualified Foo hiding (asdf)
 --     ^^^^^^^^^ keyword.control.import.modifiers.haskell
---               ^^^ entity.name.namespace.haskell
+--               ^^^ storage.module.haskell
 --                   ^^^^^^ keyword.control.import.modifiers.haskell
 --                          ^ punctuation.section.parens.begin.haskell
 --                           ^^^^ variable.function.haskell
@@ -168,42 +171,42 @@ import qualified Foo hiding (asdf)
 
 import qualified Foo as F
 --     ^^^^^^^^^ keyword.control.import.modifiers.haskell
---               ^^^ entity.name.namespace.haskell
+--               ^^^ storage.module.haskell
 --                   ^^ keyword.control.import.modifiers.haskell
---                      ^ entity.name.namespace.haskell
+--                      ^ storage.module.haskell
 
 import qualified Foo as F (asdf)
 --     ^^^^^^^^^ keyword.control.import.modifiers.haskell
---               ^^^ entity.name.namespace.haskell
+--               ^^^ storage.module.haskell
 --                   ^^ keyword.control.import.modifiers.haskell
---                      ^ entity.name.namespace.haskell
+--                      ^ storage.module.haskell
 --                        ^ punctuation.section.parens.begin.haskell
 --                         ^^^^ variable.function.haskell
 --                             ^ punctuation.section.parens.end.haskell
 
 import qualified Foo as F hiding (asdf)
 --     ^^^^^^^^^ keyword.control.import.modifiers.haskell
---               ^^^ entity.name.namespace.haskell
+--               ^^^ storage.module.haskell
 --                   ^^ keyword.control.import.modifiers.haskell
---                      ^ entity.name.namespace.haskell
+--                      ^ storage.module.haskell
 --                        ^^^^^^ keyword.control.import.modifiers.haskell
 --                               ^ punctuation.section.parens.begin.haskell
 --                                ^^^^ variable.function.haskell
 --                                    ^ punctuation.section.parens.end.haskell
 
 import Foo qualified
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^^^^^^^^ keyword.control.import.modifiers.haskell
 
 import Foo qualified (asdf)
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^^^^^^^^ keyword.control.import.modifiers.haskell
 --                   ^ punctuation.section.parens.begin.haskell
 --                    ^^^^ variable.function.haskell
 --                        ^ punctuation.section.parens.end.haskell
 
 import Foo qualified hiding (asdf)
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^^^^^^^^ keyword.control.import.modifiers.haskell
 --                   ^^^^^^ keyword.control.import.modifiers.haskell
 --                          ^ punctuation.section.parens.begin.haskell
@@ -211,25 +214,25 @@ import Foo qualified hiding (asdf)
 --                               ^ punctuation.section.parens.end.haskell
 
 import Foo qualified as F
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^^^^^^^^ keyword.control.import.modifiers.haskell
 --                   ^^ keyword.control.import.modifiers.haskell
---                      ^ entity.name.namespace.haskell
+--                      ^ storage.module.haskell
 
 import Foo qualified as F (asdf)
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^^^^^^^^ keyword.control.import.modifiers.haskell
 --                   ^^ keyword.control.import.modifiers.haskell
---                      ^ entity.name.namespace.haskell
+--                      ^ storage.module.haskell
 --                        ^ punctuation.section.parens.begin.haskell
 --                         ^^^^ variable.function.haskell
 --                             ^ punctuation.section.parens.end.haskell
 
 import Foo qualified as F hiding (asdf)
---     ^^^ entity.name.namespace.haskell
+--     ^^^ storage.module.haskell
 --         ^^^^^^^^^ keyword.control.import.modifiers.haskell
 --                   ^^ keyword.control.import.modifiers.haskell
---                      ^ entity.name.namespace.haskell
+--                      ^ storage.module.haskell
 --                        ^^^^^^ keyword.control.import.modifiers.haskell
 --                               ^ punctuation.section.parens.begin.haskell
 --                                ^^^^ variable.function.haskell

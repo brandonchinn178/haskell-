@@ -1,0 +1,72 @@
+-- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
+
+-- TODO: support indented functions
+
+addOne x = x + 1
+--^^^^ entity.name.function.haskell
+--     ^ meta.function.parameters.haskell meta.pattern.haskell variable.other.haskell
+--       ^ keyword.other.function.definition.haskell
+
+addMultiple
+--^^^^^^^^^ entity.name.function.haskell
+  x
+--^ variable.other.haskell
+  y
+--^ variable.other.haskell
+  z
+--^ variable.other.haskell
+  = x + y + z
+--^ keyword.other.function.definition.haskell
+
+testPatternMatch
+--^^^^^^^^^^^^^^ entity.name.function.haskell
+  (Just a)
+--^ punctuation.section.parens.begin.haskell
+-- ^^^^ variable.other.type.haskell
+--      ^ variable.other.haskell
+--       ^ punctuation.section.parens.end.haskell
+  Nothing
+--^^^^^^^ variable.other.type.haskell
+  xs@(x : _)
+--^^ variable.other.haskell
+--  ^ keyword.other.as_pattern.haskell
+--   ^ punctuation.section.parens.begin.haskell
+--    ^ variable.other.haskell
+--      ^ keyword.operator.constructor.haskell
+--        ^ keyword.other.wildcard.haskell
+--         ^ punctuation.section.parens.end.haskell
+  Person{name = name, boss = Just Person{name = name}}
+--^^^^^^ variable.other.type.haskell
+--      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.pattern.record.haskell
+--      ^ punctuation.section.braces.begin.haskell
+--       ^^^^ variable.other.member.haskell
+--            ^ keyword.operator.haskell
+--              ^^^^ variable.other.haskell
+--                  ^ punctuation.separator.haskell
+--                    ^^^^ variable.other.member.haskell
+--                         ^ keyword.operator.haskell
+--                           ^^^^ variable.other.type.haskell
+--                                ^^^^^^ variable.other.type.haskell
+--                                      ^ punctuation.section.braces.begin.haskell
+--                                       ^^^^ variable.other.member.haskell
+--                                            ^ keyword.operator.haskell
+--                                              ^^^^ variable.other.haskell
+--                                                  ^^ punctuation.section.braces.end.haskell
+  Person{name, age}
+--^^^^^^ variable.other.type.haskell
+--      ^ punctuation.section.braces.begin.haskell
+--       ^^^^ variable.other.haskell
+--           ^ punctuation.separator.haskell
+--             ^^^ variable.other.haskell
+--                ^ punctuation.section.braces.end.haskell
+  Person{name = name, ..}
+--^^^^^^ variable.other.type.haskell
+--      ^ punctuation.section.braces.begin.haskell
+--       ^^^^ variable.other.member.haskell
+--            ^ keyword.operator.haskell
+--              ^^^^ variable.other.haskell
+--                  ^ punctuation.separator.haskell
+--                    ^^ keyword.other.wildcard.record.haskell
+--                      ^ punctuation.section.braces.end.haskell
+  = undefined
+--^ keyword.other.function.definition.haskell

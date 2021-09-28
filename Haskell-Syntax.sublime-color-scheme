@@ -8,11 +8,13 @@
     "cyan": "#2fbfbf",
     "gold": "#bfa72f",
     "green": "#8dbc2f",
+    "olive": "#b1bf6a",
+    "orange": "#eea343",
     "periwinkle": "#c6b3ff",
     "purple": "#ac5ebc",
-    "red": "#bf472f",
+    "red": "#dd573c",
     "teal": "#55c2a1",
-    "yellow": "#e6db74",
+    "yellow": "#fffc7f",
 
     // type-level identifiers
     "types": "var(cyan)",
@@ -20,7 +22,9 @@
 
     // value-level identifiers
     "constructors": "var(teal)",
+    "constructor_pattern": "var(olive)",
     "variables": "var(green)",
+    "parameter": "var(orange)",
     "operators": "var(red)",
   },
   "globals": {
@@ -44,7 +48,8 @@
     { "scope": "comment", "foreground": "var(gray)" },
     { "scope": "keyword", "foreground": "var(red)" },
     { "scope": "keyword.operator", "foreground": "var(operators)" },
-    { "scope": "variable", "foreground": "var(variables)" },
+    { "scope": "keyword.other.wildcard", "foreground": "var(purple)" },
+    { "scope": "entity", "foreground": "var(variables)" },
     { "scope": "storage", "foreground": "var(types)" },
     { "scope": "string", "foreground": "var(yellow)" },
     { "scope": "invalid", "foreground": "var(red)" },
@@ -57,6 +62,10 @@
     {
       "scope": "keyword.other.annotation",
       "foreground": "color(var(purple) blend(var(red) 50%))",
+    },
+    {
+      "scope": "meta.annotation variable",
+      "foreground": "var(variables)",
     },
 
     // Imports + exports
@@ -73,11 +82,15 @@
       "foreground": "var(gold)",
     },
     {
+      "scope": "(meta.import, meta.declaration.module) & variable",
+      "foreground": "var(variables)",
+    },
+    {
       "scope": "(meta.import, meta.declaration.module) & keyword.operator.type",
       "foreground": "var(type_operators)",
     },
     {
-      "scope": "keyword.operator.import.wildcard, keyword.operator.export.wildcard",
+      "scope": "keyword.other.wildcard.import, keyword.other.wildcard.export",
       "foreground": "var(green)",
     },
     {
@@ -85,13 +98,13 @@
       "foreground": "var(green)",
     },
     {
-      "scope": "(meta.import.type_members, meta.export.type_members) & storage",
+      "scope": "(meta.import.type_members, meta.export.type_members) & (storage, keyword.operator.constructor)",
       "foreground": "var(constructors)",
     },
 
     // Modules
     {
-      "scope": "entity.name.namespace",
+      "scope": "storage.module, entity.name.namespace",
       "foreground": "var(gold)",
     },
 
@@ -99,6 +112,38 @@
     {
       "scope": "variable.function.constructor, variable.function.pattern",
       "foreground": "var(constructors)",
+    },
+
+    // Function parameters
+    {
+      "scope": "meta.function.parameters variable.other",
+      "foreground": "var(parameter)",
+    },
+    {
+      "scope": "meta.function.parameters variable.other.type",
+      "foreground": "var(constructor_pattern)",
+    },
+    {
+      "scope": "meta.function.parameters variable.other.member",
+      "foreground": "var(white)",
+    },
+    {
+      "scope": "meta.function.parameters & (punctuation.section.parens, keyword.other.as_pattern)",
+      "foreground": "var(yellow)",
+    },
+
+    // Pattern matching
+    {
+      "scope": "meta.pattern.record punctuation - comment",
+      "foreground": "var(constructor_pattern)",
+    },
+    {
+      "scope": "keyword.other.wildcard.record",
+      "foreground": "var(parameter)",
+    },
+    {
+      "scope": "meta.pattern keyword.operator.constructor",
+      "foreground": "var(constructor_pattern)",
     },
   ],
 }

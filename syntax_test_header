@@ -11,12 +11,12 @@
 
     Foo (..),
 --  ^^^ storage.type.haskell
---       ^^ keyword.operator.export.wildcard.haskell
+--       ^^ keyword.other.wildcard.export.haskell
 
     Bar (Bar, (:>), a),
 --  ^^^ storage.type.haskell
 --       ^^^ variable.function.constructor.haskell
---            ^^^^ keyword.operator.haskell
+--            ^^^^ keyword.operator.constructor.haskell
 --                  ^ variable.function.haskell
 
     (++),
