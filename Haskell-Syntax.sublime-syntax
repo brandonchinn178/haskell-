@@ -15,12 +15,12 @@ variables:
 
 contexts:
   prototype:
-    - include: comments
+    - include: comment
 
   main:
     - include: module_header
-    - include: imports
-    - include: functions
+    - include: import
+    - include: function
 
   ### Identifiers ###
 
@@ -36,28 +36,28 @@ contexts:
 
   ### Comments ###
 
-  comments:
-    - include: pragmas
-    - include: comments_line
-    - include: comments_block
+  comment:
+    - include: pragma
+    - include: comment_line
+    - include: comment_block
 
-  comments_line:
+  comment_line:
     - match: --
       scope: punctuation.definition.comment
-      push: comments_line_body
+      push: comment_line_body
 
-  comments_line_body:
+  comment_line_body:
     - meta_include_prototype: false
     - meta_scope: comment.line.haskell
     - match: \n
       pop: true
 
-  pragmas:
+  pragma:
     - match: '{-#'
       scope: punctuation.definition.comment
-      push: pragmas_body
+      push: pragma_body
 
-  pragmas_body:
+  pragma_body:
     - meta_include_prototype: false
     - meta_scope: comment.block.pragma.haskell
     - match: '#-}'
@@ -100,18 +100,18 @@ contexts:
       pop: true
     - match: \b(type|module)\b
       scope: keyword.other.annotation.haskell
-    - include: expressions
+    - include: expression
 
-  comments_block:
+  comment_block:
     - match: '{-'
       scope: punctuation.definition.comment
-      push: comments_block_body
+      push: comment_block_body
 
-  comments_block_body:
+  comment_block_body:
     - meta_include_prototype: false
     - meta_scope: comment.block.haskell
     - match: '{-'
-      push: comments_block_body
+      push: comment_block_body
     - match: '-}'
       scope: punctuation.definition.comment
       pop: true
@@ -163,7 +163,7 @@ contexts:
       scope: keyword.operator.haskell
     - match: \(
       scope: punctuation.section.parens.begin.haskell
-      push: imports_list_type_members
+      push: import_list_type_members
     - match: '{{upper_ident}}'
       scope: storage.type.haskell
     - match: '{{lower_ident}}'
@@ -173,13 +173,13 @@ contexts:
 
   ### Imports ###
 
-  imports:
+  import:
     - match: ^(\s*)(import)\b
       captures:
         2: keyword.control.import.haskell
-      push: imports_line
+      push: import_line
 
-  imports_line:
+  import_line:
     - meta_scope: meta.import.haskell
     - include: pop_when_deindent
     - match: \b(qualified|as|hiding)\b
@@ -187,11 +187,11 @@ contexts:
     - include: module_name
     - match: \(
       scope: punctuation.section.parens.begin.haskell
-      push: imports_list
+      push: import_list
 
   # import UnliftIO (UnliftIO, withRunInIO)
   #                  ^^^^^^^^^^^^^^^^^^^^^
-  imports_list:
+  import_list:
     - meta_scope: meta.declaration.imports.haskell
     - match: \)
       scope: punctuation.section.parens.end.haskell
@@ -219,7 +219,7 @@ contexts:
       scope: keyword.operator.haskell
     - match: \(
       scope: punctuation.section.parens.begin.haskell
-      push: imports_list_type_members
+      push: import_list_type_members
     - match: '{{upper_ident}}'
       scope: storage.type.haskell
     - match: '{{lower_ident}}'
@@ -229,7 +229,7 @@ contexts:
 
   # import GHC.Exts (IsList (Item, fromList))
   #                          ^^^^^^^^^^^^^^
-  imports_list_type_members:
+  import_list_type_members:
     - meta_scope: meta.import.type_members.haskell
     - match: \)
       scope: punctuation.section.parens.end.haskell
@@ -247,7 +247,7 @@ contexts:
 
   ### Functions ###
 
-  functions:
+  function:
     - match: '^(\s*)({{lower_ident}})'
       captures:
         2: entity.name.function.haskell
@@ -287,15 +287,15 @@ contexts:
 
   ### Expressions ###
 
-  expressions:
+  expression:
     - match: '{{lower_ident}}'
       scope: variable.other.haskell
     - match: '{{upper_ident}}'
       scope: variable.other.type.haskell
     - match: '"'
-      push: expressions_string_body
+      push: expression_string_body
 
-  expressions_string_body:
+  expression_string_body:
     - meta_include_prototype: false
     - meta_scope: string.quoted.double.haskell
     - match: '"'
