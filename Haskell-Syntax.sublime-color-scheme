@@ -5,6 +5,7 @@
     "gray": "#7f7f7f",
     "white": "#ede0ce",
 
+    "blue": "#a1bee6",
     "cyan": "#2fbfbf",
     "gold": "#bfa72f",
     "green": "#8dbc2f",
@@ -13,7 +14,7 @@
     "periwinkle": "#c6b3ff",
     "purple": "#ac5ebc",
     "red": "#dd573c",
-    "teal": "#55c2a1",
+    "teal": "#7cd0bb",
     "yellow": "#fffc7f",
 
     // type-level identifiers
@@ -52,6 +53,7 @@
     { "scope": "entity", "foreground": "var(variables)" },
     { "scope": "storage", "foreground": "var(types)" },
     { "scope": "string", "foreground": "var(yellow)" },
+    { "scope": "constant", "foreground": "var(blue)" },
     { "scope": "invalid", "foreground": "var(red)" },
 
     // Pragmas
@@ -112,6 +114,10 @@
     {
       "scope": "variable.function.constructor, variable.function.pattern",
       "foreground": "var(constructors)",
+    },
+    {
+      "scope": "variable.other.constructor",
+      "foreground": "var(olive)",
     },
 
     // Function parameters

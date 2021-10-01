@@ -9,7 +9,7 @@ variables:
   # https://www.haskell.org/onlinereport/lexemes.html#sect2.4
   lower_ident: '\b[a-z_][\w'']*\b'
   upper_ident: '\b[A-Z][\w'']*\b'
-  symbol_char: '[!#$%&*+./<=>?@\^|-~:]'
+  symbol_char: '[!#$%&*+./<=>?@\\^|\-~:]'
   operator: '(?!:){{symbol_char}}+'
   operator_con: ':{{symbol_char}}*'
 
@@ -20,13 +20,7 @@ contexts:
   main:
     - include: module_header
     - include: import
-    - include: function
-
-  ### Identifiers ###
-
-  module_name:
-    - match: '({{upper_ident}}\.)*({{upper_ident}})'
-      scope: storage.module.haskell
+    - include: function  # TODO: replace with function_or_toplevel_call
 
   ### Utilities ###
 
@@ -184,7 +178,8 @@ contexts:
     - include: pop_when_deindent
     - match: \b(qualified|as|hiding)\b
       scope: keyword.control.import.modifiers.haskell
-    - include: module_name
+    - match: '({{upper_ident}}\.)*({{upper_ident}})'
+      scope: storage.module.haskell
     - match: \(
       scope: punctuation.section.parens.begin.haskell
       push: import_list
@@ -247,6 +242,28 @@ contexts:
 
   ### Functions ###
 
+  # TODO: uncomment
+  # # At the very top-level, a function can be defined or called (a Template
+  # # Haskell splice) and we don't know until we see or don't see an equals
+  # # sign.
+  # #
+  # # We'll first try to parse a function call, and if we see an equals sign
+  # # we'll abort. Trying this first because:
+  # #   * Listing function args should be short, like fewer than 5 lines
+  # #   * Sublime Text refuses to backtrack after 128 lines, so if a
+  # #     function call goes past 128 lines, it won't backtrack if we try
+  # #     parsing it as a function definition first. A function call has
+  # #     a much higher chance of being 128+ lines than a function definition
+  # #
+  # # https://forum.sublimetext.com/t/syntax-branch-help-common-short-vs-rare-long/60863/3
+  # # Test the performance with `benchmark_toplevel_funcs`
+  # function_or_toplevel_call:
+  #   - match: '^(?=\s*{{lower_ident}})'
+  #     branch_point: function_or_toplevel_call
+  #     branch:
+  #       - function_toplevel_call
+  #       - function
+
   function:
     - match: '^(\s*)({{lower_ident}})'
       captures:
@@ -270,7 +287,7 @@ contexts:
 
   function_definition_body:
     - include: pop_when_deindent
-    # TODO
+    - include: expression
 
   function_signature:
     - match: '\s(::)\s'
@@ -285,21 +302,55 @@ contexts:
     - include: pop_when_deindent
     # TODO
 
+  # TODO: uncomment
+  # function_toplevel_call:
+  #   - match: '^(\s*)'
+  #     set: expression
+  #     with_prototype:
+  #       - include: pop_when_deindent
+  #       - match: '(?<!{{symbol_char}})=(?!{{symbol_char}})'
+  #         fail: function_or_toplevel_call
+
   ### Expressions ###
 
   expression:
-    - match: '{{lower_ident}}'
-      scope: variable.other.haskell
-    - match: '{{upper_ident}}'
-      scope: variable.function.constructor.haskell
+    - include: expression_numeric
     - match: '"'
       push: expression_string_body
+    - match: 'let|in|case|of|do'
+      scope: keyword.control.haskell
+    - match: '({{upper_ident}}\.)*({{lower_ident}})'
+      captures:
+        1: storage.module.haskell
+        2: variable.other.haskell
+    - match: '({{upper_ident}}\.)*({{upper_ident}})'
+      captures:
+        1: storage.module.haskell
+        2: variable.function.constructor.haskell
+    - match: '''{1,2}{{upper_ident}}'
+      scope: variable.other.constructor.haskell
+    - match: '{{symbol_char}}+'
+      scope: keyword.operator.haskell
 
   expression_string_body:
     - meta_include_prototype: false
     - meta_scope: string.quoted.double.haskell
     - match: '"'
       pop: true
+
+  expression_numeric:
+    - match: '((?<=\s)-)?\d+\.\d+(e-?\d+)?'
+      scope: constant.numeric.float.haskell
+    - match: '((?<=\s)-)?\d+e-?\d+'
+      scope: constant.numeric.float.haskell
+    - match: '((?<=\s)-)?0[bB][0-1]+'
+      scope: constant.numeric.integer.binary.haskell
+    - match: '((?<=\s)-)?0[oO][0-7]+'
+      scope: constant.numeric.integer.octal.haskell
+    - match: '((?<=\s)-)?0[xX][0-9a-f]+'
+      scope: constant.numeric.integer.hexadecimal.haskell
+    - match: '((?<=\s)-)?\d+'
+      scope: constant.numeric.integer.decimal.haskell
 
   ### Pattern matching ###
 

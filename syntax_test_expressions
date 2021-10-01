@@ -1,0 +1,50 @@
+-- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
+
+-- TODO: remove when top-level expressions are allowed
+foo = do
+  makeLenses ''Foo
+
+  Text.pack
+
+  a == b
+
+  asdf @?= sdaofi
+
+  a && b
+  a || b
+  a ^ b
+  a !! b
+  a ?! b
+  a ~~ b
+  a : b
+
+  let a = \x -> asdf in a True
+
+  10000
+  0b01
+  0o01234567
+  0x0123456789abcdef
+  0.123
+  -1230.23
+  123
+  1e-20
+  1.5e20
+
+  -- works for unspaced expressions
+  a-1
+  100+100
+
+  Just 10 >>= Just . (* 10) >> Nothing
+
+  "hello " ++ "world " <> "other"
+
+  (1, 2, "asdf")
+
+  [1, 2, 3]
+
+  []
+
+  [| asdf |]
+  [d| asdf |]
+  [text| asdf |]
+  [Foo.text| asdf |]
