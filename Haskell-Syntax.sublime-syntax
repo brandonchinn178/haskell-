@@ -291,7 +291,7 @@ contexts:
     - match: '{{lower_ident}}'
       scope: variable.other.haskell
     - match: '{{upper_ident}}'
-      scope: variable.other.type.haskell
+      scope: variable.function.constructor.haskell
     - match: '"'
       push: expression_string_body
 
@@ -309,7 +309,7 @@ contexts:
     - match: '{{lower_ident}}'
       scope: variable.other.haskell
     - match: '{{upper_ident}}'
-      scope: variable.other.type.haskell
+      scope: variable.other.constructor.haskell
     - match: '@'
       scope: keyword.other.as_pattern.haskell
     - match: '\('

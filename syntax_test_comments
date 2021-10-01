@@ -69,14 +69,14 @@
 --^^^ punctuation.definition.comment
 --    ^^^ keyword.other.pragma.haskell
 --        ^^^^ keyword.other.annotation.haskell
---             ^^^^^^ variable.other.type.haskell
+--             ^^^^^^ variable.function.constructor.haskell
 --                    ^^^^^ string.quoted.double.haskell
 --                          ^^^ punctuation.definition.comment
 
   {-# ANN Nil "foo" #-}
 --^^^ punctuation.definition.comment
 --    ^^^ keyword.other.pragma.haskell
---        ^^^ variable.other.type.haskell
+--        ^^^ variable.function.constructor.haskell
 --            ^^^^^ string.quoted.double.haskell
 --                  ^^^ punctuation.definition.comment
 

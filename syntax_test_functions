@@ -22,11 +22,11 @@ testPatternMatch
 --^^^^^^^^^^^^^^ entity.name.function.haskell
   (Just a)
 --^ punctuation.section.parens.begin.haskell
--- ^^^^ variable.other.type.haskell
+-- ^^^^ variable.other.constructor.haskell
 --      ^ variable.other.haskell
 --       ^ punctuation.section.parens.end.haskell
   Nothing
---^^^^^^^ variable.other.type.haskell
+--^^^^^^^ variable.other.constructor.haskell
   xs@(x : _)
 --^^ variable.other.haskell
 --  ^ keyword.other.as_pattern.haskell
@@ -36,7 +36,7 @@ testPatternMatch
 --        ^ keyword.other.wildcard.haskell
 --         ^ punctuation.section.parens.end.haskell
   Person{name = name, boss = Just Person{name = name}}
---^^^^^^ variable.other.type.haskell
+--^^^^^^ variable.other.constructor.haskell
 --      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.pattern.record.haskell
 --      ^ punctuation.section.braces.begin.haskell
 --       ^^^^ variable.other.member.haskell
@@ -45,22 +45,22 @@ testPatternMatch
 --                  ^ punctuation.separator.haskell
 --                    ^^^^ variable.other.member.haskell
 --                         ^ keyword.operator.haskell
---                           ^^^^ variable.other.type.haskell
---                                ^^^^^^ variable.other.type.haskell
+--                           ^^^^ variable.other.constructor.haskell
+--                                ^^^^^^ variable.other.constructor.haskell
 --                                      ^ punctuation.section.braces.begin.haskell
 --                                       ^^^^ variable.other.member.haskell
 --                                            ^ keyword.operator.haskell
 --                                              ^^^^ variable.other.haskell
 --                                                  ^^ punctuation.section.braces.end.haskell
   Person{name, age}
---^^^^^^ variable.other.type.haskell
+--^^^^^^ variable.other.constructor.haskell
 --      ^ punctuation.section.braces.begin.haskell
 --       ^^^^ variable.other.haskell
 --           ^ punctuation.separator.haskell
 --             ^^^ variable.other.haskell
 --                ^ punctuation.section.braces.end.haskell
   Person{name = name, ..}
---^^^^^^ variable.other.type.haskell
+--^^^^^^ variable.other.constructor.haskell
 --      ^ punctuation.section.braces.begin.haskell
 --       ^^^^ variable.other.member.haskell
 --            ^ keyword.operator.haskell

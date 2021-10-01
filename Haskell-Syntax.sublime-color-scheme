@@ -120,7 +120,7 @@
       "foreground": "var(parameter)",
     },
     {
-      "scope": "meta.function.parameters variable.other.type",
+      "scope": "meta.function.parameters variable.other.constructor",
       "foreground": "var(constructor_pattern)",
     },
     {
