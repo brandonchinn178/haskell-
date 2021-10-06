@@ -14,6 +14,7 @@
     "orange_light": "#eea343",
     "periwinkle": "#c6b3ff",
     "purple": "#ac5ebc",
+    "salmon": "#ff8c66",
     "red": "#dd573c",
     "teal": "#7cd0bb",
     "yellow": "#fffc7f",
@@ -27,6 +28,7 @@
     "constructor_pattern": "var(olive)",
     "variables": "var(green)",
     "parameter": "var(orange_light)",
+    "parameter_type": "var(salmon)",
     "operators": "var(red)",
   },
   "globals": {
@@ -52,6 +54,7 @@
     { "scope": "keyword.operator", "foreground": "var(operators)" },
     { "scope": "keyword.other.wildcard", "foreground": "var(purple)" },
     { "scope": "entity", "foreground": "var(variables)" },
+    { "scope": "entity.name.constructor", "foreground": "var(constructors)" },
     { "scope": "storage", "foreground": "var(types)" },
     { "scope": "string", "foreground": "var(yellow)" },
     { "scope": "constant", "foreground": "var(blue)" },
@@ -168,6 +171,20 @@
     {
       "scope": "meta.pattern keyword.operator.constructor",
       "foreground": "var(constructor_pattern)",
+    },
+
+    // Data types
+    {
+      "scope": "variable.other.type",
+      "foreground": "var(parameter_type)",
+    },
+    {
+      "scope": "variable.other.member",
+      "foreground": "var(variables)",
+    },
+    {
+      "scope": "punctuation.section.record, punctuation.separator.record",
+      "foreground": "var(constructors)",
     },
   ],
 }

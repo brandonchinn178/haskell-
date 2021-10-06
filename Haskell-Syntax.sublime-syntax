@@ -21,6 +21,7 @@ contexts:
   main:
     - include: module_header
     - include: import
+    - include: data_types
     - include: function  # TODO: replace with function_or_toplevel_call
 
   ### Utilities ###
@@ -240,6 +241,65 @@ contexts:
       scope: keyword.operator.constructor.haskell
     - match: \({{operator}}\)
       scope: keyword.operator.haskell #variable.other.import.operator.haskell
+
+  ### Data types ###
+
+  data_types:
+    - match: '^(\s*)(data|newtype){{post_non_ident}}'
+      captures:
+        2: keyword.control.type.haskell
+      push: data_type_declaration
+    # TODO: type aliases
+
+  data_type_declaration:
+    - include: pop_when_deindent
+    - match: '{{upper_ident}}'
+      scope: storage.type.haskell
+    - match: '{{lower_ident}}'
+      scope: variable.other.type.haskell
+    - match: '='
+      scope: keyword.operator.haskell
+      set: data_type_constructor_start
+    # TODO: GADTs
+
+  data_type_constructor_start:
+    - include: pop_when_deindent
+    - match: '{{upper_ident}}'
+      scope: entity.name.constructor.haskell
+      set: data_type_constructor
+
+  data_type_constructor:
+    - include: pop_when_deindent
+    - match: \|
+      scope: keyword.operator.haskell
+      set: data_type_constructor_start
+    - match: \{
+      scope: punctuation.section.record.begin.haskell
+      push: data_type_record
+    - match: '{{upper_ident}}'
+      scope: storage.type.haskell
+    - match: '{{lower_ident}}'
+      scope: variable.other.type.haskell
+    # TODO: deriving
+
+  data_type_record:
+    - match: '{{lower_ident}}'
+      scope: variable.other.member.haskell
+    - match: '::'
+      scope: keyword.declaration.haskell
+      set: data_type_record_type
+
+  data_type_record_type:
+    - match: ','
+      scope: punctuation.separator.record.haskell
+      set: data_type_record
+    - match: \}
+      scope: punctuation.section.record.end.haskell
+      pop: true
+    - match: '{{upper_ident}}'
+      scope: storage.type.haskell
+    - match: '{{lower_ident}}'
+      scope: variable.other.type.haskell
 
   ### Functions ###
 

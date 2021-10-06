@@ -1,0 +1,35 @@
+-- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
+
+{--------------------------------------------------------------------------------
+  Data types
+--------------------------------------------------------------------------------}
+
+data Color = Red | Blue | Green | Yellow | White | Black
+
+data Maybe a = Nothing | Just a
+
+data Person = Person
+  { name :: Text
+  , age :: Int
+  , nicknames :: [Text]
+  }
+
+data Foo a b
+  = Foo a (Int, Maybe b)
+  | Bar Int Double
+  | Baz { a :: Int }
+  | Foo2 b
+
+{--------------------------------------------------------------------------------
+  Newtypes
+--------------------------------------------------------------------------------}
+
+newtype Path = Path Text
+
+newtype AppM a = AppM { unAppM :: ReaderT AppEnv IO a }
+
+{--------------------------------------------------------------------------------
+  Type aliases
+--------------------------------------------------------------------------------}
+
+type String = [Char]
