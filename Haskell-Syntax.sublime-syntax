@@ -7,8 +7,9 @@ scope: source.haskell
 variables:
   # Identifiers and Operators
   # https://www.haskell.org/onlinereport/lexemes.html#sect2.4
-  lower_ident: '\b[a-z_][\w'']*\b'
-  upper_ident: '\b[A-Z][\w'']*\b'
+  post_non_ident: '(?=[^\w''])'
+  lower_ident: '\b[a-z_][\w'']*{{post_non_ident}}'
+  upper_ident: '\b[A-Z][\w'']*{{post_non_ident}}'
   symbol_char: '[!#$%&*+./<=>?@\\^|\-~:]'
   operator: '(?!:){{symbol_char}}+'
   operator_con: ':{{symbol_char}}*'
@@ -331,7 +332,7 @@ contexts:
             | then
             | else
           )
-          (?=[^\w'])
+          {{post_non_ident}}
       scope: keyword.control.haskell
     - # identifiers that are keywords when certain extensions are enabled
       match: |-
@@ -340,7 +341,7 @@ contexts:
               mdo
             | rec
           )
-          (?=[^\w'])
+          {{post_non_ident}}
       scope: keyword.control.extension_dependent.haskell
     - match: (error|undefined)(?=[^\w'])
       scope: variable.other.error.haskell
