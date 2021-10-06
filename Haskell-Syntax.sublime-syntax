@@ -317,8 +317,33 @@ contexts:
     - include: expression_numeric
     - match: '"'
       push: expression_string_body
-    - match: 'let|in|case|of|do'
+    # TODO: parse let-statements with pattern matching, maybe function definition?
+    # TODO: parse case-statements with pattern matching
+    - match: |-
+        (?x)
+          (
+              let
+            | in
+            | case
+            | of
+            | do
+            | if
+            | then
+            | else
+          )
+          (?=[^\w'])
       scope: keyword.control.haskell
+    - # identifiers that are keywords when certain extensions are enabled
+      match: |-
+        (?x)
+          (
+              mdo
+            | rec
+          )
+          (?=[^\w'])
+      scope: keyword.control.extension_dependent.haskell
+    - match: (error|undefined)(?=[^\w'])
+      scope: variable.other.error.haskell
     - match: '({{upper_ident}}\.)*({{lower_ident}})'
       captures:
         1: storage.module.haskell
@@ -329,14 +354,54 @@ contexts:
         2: variable.function.constructor.haskell
     - match: '''{1,2}{{upper_ident}}'
       scope: variable.other.constructor.haskell
+    - match: '`({{upper_ident}}\.)*({{lower_ident}})`'
+      scope: variable.other.infix.haskell
+    - match: '`({{upper_ident}}\.)*({{upper_ident}})`'
+      scope: variable.function.constructor.infix.haskell
+    # TODO: parse type annotations
+    - match: ':{{symbol_char}}*'
+      scope: keyword.operator.constructor.haskell
+    - match: '\(:{{symbol_char}}*\)'
+      scope: keyword.operator.constructor.prefix.haskell
+    - match: '\(,*\)'
+      scope: keyword.operator.constructor.prefix.haskell
     - match: '{{symbol_char}}+'
       scope: keyword.operator.haskell
+    - match: '\({{symbol_char}}+\)'
+      scope: keyword.operator.prefix.haskell
+    - include: expression_quasiquote
+    - match: '\['
+      scope: punctuation.section.list.begin.haskell
+      push: expression_list_body
+    - # pretend like all parenthetical groups are tuples
+      # a non-tuple like `(f x)` can still be thought of
+      # as a tuple of one element
+      match: '\('
+      scope: punctuation.section.tuple.begin.haskell
+      push: expression_tuple_body
 
   expression_string_body:
     - meta_include_prototype: false
     - meta_scope: string.quoted.double.haskell
     - match: '"'
       pop: true
+
+  expression_list_body:
+    - match: ','
+      scope: punctuation.separator.list.haskell
+    # TODO: parse list comprehensions, with pattern matching
+    - match: '\]'
+      scope: punctuation.section.list.end.haskell
+      pop: true
+    - include: expression
+
+  expression_tuple_body:
+    - match: ','
+      scope: punctuation.separator.tuple.haskell
+    - match: '\)'
+      scope: punctuation.section.tuple.end.haskell
+      pop: true
+    - include: expression
 
   expression_numeric:
     - match: '((?<=\s)-)?\d+\.\d+(e-?\d+)?'
@@ -351,6 +416,27 @@ contexts:
       scope: constant.numeric.integer.hexadecimal.haskell
     - match: '((?<=\s)-)?\d+'
       scope: constant.numeric.integer.decimal.haskell
+
+  expression_quasiquote:
+    - match: '\[e?\|'
+      scope: punctuation.section.quasiquote.template_haskell.begin.haskell
+      embed: expression
+      embed_scope: meta.block.template_haskell.haskell
+      escape: '\|\]'
+      escape_captures:
+        0: punctuation.section.quasiquote.template_haskell.end.haskell
+    # TODO: [d|...|]
+    # TODO: [t|...|]
+    # TODO: [p|...|]
+    - match: '\[({{upper_ident}}\.)*{{lower_ident}}\|'
+      scope: punctuation.section.quasiquote.begin.haskell
+      embed: expression_quasiquote_body
+      embed_scope: string.quoted.quasiquote.haskell
+      escape: '\|\]'
+      escape_captures:
+        0: punctuation.section.quasiquote.end.haskell
+
+  expression_quasiquote_body: []
 
   ### Pattern matching ###
 

@@ -10,7 +10,8 @@
     "gold": "#bfa72f",
     "green": "#8dbc2f",
     "olive": "#b1bf6a",
-    "orange": "#eea343",
+    "orange": "#ff6600",
+    "orange_light": "#eea343",
     "periwinkle": "#c6b3ff",
     "purple": "#ac5ebc",
     "red": "#dd573c",
@@ -25,7 +26,7 @@
     "constructors": "var(teal)",
     "constructor_pattern": "var(olive)",
     "variables": "var(green)",
-    "parameter": "var(orange)",
+    "parameter": "var(orange_light)",
     "operators": "var(red)",
   },
   "globals": {
@@ -110,14 +111,31 @@
       "foreground": "var(gold)",
     },
 
-    // Variables
+    // Expressions
     {
-      "scope": "variable.function.constructor, variable.function.pattern",
+      "scope": "variable.function.constructor, keyword.operator.constructor.prefix, variable.function.pattern",
       "foreground": "var(constructors)",
     },
     {
       "scope": "variable.other.constructor",
       "foreground": "var(olive)",
+    },
+    {
+      "scope": "variable.other.error",
+      "foreground": "var(orange)",
+      "font_style": "glow italic",
+    },
+    {
+      "scope": "variable.other.infix",
+      "foreground": "var(red)",
+    },
+    {
+      "scope": "punctuation.section.list, punctuation.separator.list",
+      "foreground": "var(olive)",
+    },
+    {
+      "scope": "punctuation.section.quasiquote",
+      "foreground": "var(purple)",
     },
 
     // Function parameters

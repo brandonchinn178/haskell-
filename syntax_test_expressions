@@ -4,7 +4,14 @@
 foo = do
   makeLenses ''Foo
 
-  Text.pack
+  let r = Record
+        { a = 1
+        , b = 2
+        }
+
+  let x = Text.unpack foo
+      y = 1
+  x <> show y
 
   a == b
 
@@ -16,9 +23,20 @@ foo = do
   a !! b
   a ?! b
   a ~~ b
-  a : b
+  a . b . c . d $ x
+
+  let a = (10 :: Int)
 
   let a = \x -> asdf in a True
+
+  alet + letA + in' + in2
+
+  if a then b else c
+
+  case x of
+    (a, b) -> error "TODO"
+    Just b -> undefined
+    _ -> undefined
 
   10000
   0b01
@@ -29,6 +47,18 @@ foo = do
   123
   1e-20
   1.5e20
+
+  a `foo` b
+  a `Foo` b
+  a `Foo.bar` b
+  (`runReaderT` env) . unFoo $ m
+  a : b
+  a :| []
+  (:|) a []
+
+  (,) 1 2
+  (,,) <$> Just 1 <*> Nothing <*> Nothing
+  pure ()
 
   -- works for unspaced expressions
   a-1
@@ -41,10 +71,20 @@ foo = do
   (1, 2, "asdf")
 
   [1, 2, 3]
-
   []
+  [(x, x + 1) | x <- [0..10], x > 2]
+  [ (x * 10, y)
+  | Just x <- xs
+  , let y = 2
+  , x + y > 20
+  ]
 
-  [| asdf |]
+  [|["a", 3, 12.1, False] ++ $(other)|]
+  [e|["a", 3, 12.1, False] ++ $(other)|]
   [d| asdf |]
   [text| asdf |]
   [Foo.text| asdf |]
+
+  do { a <- pure 1; return a }
+  do { rec { a <- pure b; b <- pure 1; return a } }
+  mdo { a <- pure b; b <- pure 1; return a }
