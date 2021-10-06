@@ -14,7 +14,7 @@
     "orange_light": "#eea343",
     "periwinkle": "#c6b3ff",
     "purple": "#ac5ebc",
-    "salmon": "#ff8c66",
+    "salmon": "#ffb399",
     "red": "#dd573c",
     "teal": "#7cd0bb",
     "yellow": "#fffc7f",
@@ -25,6 +25,7 @@
 
     // value-level identifiers
     "constructors": "var(teal)",
+    "constructor_declaration": "color(var(teal) blend(var(green) 60%))",
     "constructor_pattern": "var(olive)",
     "variables": "var(green)",
     "parameter": "var(orange_light)",
@@ -54,7 +55,6 @@
     { "scope": "keyword.operator", "foreground": "var(operators)" },
     { "scope": "keyword.other.wildcard", "foreground": "var(purple)" },
     { "scope": "entity", "foreground": "var(variables)" },
-    { "scope": "entity.name.constructor", "foreground": "var(constructors)" },
     { "scope": "storage", "foreground": "var(types)" },
     { "scope": "string", "foreground": "var(yellow)" },
     { "scope": "constant", "foreground": "var(blue)" },
@@ -179,12 +179,16 @@
       "foreground": "var(parameter_type)",
     },
     {
-      "scope": "variable.other.member",
-      "foreground": "var(variables)",
+      "scope": "meta.datatype.record variable.other.member",
+      "foreground": "var(teal)",
+    },
+    {
+      "scope": "entity.name.constructor",
+      "foreground": "var(constructor_declaration)",
     },
     {
       "scope": "punctuation.section.record, punctuation.separator.record",
-      "foreground": "var(constructors)",
+      "foreground": "var(constructor_declaration)",
     },
   ],
 }

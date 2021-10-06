@@ -283,6 +283,7 @@ contexts:
     # TODO: deriving
 
   data_type_record:
+    - meta_scope: meta.datatype.record.haskell
     - match: '{{lower_ident}}'
       scope: variable.other.member.haskell
     - match: '::'
