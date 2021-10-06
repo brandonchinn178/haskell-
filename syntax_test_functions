@@ -70,3 +70,16 @@ testPatternMatch
 --                      ^ punctuation.section.braces.end.haskell
   = undefined
 --^ keyword.other.function.definition.haskell
+
+{--------------------------------------------------------------------------------
+  Check some valid identifiers
+--------------------------------------------------------------------------------}
+
+foo _' = undefined
+--  ^^ variable.other.haskell
+
+module' = undefined
+--^^^^^ entity.name.function.haskell
+
+import' = undefined
+--^^^^^ entity.name.function.haskell

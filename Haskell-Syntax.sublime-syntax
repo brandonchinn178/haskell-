@@ -93,7 +93,7 @@ contexts:
     - meta_scope: meta.annotation.haskell
     - match: '(?=#-})'
       pop: true
-    - match: \b(type|module)\b
+    - match: \b(type|module){{post_non_ident}}
       scope: keyword.other.annotation.haskell
     - include: expression
 
@@ -114,7 +114,7 @@ contexts:
   ### Module header ##
 
   module_header:
-    - match: ^(\s*)(module)\b
+    - match: ^(\s*)(module){{post_non_ident}}
       captures:
         2: keyword.declaration.namespace.haskell
       push: module_header_line
@@ -169,7 +169,7 @@ contexts:
   ### Imports ###
 
   import:
-    - match: ^(\s*)(import)\b
+    - match: ^(\s*)(import){{post_non_ident}}
       captures:
         2: keyword.control.import.haskell
       push: import_line
@@ -442,7 +442,7 @@ contexts:
   ### Pattern matching ###
 
   pattern_match:
-    - match: '\b_\b'
+    - match: '\b_{{post_non_ident}}'
       scope: keyword.other.wildcard.haskell
     - match: '{{lower_ident}}'
       scope: variable.other.haskell
