@@ -377,6 +377,11 @@ contexts:
 
   expression:
     - include: expression_numeric
+    - match: |-
+        '.'|'(\\.|\\o[0-7]+|\\x[0-9a-f]+)'
+      scope: string.quoted.single.haskell
+      captures:
+        1: constant.character.escape.haskell
     - match: '"'
       push: expression_string_body
     # TODO: parse let-statements with pattern matching, maybe function definition?
@@ -445,6 +450,8 @@ contexts:
   expression_string_body:
     - meta_include_prototype: false
     - meta_scope: string.quoted.double.haskell
+    - match: '\\.'
+      scope: constant.character.escape.haskell
     - match: '"'
       pop: true
 

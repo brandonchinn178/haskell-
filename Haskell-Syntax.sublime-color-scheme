@@ -17,7 +17,7 @@
     "salmon": "#ffb399",
     "red": "#dd573c",
     "teal": "#7cd0bb",
-    "yellow": "#fffc7f",
+    "yellow": "#ffd866",
 
     // type-level identifiers
     "types": "var(cyan)",

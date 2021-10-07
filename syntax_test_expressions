@@ -127,6 +127,13 @@ foo = do
 --                          ^^ keyword.operator.haskell
 --                             ^^^^^^^ variable.function.constructor.haskell
 
+  ['a', 'b', '\n', '\o123', '\x123abc']
+-- ^^^ string.quoted.single.haskell
+--      ^^^ string.quoted.single.haskell
+--           ^^^^ string.quoted.single.haskell
+--                 ^^^^^^^ string.quoted.single.haskell
+--                          ^^^^^^^^^^ string.quoted.single.haskell
+
   "hello " ++ "world " <> "other"
 --^^^^^^^^ string.quoted.double.haskell
 --            ^^^^^^^^ string.quoted.double.haskell
