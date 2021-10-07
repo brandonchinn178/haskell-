@@ -346,6 +346,8 @@ contexts:
   ### Expressions ###
 
   expression:
+    - # https://forum.sublimetext.com/t/including-context-in-prototype-context-disables-prototype-everywhere/61039
+      include: prototype
     - include: expression_numeric
     - match: |-
         '.'|'(\\.|\\o[0-7]+|\\x[0-9a-f]+)'

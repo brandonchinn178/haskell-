@@ -183,6 +183,18 @@ foo = do
   "a -- b"
 --^^^^^^^^ string.quoted.double.haskell
 
+  [ a -- asdf
+--    ^^^^^^^ comment.line.haskell
+  , "a -- b"
+--  ^^^^^^^^ string.quoted.double.haskell
+  ]
+
+  ( a -- asdf
+--    ^^^^^^^ comment.line.haskell
+  , b -- asdf
+--    ^^^^^^^ comment.line.haskell
+  )
+
   [|["a", 3, 12.1, False] ++ $(other)|]
 --^^ punctuation.section.quasiquote.template_haskell.begin.haskell
 --  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.template_haskell.haskell

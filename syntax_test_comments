@@ -83,3 +83,9 @@
   {-# ANN foo "asdf #-}" #-}
 --            ^^^^^^^^^^ string.quoted.double.haskell
 --                       ^^^ punctuation.definition.comment
+
+  {-# ANN foo 1 + {- asdf -} 2 #-}
+--            ^ constant.numeric.integer.decimal.haskell
+--              ^ keyword.operator.haskell
+--                ^^^^^^^^^^ comment.block.haskell
+--                           ^ constant.numeric.integer.decimal.haskell
