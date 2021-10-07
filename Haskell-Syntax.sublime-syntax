@@ -22,6 +22,7 @@ contexts:
     - include: module_header
     - include: import
     - include: data_types
+    # TODO: typeclasses, instances, standalone deriving
     - include: function  # TODO: replace with function_or_toplevel_call
 
   ### Utilities ###
@@ -505,7 +506,8 @@ contexts:
       escape_captures:
         0: punctuation.section.quasiquote.end.haskell
 
-  expression_quasiquote_body: []
+  expression_quasiquote_body:
+    - meta_include_prototype: false
 
   ### Pattern matching ###
 

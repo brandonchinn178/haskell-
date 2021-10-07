@@ -180,6 +180,9 @@ foo = do
   , x + y > 20
   ]
 
+  "a -- b"
+--^^^^^^^^ string.quoted.double.haskell
+
   [|["a", 3, 12.1, False] ++ $(other)|]
 --^^ punctuation.section.quasiquote.template_haskell.begin.haskell
 --  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.template_haskell.haskell
@@ -190,6 +193,8 @@ foo = do
 --^^^ punctuation.section.quasiquote.template_haskell.begin.haskell
 --                                    ^^ punctuation.section.quasiquote.template_haskell.end.haskell
   [d| asdf |]
+  [text| asdf -- basdf |]
+--      ^^^^^^^^^^^^^^^ string.quoted.quasiquote.haskell
   [text| asdf |]
 --^^^^^^ punctuation.section.quasiquote.begin.haskell
 --      ^^^^^^ string.quoted.quasiquote.haskell
