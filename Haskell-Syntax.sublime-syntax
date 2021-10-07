@@ -23,7 +23,7 @@ contexts:
     - include: import
     - include: data_types
     # TODO: typeclasses, instances, standalone deriving
-    - include: function  # TODO: replace with function_or_toplevel_call
+    - include: function
 
   ### Utilities ###
 
@@ -305,28 +305,6 @@ contexts:
 
   ### Functions ###
 
-  # TODO: uncomment
-  # # At the very top-level, a function can be defined or called (a Template
-  # # Haskell splice) and we don't know until we see or don't see an equals
-  # # sign.
-  # #
-  # # We'll first try to parse a function call, and if we see an equals sign
-  # # we'll abort. Trying this first because:
-  # #   * Listing function args should be short, like fewer than 5 lines
-  # #   * Sublime Text refuses to backtrack after 128 lines, so if a
-  # #     function call goes past 128 lines, it won't backtrack if we try
-  # #     parsing it as a function definition first. A function call has
-  # #     a much higher chance of being 128+ lines than a function definition
-  # #
-  # # https://forum.sublimetext.com/t/syntax-branch-help-common-short-vs-rare-long/60863/3
-  # # Test the performance with `benchmark_toplevel_funcs`
-  # function_or_toplevel_call:
-  #   - match: '^(?=\s*{{lower_ident}})'
-  #     branch_point: function_or_toplevel_call
-  #     branch:
-  #       - function_toplevel_call
-  #       - function
-
   function:
     - match: '^(\s*)({{lower_ident}})'
       captures:
@@ -364,15 +342,6 @@ contexts:
   function_signature_type:
     - include: pop_when_deindent
     # TODO
-
-  # TODO: uncomment
-  # function_toplevel_call:
-  #   - match: '^(\s*)'
-  #     set: expression
-  #     with_prototype:
-  #       - include: pop_when_deindent
-  #       - match: '(?<!{{symbol_char}})=(?!{{symbol_char}})'
-  #         fail: function_or_toplevel_call
 
   ### Expressions ###
 
