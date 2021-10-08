@@ -68,6 +68,8 @@ testPatternMatch
 --                  ^ punctuation.separator.haskell
 --                    ^^ keyword.other.wildcard.record.haskell
 --                      ^ punctuation.section.braces.end.haskell
+  (a `AS` b)
+--   ^^^^ variable.other.constructor.haskell
   = undefined
 --^ keyword.other.function.definition.haskell
 

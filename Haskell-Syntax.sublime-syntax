@@ -494,6 +494,8 @@ contexts:
       scope: variable.other.haskell
     - match: '{{upper_ident}}'
       scope: variable.other.constructor.haskell
+    - match: '`{{upper_ident}}`'
+      scope: variable.other.constructor.haskell
     - match: '@'
       scope: keyword.other.as_pattern.haskell
     - match: '\('
