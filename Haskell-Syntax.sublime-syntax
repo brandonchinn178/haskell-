@@ -383,31 +383,35 @@ contexts:
       scope: keyword.control.extension_dependent.haskell
     - match: (error|undefined)(?=[^\w'])
       scope: variable.other.error.haskell
+    # possibly qualified operators
+    - match: '({{upper_ident}}\.)*:{{symbol_char}}*'
+      scope: keyword.operator.constructor.haskell
+    - match: '\(({{upper_ident}}\.)*:{{symbol_char}}*\)'
+      scope: keyword.operator.constructor.prefix.haskell
+    - match: '({{upper_ident}}\.)*{{symbol_char}}+'
+      scope: keyword.operator.haskell
+    - match: '\(({{upper_ident}}\.)*{{symbol_char}}+\)'
+      scope: keyword.operator.prefix.haskell
+    # possibly qualified values/functions
     - match: '({{upper_ident}}\.)*({{lower_ident}})'
       captures:
         1: storage.module.haskell
         2: variable.other.haskell
+    - match: '`({{upper_ident}}\.)*({{lower_ident}})`'
+      scope: variable.other.infix.haskell
+    # possibly qualified types/constructors
     - match: '({{upper_ident}}\.)*({{upper_ident}})'
       captures:
         1: storage.module.haskell
         2: variable.function.constructor.haskell
-    - match: '''{1,2}{{upper_ident}}'
-      scope: variable.other.constructor.haskell
-    - match: '`({{upper_ident}}\.)*({{lower_ident}})`'
-      scope: variable.other.infix.haskell
     - match: '`({{upper_ident}}\.)*({{upper_ident}})`'
       scope: variable.function.constructor.infix.haskell
-    # TODO: parse type annotations
-    - match: ':{{symbol_char}}*'
-      scope: keyword.operator.constructor.haskell
-    - match: '\(:{{symbol_char}}*\)'
-      scope: keyword.operator.constructor.prefix.haskell
+    # possibly qualified quoted TH Name
+    - match: '''{1,2}({{upper_ident}}\.)*{{upper_ident}}'
+      scope: variable.other.constructor.haskell
+    # tuples + lists
     - match: '\(,*\)'
       scope: keyword.operator.constructor.prefix.haskell
-    - match: '{{symbol_char}}+'
-      scope: keyword.operator.haskell
-    - match: '\({{symbol_char}}+\)'
-      scope: keyword.operator.prefix.haskell
     - include: expression_quasiquote
     - match: '\['
       scope: punctuation.section.list.begin.haskell
@@ -418,6 +422,7 @@ contexts:
       match: '\('
       scope: punctuation.section.tuple.begin.haskell
       push: expression_tuple_body
+    # TODO: parse type annotations
 
   expression_string_body:
     - meta_include_prototype: false

@@ -6,6 +6,9 @@ foo = do
 --^^^^^^^^^^ variable.other.haskell
 --           ^^^^^ variable.other.constructor.haskell
 
+  makeLenses ''Foo.Bar
+--           ^^^^^^^^^ variable.other.constructor.haskell
+
   let r = Record
         { a = 1
         , b = 2
@@ -18,6 +21,14 @@ foo = do
 
   a == b
 --  ^^ keyword.operator.haskell
+
+  a Prelude.== b
+--  ^^^^^^^^^^ keyword.operator.haskell
+
+  (==) a b
+--^^^^ keyword.operator.prefix.haskell
+  (Prelude.==) a b
+--^^^^^^^^^^^^ keyword.operator.prefix.haskell
 
   asdf @?= sdaofi
 --     ^^^ keyword.operator.haskell
@@ -93,6 +104,8 @@ foo = do
 --  ^^^^^ variable.other.infix.haskell
   a `Foo` b
 --  ^^^^^ variable.function.constructor.infix.haskell
+  a `Foo.Bar` b
+--  ^^^^^^^^^ variable.function.constructor.infix.haskell
   a `Foo.bar` b
 --  ^^^^^^^^^ variable.other.infix.haskell
   (`runReaderT` env) . unFoo $ m
@@ -100,8 +113,12 @@ foo = do
 --  ^ keyword.operator.constructor.haskell
   a :| []
 --  ^^ keyword.operator.constructor.haskell
+  a NonEmpty.:| []
+--  ^^^^^^^^^^^ keyword.operator.constructor.haskell
   (:|) a []
 --^^^^ keyword.operator.constructor.prefix.haskell
+  (NonEmpty.:|) a []
+--^^^^^^^^^^^^^ keyword.operator.constructor.prefix.haskell
 
   (,) 1 2
 --^^^ keyword.operator.constructor.prefix.haskell
