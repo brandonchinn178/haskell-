@@ -33,6 +33,21 @@
     someFunc,
 --  ^^^^^^^^ variable.function.haskell
 
+    module Bar,
+--  ^^^^^^ keyword.other.export.haskell
+--         ^^^ storage.module.haskell
+
+    module Foo.Bar,
+--  ^^^^^^ keyword.other.export.haskell
+--         ^^^^^^^ storage.module.haskell
+
+    Foo.Bar.Bar,
+--  ^^^^^^^^ storage.module.haskell
+--          ^^^ storage.type.haskell
+
+    Foo.Bar.barFunc,
+--  ^^^^^^^^ storage.module.haskell
+--          ^^^^^^^ variable.function.haskell
   ) where
 --^ punctuation.section.parens.end.haskell
 --  ^^^^^ keyword.control.context.haskell

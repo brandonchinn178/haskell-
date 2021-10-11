@@ -145,6 +145,10 @@ contexts:
       captures:
         1: keyword.other.export.haskell
         2: variable.function.pattern.haskell
+    - match: \b(module) (({{upper_ident}}\.)*{{upper_ident}})
+      captures:
+        1: keyword.other.export.haskell
+        2: storage.module.haskell
     - # explicitly check for `(..)`
       match: |-
         (?x)
@@ -161,10 +165,14 @@ contexts:
     - match: \(
       scope: punctuation.section.parens.begin.haskell
       push: import_list_type_members
-    - match: '{{upper_ident}}'
-      scope: storage.type.haskell
-    - match: '{{lower_ident}}'
-      scope: variable.function.haskell
+    - match: '(({{upper_ident}}\.)*)({{lower_ident}})'
+      captures:
+        1: storage.module.haskell
+        3: variable.function.haskell
+    - match: '(({{upper_ident}}\.)*)({{upper_ident}})'
+      captures:
+        1: storage.module.haskell
+        3: storage.type.haskell
     - match: ','
       scope: punctuation.separator.haskell
 
@@ -396,17 +404,17 @@ contexts:
     - match: '\(({{upper_ident}}\.)*{{symbol_char}}+\)'
       scope: keyword.operator.prefix.haskell
     # possibly qualified values/functions
-    - match: '({{upper_ident}}\.)*({{lower_ident}})'
+    - match: '(({{upper_ident}}\.)*)({{lower_ident}})'
       captures:
         1: storage.module.haskell
-        2: variable.other.haskell
+        3: variable.other.haskell
     - match: '`({{upper_ident}}\.)*({{lower_ident}})`'
       scope: variable.other.infix.haskell
     # possibly qualified types/constructors
-    - match: '({{upper_ident}}\.)*({{upper_ident}})'
+    - match: '(({{upper_ident}}\.)*)({{upper_ident}})'
       captures:
         1: storage.module.haskell
-        2: variable.function.constructor.haskell
+        3: variable.function.constructor.haskell
     - match: '`({{upper_ident}}\.)*({{upper_ident}})`'
       scope: variable.function.constructor.infix.haskell
     # possibly qualified quoted TH Name

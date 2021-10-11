@@ -14,7 +14,8 @@ foo = do
         , b = 2
         }
 
-  let x = Text.unpack foo
+  let x = Data.Text.unpack foo
+--        ^^^^^^^^^^ storage.module.haskell
       y = 1
   x <> show y
 --  ^^ keyword.operator.haskell
@@ -106,6 +107,8 @@ foo = do
 --  ^^^^^ variable.function.constructor.infix.haskell
   a `Foo.Bar` b
 --  ^^^^^^^^^ variable.function.constructor.infix.haskell
+  let x = Foo.Bar.Bar b
+--        ^^^^^^^^ storage.module.haskell
   a `Foo.bar` b
 --  ^^^^^^^^^ variable.other.infix.haskell
   (`runReaderT` env) . unFoo $ m
