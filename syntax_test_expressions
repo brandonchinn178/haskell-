@@ -212,12 +212,16 @@ foo = do
 --    ^^^^^^^ comment.line.haskell
   )
 
-  [|["a", 3, 12.1, False] ++ $(other)|]
+  [|["a", 3, 12.1, False] ++ $(other 1 2)|]
 --^^ punctuation.section.quasiquote.template_haskell.begin.haskell
 --  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.template_haskell.haskell
 --  ^ punctuation.section.list.begin.haskell
 --   ^^^ string.quoted.double.haskell
---                                   ^^ punctuation.section.quasiquote.template_haskell.end.haskell
+--                           ^^ punctuation.section.thquote.begin.haskell
+--                                   ^ constant.numeric.integer.decimal.haskell
+--                                     ^ constant.numeric.integer.decimal.haskell
+--                                      ^ punctuation.section.thquote.end.haskell
+--                                       ^^ punctuation.section.quasiquote.template_haskell.end.haskell
   [e|["a", 3, 12.1, False] ++ $(other)|]
 --^^^ punctuation.section.quasiquote.template_haskell.begin.haskell
 --                                    ^^ punctuation.section.quasiquote.template_haskell.end.haskell

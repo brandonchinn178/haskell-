@@ -5,7 +5,7 @@
     "gray": "#7f7f7f",
     "white": "#ede0ce",
 
-    "blue": "#a1bee6",
+    "blue": "#729dda",
     "cyan": "#2fbfbf",
     "gold": "#bfa72f",
     "green": "#8dbc2f",
@@ -13,10 +13,10 @@
     "orange": "#ff6600",
     "orange_light": "#eea343",
     "periwinkle": "#c6b3ff",
-    "purple": "#ac5ebc",
+    "purple": "#bf5fbf",
     "salmon": "#ffb399",
     "red": "#dd573c",
-    "teal": "#7cd0bb",
+    "teal": "#5EBC7D",
     "yellow": "#ffd866",
 
     // type-level identifiers
@@ -30,7 +30,7 @@
     "variables": "var(green)",
     "parameter": "var(orange_light)",
     "parameter_type": "var(salmon)",
-    "operators": "var(red)",
+    "operators": "var(green)",
   },
   "globals": {
     "background": "var(black)",
@@ -56,14 +56,14 @@
     { "scope": "keyword.other.wildcard", "foreground": "var(purple)" },
     { "scope": "entity", "foreground": "var(variables)" },
     { "scope": "storage", "foreground": "var(types)" },
-    { "scope": "string", "foreground": "var(yellow)" },
+    { "scope": "string", "foreground": "var(purple)" },
     { "scope": "constant", "foreground": "var(blue)" },
     { "scope": "invalid", "foreground": "var(red)" },
 
     // Pragmas
     {
       "scope": "comment.block.pragma",
-      "foreground": "var(purple)",
+      "foreground": "#d78fef",
     },
     {
       "scope": "keyword.other.annotation",
@@ -130,15 +130,19 @@
     },
     {
       "scope": "variable.other.infix",
+      "foreground": "var(operators)",
+    },
+    {
+      "scope": "punctuation.section.thquote",
       "foreground": "var(red)",
     },
     {
       "scope": "punctuation.section.list, punctuation.separator.list",
-      "foreground": "var(olive)",
+      "foreground": "var(gold)",
     },
     {
       "scope": "punctuation.section.quasiquote",
-      "foreground": "var(purple)",
+      "foreground": "var(salmon)",
     },
 
     // Function parameters

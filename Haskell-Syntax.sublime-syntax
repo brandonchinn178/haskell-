@@ -356,6 +356,9 @@ contexts:
         1: constant.character.escape.haskell
     - match: '"'
       push: expression_string_body
+    - match: '\$\('
+      scope: punctuation.section.thquote.begin.haskell
+      push: expression_thquote_body
     # TODO: parse let-statements with pattern matching, maybe function definition?
     # TODO: parse case-statements with pattern matching
     - match: |-
@@ -432,8 +435,14 @@ contexts:
     - match: '"'
       pop: true
 
+  expression_thquote_body:
+    - include: expression
+    - match: '\)'
+      scope: punctuation.section.thquote.end.haskell
+      pop: true
+
   expression_list_body:
-    - match: ','
+    - match: ',|\|'
       scope: punctuation.separator.list.haskell
     # TODO: parse list comprehensions, with pattern matching
     - match: '\]'
