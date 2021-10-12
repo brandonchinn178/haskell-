@@ -52,12 +52,7 @@ foo = do
 --          ^ keyword.operator.haskell
 --              ^ keyword.operator.haskell
 
-  let a = (10 :: Int)
---^^^ keyword.control.haskell
---    ^ variable.other.haskell
---      ^ keyword.operator.haskell
-
-  let a = \x -> asdf in a True
+  let a = \Person{..} -> asdf in a person
 
   alet + letA + in' + in2
 --^^^^ variable.other.haskell
@@ -239,6 +234,48 @@ foo = do
 --^^^^^^^^^^ punctuation.section.quasiquote.begin.haskell
 --          ^^^^^^ string.quoted.quasiquote.haskell
 --                ^^ punctuation.section.quasiquote.end.haskell
+
+  (10 :: Int) + 10
+--    ^^ keyword.control.type_annotation.haskell
+--       ^^^ storage.type.haskell
+--            ^ keyword.operator.haskell
+--              ^^ constant.numeric.integer.decimal.haskell
+
+  (1 :: Int, "asdf" :: String) <&> length
+--      ^^^ storage.type.haskell
+--           ^^^^^^ string.quoted.double.haskell
+--                     ^^^^^^ storage.type.haskell
+--                             ^^^ keyword.operator.haskell
+--                                 ^^^^^^ variable.other.haskell
+
+  ["" :: String, "asdf" :: String] <&> length
+--       ^^^^^^ storage.type.haskell
+--               ^^^^^^ string.quoted.double.haskell
+--                         ^^^^^^ storage.type.haskell
+--                                 ^^^ keyword.operator.haskell
+--                                     ^^^^^^ variable.other.haskell
+
+  first (+ 1) <$> x :: Maybe (Int, Bool)
+--                  ^^ keyword.control.type_annotation.haskell
+--                     ^^^^^ storage.type.haskell
+--                           ^ keyword.other.type.haskell
+--                            ^^^ storage.type.haskell
+--                               ^ punctuation.separator.type.tuple.haskell
+--                                 ^^^^ storage.type.haskell
+--                                     ^ keyword.other.type.haskell
+
+  do
+    x :: Int <- pure 10 :: IO Int
+--       ^^^ storage.type.haskell
+--           ^^ keyword.operator.haskell
+--              ^^^^ variable.other.haskell
+--                   ^^ constant.numeric.integer.decimal.haskell
+
+  -- this should be a normal expression, after the above type annotation
+  x + 2
+--^ variable.other.haskell
+--  ^ keyword.operator.haskell
+--    ^ constant.numeric.integer.decimal.haskell
 
   do { a <- pure 1; return a }
 --^^ keyword.control.haskell

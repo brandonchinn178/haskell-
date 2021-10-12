@@ -362,6 +362,7 @@ contexts:
 
   function_definition_body:
     - include: pop_when_deindent
+    # TODO: where clause
     - include: expression
 
   function_signature:
@@ -404,11 +405,18 @@ contexts:
         1: constant.character.escape.haskell
     - match: '"'
       push: expression_string_body
+    - match: '::'
+      scope: keyword.control.type_annotation.haskell
+      push:
+        - match: '(?=$|<-)'
+          pop: true
+        - include: type
     - match: '\$\('
       scope: punctuation.section.thquote.begin.haskell
       push: expression_thquote_body
     # TODO: parse let-statements with pattern matching, maybe function definition?
     # TODO: parse case-statements with pattern matching
+    # TODO: lambdas with pattern matching
     - match: |-
         (?x)
           (
@@ -473,7 +481,6 @@ contexts:
       match: '\('
       scope: punctuation.section.tuple.begin.haskell
       push: expression_tuple_body
-    # TODO: parse type annotations
     # TODO: record constructions
 
   expression_string_body:
@@ -497,6 +504,12 @@ contexts:
     - match: '\]'
       scope: punctuation.section.list.end.haskell
       pop: true
+    - match: '::'
+      scope: keyword.control.type_annotation.haskell
+      push:
+        - match: '(?=,|\])'
+          pop: true
+        - include: type
     - include: expression
 
   expression_tuple_body:
@@ -505,6 +518,12 @@ contexts:
     - match: '\)'
       scope: punctuation.section.tuple.end.haskell
       pop: true
+    - match: '::'
+      scope: keyword.control.type_annotation.haskell
+      push:
+        - match: '(?=,|\))'
+          pop: true
+        - include: type
     - include: expression
 
   expression_numeric:
