@@ -17,6 +17,7 @@ foo = do
   let x = Data.Text.unpack foo
 --        ^^^^^^^^^^ storage.module.haskell
       y = 1
+
   x <> show y
 --  ^^ keyword.operator.haskell
 
@@ -51,6 +52,13 @@ foo = do
 --      ^ keyword.operator.haskell
 --          ^ keyword.operator.haskell
 --              ^ keyword.operator.haskell
+
+  let Foo a = undefined
+--^^^ keyword.control.haskell
+--    ^^^^^ meta.pattern.haskell
+--    ^^^ variable.other.constructor.haskell
+--        ^ variable.other.haskell
+--          ^ keyword.operator.haskell
 
   let a = \Person{..} -> asdf in a person
 

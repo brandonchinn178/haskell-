@@ -414,14 +414,13 @@ contexts:
     - match: '\$\('
       scope: punctuation.section.thquote.begin.haskell
       push: expression_thquote_body
-    # TODO: parse let-statements with pattern matching, maybe function definition?
+    - include: expression_let_statement
     # TODO: parse case-statements with pattern matching
     # TODO: lambdas with pattern matching
     - match: |-
         (?x)
           (
-              let
-            | in
+              in
             | case
             | of
             | do
@@ -483,6 +482,20 @@ contexts:
       push: expression_tuple_body
     # TODO: record constructions
 
+  expression_let_statement:
+    - match: '\blet{{post_non_ident}}'
+      scope: keyword.control.haskell
+      set:
+        - match: '='
+          scope: keyword.operator.haskell
+          set:
+            - match: '(?=,|\])'
+              pop: true
+            - include: expression
+        - meta_scope: meta.pattern.haskell
+        - include: pattern_match
+    # TODO: multi expression statement
+
   expression_string_body:
     - meta_include_prototype: false
     - meta_scope: string.quoted.double.haskell
@@ -526,17 +539,7 @@ contexts:
       pop: true
 
   expression_list_comprehension_let:
-    - match: '\blet{{post_non_ident}}'
-      scope: keyword.control.haskell
-      set:
-        - match: '='
-          scope: keyword.operator.haskell
-          set:
-            - match: '(?=,|\])'
-              pop: true
-            - include: expression
-        - meta_scope: meta.pattern.haskell
-        - include: pattern_match
+    - include: expression_let_statement
     - match: '\S'
       fail: list_comprehension
 
