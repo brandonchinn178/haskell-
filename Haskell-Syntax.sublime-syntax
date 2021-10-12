@@ -417,8 +417,8 @@ contexts:
           pop: true
         - include: type
     - match: '\$\('
-      scope: punctuation.section.thquote.begin.haskell
-      push: expression_thquote_body
+      scope: punctuation.section.th_splice.begin.haskell
+      push: expression_th_splice_body
     - include: expression_let_statement
     # TODO: parse case-statements with pattern matching
     # TODO: lambdas with pattern matching
@@ -525,10 +525,10 @@ contexts:
     - match: '"'
       pop: true
 
-  expression_thquote_body:
+  expression_th_splice_body:
     - include: expression
     - match: '\)'
-      scope: punctuation.section.thquote.end.haskell
+      scope: punctuation.section.th_splice.end.haskell
       pop: true
 
   expression_list_body:

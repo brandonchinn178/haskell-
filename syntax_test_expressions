@@ -80,7 +80,7 @@ foo = do
 --        ^ variable.other.haskell
 --          ^ keyword.operator.haskell
 
-  let a = \Person{..} -> asdf in a person
+  let x@(_, y) = \Person{..} -> asdf in a person
 
   alet + letA + in' + in2
 --^^^^ variable.other.haskell
@@ -269,10 +269,10 @@ foo = do
 --  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.template_haskell.haskell
 --  ^ punctuation.section.list.begin.haskell
 --   ^^^ string.quoted.double.haskell
---                           ^^ punctuation.section.thquote.begin.haskell
+--                           ^^ punctuation.section.th_splice.begin.haskell
 --                                   ^ constant.numeric.integer.decimal.haskell
 --                                     ^ constant.numeric.integer.decimal.haskell
---                                      ^ punctuation.section.thquote.end.haskell
+--                                      ^ punctuation.section.th_splice.end.haskell
 --                                       ^^ punctuation.section.quasiquote.template_haskell.end.haskell
   [e|["a", 3, 12.1, False] ++ $(other)|]
 --^^^ punctuation.section.quasiquote.template_haskell.begin.haskell

@@ -1,38 +1,53 @@
 {
   "name": "Haskell Syntax",
   "variables": {
+    // grayscale colors
     "black": "#2b2a27",
     "gray": "#7f7f7f",
     "white": "#ede0ce",
 
+    // color names
     "blue": "#729dda",
     "brown": "#bf8040",
     "cyan": "#2fbfbf",
     "gold": "#bfa72f",
     "green": "#8dbc2f",
+    "magenta": "#d78fef",
     "olive": "#b1bf6a",
     "orange": "#ff6600",
     "orange_light": "#eea343",
     "periwinkle": "#c6b3ff",
     "purple": "#bf5fbf",
-    "salmon": "#ffb399",
     "red": "#dd573c",
+    "salmon": "#ffb399",
     "teal": "#5EBC7D",
     "yellow": "#ffd866",
 
-    // type-level identifiers
-    "types": "var(cyan)",
-    "type_operators": "var(periwinkle)",
-
-    // value-level identifiers
+    // semantic colors
+    "comment": "var(gray)",
     "constant": "var(blue)",
-    "constructors": "var(teal)",
-    "constructor_declaration": "var(teal)",
-    "constructor_declaration_field": "var(orange_light)",
-    "constructor_pattern": "var(olive)",
-    "variables": "var(green)",
+    "constructor": "var(teal)",
+    "constructor_record_field": "var(orange_light)",
+    "error": "var(orange)",
+    "import_type_members_punctuation": "var(green)",
+    "invalid": "var(red)",
+    "forall": "var(brown)",
+    "keyword": "var(red)",
+    "keyword_annotation": "color(var(keyword) blend(var(pragma) 50%))",
+    "keyword_import": "color(var(keyword) blend(var(module) 50%))",
+    "keyword_pattern": "var(purple)",
+    "list": "var(gold)",
+    "list_type": "var(brown)",
+    "module": "var(gold)",
+    "operator": "var(green)",
     "parameter_type": "var(blue)",
-    "operators": "var(green)",
+    "pragma": "var(magenta)",
+    "quasiquote_marker": "var(salmon)",
+    "string": "var(purple)",
+    "th_splice": "var(red)",
+    "type": "var(cyan)",
+    "type_operator": "var(periwinkle)",
+    "variable": "var(green)",
   },
   "globals": {
     "background": "var(black)",
@@ -52,34 +67,33 @@
   },
   "rules": [
     // Top-level
-    { "scope": "comment", "foreground": "var(gray)" },
-    { "scope": "keyword", "foreground": "var(red)" },
-    { "scope": "keyword.operator", "foreground": "var(operators)" },
-    { "scope": "keyword.other.wildcard", "foreground": "var(purple)" },
-    { "scope": "entity", "foreground": "var(variables)" },
-    { "scope": "storage", "foreground": "var(types)" },
-    { "scope": "string", "foreground": "var(purple)" },
+    { "scope": "comment", "foreground": "var(comment)" },
+    { "scope": "keyword", "foreground": "var(keyword)" },
+    { "scope": "keyword.operator", "foreground": "var(operator)" },
+    { "scope": "entity", "foreground": "var(variable)" },
+    { "scope": "storage", "foreground": "var(type)" },
+    { "scope": "string", "foreground": "var(string)" },
     { "scope": "constant", "foreground": "var(constant)" },
-    { "scope": "invalid", "foreground": "var(red)" },
+    { "scope": "invalid", "foreground": "var(invalid)" },
 
     // Pragmas
     {
       "scope": "comment.block.pragma",
-      "foreground": "#d78fef",
+      "foreground": "var(pragma)",
     },
     {
       "scope": "keyword.other.annotation",
-      "foreground": "color(var(purple) blend(var(red) 50%))",
+      "foreground": "var(keyword_annotation)",
     },
     {
       "scope": "meta.annotation variable",
-      "foreground": "var(variables)",
+      "foreground": "var(variable)",
     },
 
     // Imports + exports
     {
       "scope": "(meta.import, meta.declaration.module) & keyword",
-      "foreground": "color(var(gold) blend(var(red) 50%))",
+      "foreground": "var(keyword_import)",
     },
     {
       "scope": "keyword.other.import, keyword.other.export",
@@ -87,39 +101,35 @@
     },
     {
       "scope": "(meta.import, meta.declaration.module) & punctuation - comment",
-      "foreground": "var(gold)",
+      "foreground": "var(module)",
     },
     {
       "scope": "(meta.import, meta.declaration.module) & variable",
-      "foreground": "var(variables)",
+      "foreground": "var(variable)",
     },
     {
       "scope": "(meta.import, meta.declaration.module) & keyword.operator.type",
-      "foreground": "var(type_operators)",
+      "foreground": "var(type_operator)",
     },
     {
-      "scope": "keyword.other.wildcard.import, keyword.other.wildcard.export",
-      "foreground": "var(green)",
-    },
-    {
-      "scope": "(meta.import.type_members, meta.export.type_members) & punctuation - comment",
-      "foreground": "var(green)",
+      "scope": "(meta.import.type_members, meta.export.type_members) & (punctuation - comment, keyword.other.wildcard)",
+      "foreground": "var(import_type_members_punctuation)",
     },
     {
       "scope": "(meta.import.type_members, meta.export.type_members) & (storage, keyword.operator.constructor)",
-      "foreground": "var(constructors)",
+      "foreground": "var(constructor)",
     },
 
     // Modules
     {
       "scope": "storage.module, entity.name.namespace",
-      "foreground": "var(gold)",
+      "foreground": "var(module)",
     },
 
     // Expressions
     {
       "scope": "variable.function.constructor, keyword.operator.constructor.prefix, variable.function.pattern",
-      "foreground": "var(constructors)",
+      "foreground": "var(constructor)",
     },
     {
       "scope": "variable.other.constant.name",
@@ -127,78 +137,74 @@
     },
     {
       "scope": "variable.other.constant.name.constructor",
-      "foreground": "var(constructors)",
+      "foreground": "var(constructor)",
     },
     {
       "scope": "variable.other.constant.name.type",
-      "foreground": "var(types)",
+      "foreground": "var(type)",
     },
     {
       "scope": "variable.other.error",
-      "foreground": "var(orange)",
+      "foreground": "var(error)",
       "font_style": "glow italic",
     },
     {
       "scope": "variable.other.infix",
-      "foreground": "var(operators)",
+      "foreground": "var(operator)",
     },
     {
-      "scope": "punctuation.section.thquote",
-      "foreground": "var(red)",
+      "scope": "punctuation.section.th_splice",
+      "foreground": "var(th_splice)",
     },
     {
       "scope": "punctuation.section.list, punctuation.separator.list",
-      "foreground": "var(gold)",
+      "foreground": "var(list)",
     },
     {
       "scope": "punctuation.section.quasiquote",
-      "foreground": "var(salmon)",
+      "foreground": "var(quasiquote_marker)",
     },
 
     // Functions
     {
       "scope": "meta.function.parameters variable.other.member",
-      "foreground": "var(orange_light)",
-    },
-    {
-      "scope": "meta.function.parameters & (punctuation.section.parens, keyword.other.as_pattern)",
-      "foreground": "var(yellow)",
+      "foreground": "var(constructor_record_field)",
     },
     {
       "scope": "variable.function.signature",
-      "foreground": "var(variables)",
+      "foreground": "var(variable)",
     },
 
     // Pattern matching
     {
-      "scope": "meta.pattern variable.other.constructor",
-      "foreground": "var(constructor_pattern)",
+      "scope": "meta.pattern & (variable.other.constructor, keyword.operator.constructor)",
+      "foreground": "var(constructor)",
     },
     {
       "scope": "meta.pattern.record punctuation - comment",
-      "foreground": "var(constructor_pattern)",
+      "foreground": "var(constructor)",
+    },
+    {
+      "scope": "meta.pattern & (keyword.other.wildcard, keyword.other.as_pattern)",
+      "foreground": "var(keyword_pattern)",
     },
     {
       "scope": "keyword.other.wildcard.record",
-      "foreground": "var(orange_light)",
-    },
-    {
-      "scope": "meta.pattern keyword.operator.constructor",
-      "foreground": "var(constructor_pattern)",
+      "foreground": "var(constructor_record_field)",
     },
 
     // Data types
     {
       "scope": "meta.datatype.record variable.other.member",
-      "foreground": "var(constructor_declaration_field)",
+      "foreground": "var(constructor_record_field)",
     },
     {
       "scope": "entity.name.constructor",
-      "foreground": "var(constructor_declaration)",
+      "foreground": "var(constructor)",
     },
     {
       "scope": "punctuation.section.record, punctuation.separator.record",
-      "foreground": "var(constructor_declaration)",
+      "foreground": "var(constructor)",
     },
 
     // Types
@@ -208,11 +214,11 @@
     },
     {
       "scope": "keyword.other.type, punctuation.separator.type",
-      "foreground": "var(brown)",
+      "foreground": "var(list_type)",
     },
     {
       "scope": "keyword.control.forall",
-      "foreground": "var(brown)",
+      "foreground": "var(forall)",
     },
   ],
 }

@@ -25,6 +25,9 @@ addMultiple
   = x + y + z
 --^ keyword.other.function.definition.haskell
 
+test (Just x) = Right x
+test Nothing = Left ()
+
 testPatternMatch
 --^^^^^^^^^^^^^^ entity.name.function.haskell
   (Just a)
