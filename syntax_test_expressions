@@ -190,9 +190,35 @@ foo = do
 --                         ^ punctuation.section.list.end.haskell
 --                                 ^ punctuation.section.list.end.haskell
   [ (x * 10, y)
-  | Just x <- xs
-  , let y = 2
+  | Just x <- [1..10]
+--^ punctuation.separator.list.haskell
+--  ^^^^ meta.pattern.haskell variable.other.constructor.haskell
+--       ^ variable.other.haskell
+--         ^^ keyword.operator.haskell
+--            ^ punctuation.section.list.begin.haskell
+--             ^ constant.numeric.integer.decimal.haskell
+--              ^^ keyword.operator.haskell
+--                ^^ constant.numeric.integer.decimal.haskell
+--                  ^ punctuation.section.list.end.haskell
+  , let Just y = Just (2 + 4)
+--^ punctuation.separator.list.haskell
+--  ^^^ keyword.control.haskell
+--      ^^^^ meta.pattern.haskell variable.other.constructor.haskell
+--           ^ meta.pattern.haskell variable.other.haskell
+--             ^ keyword.operator.haskell
+--               ^^^^ variable.function.constructor.haskell
+--                    ^ punctuation.section.tuple.begin.haskell
+--                     ^ constant.numeric.integer.decimal.haskell
+--                       ^ keyword.operator.haskell
+--                         ^ constant.numeric.integer.decimal.haskell
+--                          ^ punctuation.section.tuple.end.haskell
   , x + y > 20
+--^ punctuation.separator.list.haskell
+--  ^ variable.other.haskell
+--    ^ keyword.operator.haskell
+--      ^ variable.other.haskell
+--        ^ keyword.operator.haskell
+--          ^^ constant.numeric.integer.decimal.haskell
   ]
 
   "a -- b"

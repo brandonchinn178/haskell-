@@ -498,9 +498,10 @@ contexts:
       pop: true
 
   expression_list_body:
-    - match: ',|\|'
+    - match: ','
       scope: punctuation.separator.list.haskell
-    # TODO: parse list comprehensions, with pattern matching
+    - match: '(?=\|)'
+      set: expression_list_comprehension
     - match: '\]'
       scope: punctuation.section.list.end.haskell
       pop: true
@@ -511,6 +512,50 @@ contexts:
           pop: true
         - include: type
     - include: expression
+
+  expression_list_comprehension:
+    - match: ',|\|'
+      scope: punctuation.separator.list.haskell
+      branch_point: list_comprehension
+      branch:
+        - expression_list_comprehension_let
+        - expression_list_comprehension_expr
+        - expression_list_comprehension_bind
+    - match: '\]'
+      scope: punctuation.section.list.end.haskell
+      pop: true
+
+  expression_list_comprehension_let:
+    - match: '\blet{{post_non_ident}}'
+      scope: keyword.control.haskell
+      set:
+        - match: '='
+          scope: keyword.operator.haskell
+          set:
+            - match: '(?=,|\])'
+              pop: true
+            - include: expression
+        - meta_scope: meta.pattern.haskell
+        - include: pattern_match
+    - match: '\S'
+      fail: list_comprehension
+
+  expression_list_comprehension_expr:
+    - match: '<-'
+      fail: list_comprehension
+    - match: '(?=,|\])'
+      pop: true
+    - include: expression
+
+  expression_list_comprehension_bind:
+    - match: '<-'
+      scope: keyword.operator.haskell
+      set:
+        - match: '(?=,|\])'
+          pop: true
+        - include: expression
+    - meta_scope: meta.pattern.haskell
+    - include: pattern_match
 
   expression_tuple_body:
     - match: ','

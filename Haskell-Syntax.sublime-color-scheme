@@ -148,10 +148,6 @@
 
     // Functions
     {
-      "scope": "meta.function.parameters variable.other.constructor",
-      "foreground": "var(constructor_pattern)",
-    },
-    {
       "scope": "meta.function.parameters variable.other.member",
       "foreground": "var(orange_light)",
     },
@@ -165,6 +161,10 @@
     },
 
     // Pattern matching
+    {
+      "scope": "meta.pattern variable.other.constructor",
+      "foreground": "var(constructor_pattern)",
+    },
     {
       "scope": "meta.pattern.record punctuation - comment",
       "foreground": "var(constructor_pattern)",
