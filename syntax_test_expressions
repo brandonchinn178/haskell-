@@ -2,12 +2,32 @@
 
 -- TODO: remove when top-level expressions are allowed
 foo = do
-  makeLenses ''Foo
+  makeLenses
 --^^^^^^^^^^ variable.other.haskell
---           ^^^^^ variable.other.constructor.haskell
-
-  makeLenses ''Foo.Bar
---           ^^^^^^^^^ variable.other.constructor.haskell
+    ''Foo
+--  ^^^^^ variable.other.constant.name.type.haskell
+    ''Foo.Bar
+--  ^^^^^^^^^ variable.other.constant.name.type.haskell
+    ''(<=)
+--  ^^^^^^ variable.other.constant.name.type.haskell
+    ''(GHC.TypeNats.<=)
+--  ^^^^^^^^^^^^^^^^^^^ variable.other.constant.name.type.haskell
+    'Foo
+--  ^^^^ variable.other.constant.name.constructor.haskell
+    'Foo.Bar
+--  ^^^^^^^^ variable.other.constant.name.constructor.haskell
+    '(:|)
+--  ^^^^^ variable.other.constant.name.constructor.haskell
+    '(Data.List.NonEmpty.:|)
+--  ^^^^^^^^^^^^^^^^^^^^^^^^ variable.other.constant.name.constructor.haskell
+    'bar
+--  ^^^^ variable.other.constant.name.haskell
+    'Foo.bar
+--  ^^^^^^^^ variable.other.constant.name.haskell
+    '(+)
+--  ^^^^ variable.other.constant.name.haskell
+    '(Prelude.+)
+--  ^^^^^^^^^^^^ variable.other.constant.name.haskell
 
   let r = Record
         { a = 1

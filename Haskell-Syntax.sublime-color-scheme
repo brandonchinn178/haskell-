@@ -25,6 +25,7 @@
     "type_operators": "var(periwinkle)",
 
     // value-level identifiers
+    "constant": "var(blue)",
     "constructors": "var(teal)",
     "constructor_declaration": "var(teal)",
     "constructor_declaration_field": "var(orange_light)",
@@ -58,7 +59,7 @@
     { "scope": "entity", "foreground": "var(variables)" },
     { "scope": "storage", "foreground": "var(types)" },
     { "scope": "string", "foreground": "var(purple)" },
-    { "scope": "constant", "foreground": "var(blue)" },
+    { "scope": "constant", "foreground": "var(constant)" },
     { "scope": "invalid", "foreground": "var(red)" },
 
     // Pragmas
@@ -121,8 +122,16 @@
       "foreground": "var(constructors)",
     },
     {
-      "scope": "variable.other.constructor",
-      "foreground": "var(olive)",
+      "scope": "variable.other.constant.name",
+      "foreground": "var(constant)",
+    },
+    {
+      "scope": "variable.other.constant.name.constructor",
+      "foreground": "var(constructors)",
+    },
+    {
+      "scope": "variable.other.constant.name.type",
+      "foreground": "var(types)",
     },
     {
       "scope": "variable.other.error",

@@ -14,6 +14,8 @@ variables:
   operator: '(?!:){{symbol_char}}+'
   operator_con: ':{{symbol_char}}*'
 
+  module_prefix: '({{upper_ident}}\.)*'
+
 contexts:
   prototype:
     - include: comment
@@ -130,7 +132,7 @@ contexts:
 
   module_header_line:
     - meta_scope: meta.declaration.module.haskell
-    - match: '({{upper_ident}}\.)*({{upper_ident}})'
+    - match: '{{module_prefix}}({{upper_ident}})'
       scope: entity.name.namespace.haskell
     - match: \(
       scope: punctuation.section.parens.begin.haskell
@@ -152,7 +154,7 @@ contexts:
       captures:
         1: keyword.other.export.haskell
         2: variable.function.pattern.haskell
-    - match: \b(module) (({{upper_ident}}\.)*{{upper_ident}})
+    - match: \b(module) ({{module_prefix}}{{upper_ident}})
       captures:
         1: keyword.other.export.haskell
         2: storage.module.haskell
@@ -172,11 +174,11 @@ contexts:
     - match: \(
       scope: punctuation.section.parens.begin.haskell
       push: import_list_type_members
-    - match: '(({{upper_ident}}\.)*)({{lower_ident}})'
+    - match: '({{module_prefix}})({{lower_ident}})'
       captures:
         1: storage.module.haskell
         3: variable.function.haskell
-    - match: '(({{upper_ident}}\.)*)({{upper_ident}})'
+    - match: '({{module_prefix}})({{upper_ident}})'
       captures:
         1: storage.module.haskell
         3: storage.type.haskell
@@ -196,7 +198,7 @@ contexts:
     - include: pop_when_deindent
     - match: \b(qualified|as|hiding)\b
       scope: keyword.control.import.modifiers.haskell
-    - match: '({{upper_ident}}\.)*({{upper_ident}})'
+    - match: '{{module_prefix}}({{upper_ident}})'
       scope: storage.module.haskell
     - match: \(
       scope: punctuation.section.parens.begin.haskell
@@ -442,31 +444,41 @@ contexts:
     - match: (error|undefined)(?=[^\w'])
       scope: variable.other.error.haskell
     # possibly qualified operators
-    - match: '({{upper_ident}}\.)*:{{symbol_char}}*'
+    - match: '{{module_prefix}}{{operator_con}}'
       scope: keyword.operator.constructor.haskell
-    - match: '\(({{upper_ident}}\.)*:{{symbol_char}}*\)'
+    - match: '\({{module_prefix}}{{operator_con}}\)'
       scope: keyword.operator.constructor.prefix.haskell
-    - match: '({{upper_ident}}\.)*{{symbol_char}}+'
+    - match: '{{module_prefix}}{{operator}}'
       scope: keyword.operator.haskell
-    - match: '\(({{upper_ident}}\.)*{{symbol_char}}+\)'
+    - match: '\({{module_prefix}}{{operator}}\)'
       scope: keyword.operator.prefix.haskell
     # possibly qualified values/functions
-    - match: '(({{upper_ident}}\.)*)({{lower_ident}})'
+    - match: '({{module_prefix}})({{lower_ident}})'
       captures:
         1: storage.module.haskell
         3: variable.other.haskell
-    - match: '`({{upper_ident}}\.)*({{lower_ident}})`'
+    - match: '`{{module_prefix}}({{lower_ident}})`'
       scope: variable.other.infix.haskell
     # possibly qualified types/constructors
-    - match: '(({{upper_ident}}\.)*)({{upper_ident}})'
+    - match: '({{module_prefix}})({{upper_ident}})'
       captures:
         1: storage.module.haskell
         3: variable.function.constructor.haskell
-    - match: '`({{upper_ident}}\.)*({{upper_ident}})`'
+    - match: '`{{module_prefix}}({{upper_ident}})`'
       scope: variable.function.constructor.infix.haskell
-    # possibly qualified quoted TH Name
-    - match: '''{1,2}({{upper_ident}}\.)*{{upper_ident}}'
-      scope: variable.other.constructor.haskell
+    # possibly qualified quoted TH Names
+    - match: '''{{module_prefix}}{{lower_ident}}'
+      scope: variable.other.constant.name.haskell
+    - match: '''\({{module_prefix}}{{operator}}\)'
+      scope: variable.other.constant.name.haskell
+    - match: '''{{module_prefix}}{{upper_ident}}'
+      scope: variable.other.constant.name.constructor.haskell
+    - match: '''\({{module_prefix}}{{operator_con}}\)'
+      scope: variable.other.constant.name.constructor.haskell
+    - match: '''{2}{{module_prefix}}{{upper_ident}}'
+      scope: variable.other.constant.name.type.haskell
+    - match: '''{2}\({{module_prefix}}{{operator}}\)'
+      scope: variable.other.constant.name.type.haskell
     # tuples + lists
     - match: '\(,*\)'
       scope: keyword.operator.constructor.prefix.haskell
@@ -599,7 +611,7 @@ contexts:
     # TODO: [d|...|]
     # TODO: [t|...|]
     # TODO: [p|...|]
-    - match: '\[({{upper_ident}}\.)*{{lower_ident}}\|'
+    - match: '\[{{module_prefix}}{{lower_ident}}\|'
       scope: punctuation.section.quasiquote.begin.haskell
       embed: expression_quasiquote_body
       embed_scope: string.quoted.quasiquote.haskell
@@ -679,7 +691,7 @@ contexts:
         keyword.other.type.haskell
       push: type_tuple_body
     - include: type_forall
-    - match: '(({{upper_ident}}\.)*)({{upper_ident}})'
+    - match: '({{module_prefix}})({{upper_ident}})'
       captures:
         1: storage.module.haskell
         3: storage.type.haskell
