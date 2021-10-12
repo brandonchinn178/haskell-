@@ -7,9 +7,12 @@ scope: source.haskell
 variables:
   # Identifiers and Operators
   # https://www.haskell.org/onlinereport/lexemes.html#sect2.4
-  post_non_ident: '(?=[^\w''])'
-  lower_ident: '\b[a-z_][\w'']*{{post_non_ident}}'
-  upper_ident: '\b[A-Z][\w'']*{{post_non_ident}}'
+  post_non_ident: |-
+    (?=[^\w'])
+  lower_ident: |-
+    \b[a-z_][\w']*{{post_non_ident}}
+  upper_ident: |-
+    \b[A-Z][\w']*{{post_non_ident}}
   symbol_char: '[!#$%&*+./<=>?@\\^|\-~:]'
   operator: '(?!:){{symbol_char}}+'
   operator_con: ':{{symbol_char}}*'
@@ -467,17 +470,23 @@ contexts:
     - match: '`{{module_prefix}}({{upper_ident}})`'
       scope: variable.function.constructor.infix.haskell
     # possibly qualified quoted TH Names
-    - match: '''{{module_prefix}}{{lower_ident}}'
+    - match: |-
+        '{{module_prefix}}{{lower_ident}}
       scope: variable.other.constant.name.haskell
-    - match: '''\({{module_prefix}}{{operator}}\)'
+    - match: |-
+        '\({{module_prefix}}{{operator}}\)
       scope: variable.other.constant.name.haskell
-    - match: '''{{module_prefix}}{{upper_ident}}'
+    - match: |-
+        '{{module_prefix}}{{upper_ident}}
       scope: variable.other.constant.name.constructor.haskell
-    - match: '''\({{module_prefix}}{{operator_con}}\)'
+    - match: |-
+        '\({{module_prefix}}{{operator_con}}\)
       scope: variable.other.constant.name.constructor.haskell
-    - match: '''{2}{{module_prefix}}{{upper_ident}}'
+    - match: |-
+        ''{{module_prefix}}{{upper_ident}}
       scope: variable.other.constant.name.type.haskell
-    - match: '''{2}\({{module_prefix}}{{operator}}\)'
+    - match: |-
+        ''\({{module_prefix}}{{operator}}\)
       scope: variable.other.constant.name.type.haskell
     # tuples + lists
     - match: '\(,*\)'
@@ -680,12 +689,14 @@ contexts:
   type:
     - match: '->|=>'
       scope: keyword.operator.type.haskell
-    - match: '''?\['
+    - match: |-
+        '?\[
       scope: |-
         punctuation.section.brackets.begin.haskell
         keyword.other.type.haskell
       push: type_list_body
-    - match: '''?\('
+    - match: |-
+        '?\(
       scope: |-
         punctuation.section.parens.begin.haskell
         keyword.other.type.haskell
