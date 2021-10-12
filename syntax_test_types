@@ -1,3 +1,40 @@
 -- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
 
 type String = [Char]
+--^^ keyword.control.type.haskell
+--   ^^^^^^
+--          ^ keyword.control.definition.haskell
+--            ^ punctuation.section.brackets.begin.haskell keyword.other.type.haskell
+--             ^^^^ storage.type.haskell
+--                 ^ punctuation.section.brackets.end.haskell keyword.other.type.haskell
+
+type URL = (Network.HTTP.URI, Bool)
+--         ^ punctuation.section.parens.begin.haskell keyword.other.type.haskell
+--          ^^^^^^^^^^^^^ storage.module.haskell
+--                       ^^^ storage.type.haskell
+--                          ^ punctuation.separator.type.tuple.haskell
+--                            ^^^^ storage.type.haskell
+--                                ^ punctuation.section.parens.end.haskell keyword.other.type.haskell
+
+type Showable = forall a. Show a => a
+--              ^^^^^^ keyword.control.forall.haskell
+--                     ^ variable.other.type.haskell
+--                      ^ keyword.control.forall.haskell
+--                        ^^^^ storage.type.haskell
+--                             ^ variable.other.type.haskell
+--                               ^^ keyword.operator.type.haskell
+--                                  ^ variable.other.type.haskell
+
+type ListKind = '[Int, Double, Bool]
+--              ^^ punctuation.section.brackets.begin.haskell keyword.other.type.haskell
+--                   ^ punctuation.separator.type.list.haskell
+--                           ^ punctuation.separator.type.list.haskell
+--                                 ^ punctuation.section.brackets.end.haskell keyword.other.type.haskell
+
+type TupleKind = '(Int, Double)
+--               ^^ punctuation.section.parens.begin.haskell keyword.other.type.haskell
+--                    ^ punctuation.separator.type.tuple.haskell
+--                            ^ punctuation.section.parens.end.haskell keyword.other.type.haskell
+
+type Foo forall' = Int
+--       ^^^^^^^ variable.other.type.haskell

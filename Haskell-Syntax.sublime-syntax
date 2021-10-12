@@ -465,6 +465,7 @@ contexts:
       scope: punctuation.section.tuple.begin.haskell
       push: expression_tuple_body
     # TODO: parse type annotations
+    # TODO: record constructions
 
   expression_string_body:
     - meta_include_prototype: false
@@ -589,15 +590,24 @@ contexts:
   ### Types ###
 
   type:
-    - match: '->'
+    - match: '->|=>'
       scope: keyword.operator.type.haskell
-    - match: '\['
+    - match: '''?\['
       scope: |-
         punctuation.section.brackets.begin.haskell
         keyword.other.type.haskell
       push: type_list_body
-    - match: '{{upper_ident}}'
-      scope: storage.type.haskell
+    - match: '''?\('
+      scope: |-
+        punctuation.section.parens.begin.haskell
+        keyword.other.type.haskell
+      push: type_tuple_body
+    - match: '\bforall{{post_non_ident}}|\.'
+      scope: keyword.control.forall.haskell
+    - match: '(({{upper_ident}}\.)*)({{upper_ident}})'
+      captures:
+        1: storage.module.haskell
+        3: storage.type.haskell
     - match: '{{lower_ident}}'
       scope: variable.other.type.haskell
 
@@ -607,4 +617,16 @@ contexts:
         punctuation.section.brackets.end.haskell
         keyword.other.type.haskell
       pop: true
+    - match: ','
+      scope: punctuation.separator.type.list.haskell
+    - include: type
+
+  type_tuple_body:
+    - match: '\)'
+      scope: |-
+        punctuation.section.parens.end.haskell
+        keyword.other.type.haskell
+      pop: true
+    - match: ','
+      scope: punctuation.separator.type.tuple.haskell
     - include: type

@@ -6,6 +6,7 @@
     "white": "#ede0ce",
 
     "blue": "#729dda",
+    "brown": "#bf8040",
     "cyan": "#2fbfbf",
     "gold": "#bfa72f",
     "green": "#8dbc2f",
@@ -29,8 +30,7 @@
     "constructor_declaration_field": "var(orange_light)",
     "constructor_pattern": "var(olive)",
     "variables": "var(green)",
-    "parameter": "var(orange_light)",
-    "parameter_type": "var(salmon)",
+    "parameter_type": "var(blue)",
     "operators": "var(green)",
   },
   "globals": {
@@ -148,16 +148,12 @@
 
     // Functions
     {
-      "scope": "meta.function.parameters variable.other",
-      "foreground": "var(parameter)",
-    },
-    {
       "scope": "meta.function.parameters variable.other.constructor",
       "foreground": "var(constructor_pattern)",
     },
     {
       "scope": "meta.function.parameters variable.other.member",
-      "foreground": "var(white)",
+      "foreground": "var(orange_light)",
     },
     {
       "scope": "meta.function.parameters & (punctuation.section.parens, keyword.other.as_pattern)",
@@ -175,7 +171,7 @@
     },
     {
       "scope": "keyword.other.wildcard.record",
-      "foreground": "var(parameter)",
+      "foreground": "var(orange_light)",
     },
     {
       "scope": "meta.pattern keyword.operator.constructor",
@@ -202,8 +198,12 @@
       "foreground": "var(parameter_type)",
     },
     {
-      "scope": "keyword.other.type",
-      "foreground": "var(gold)",
+      "scope": "keyword.other.type, punctuation.separator.type",
+      "foreground": "var(brown)",
+    },
+    {
+      "scope": "keyword.control.forall",
+      "foreground": "var(brown)",
     },
   ],
 }
