@@ -265,7 +265,10 @@ contexts:
       captures:
         2: keyword.control.type.haskell
       push: data_type_declaration
-    # TODO: type aliases
+    - match: '^(\s*)(type){{post_non_ident}}'
+      captures:
+        2: keyword.control.type.haskell
+      push: data_type_alias_declaration
 
   data_type_declaration:
     - include: pop_when_deindent
@@ -274,7 +277,7 @@ contexts:
     - match: '{{lower_ident}}'
       scope: variable.other.type.haskell
     - match: '='
-      scope: keyword.operator.haskell
+      scope: keyword.control.definition.haskell
       set: data_type_constructor_start
     # TODO: GADTs
 
@@ -287,7 +290,7 @@ contexts:
   data_type_constructor:
     - include: pop_when_deindent
     - match: \|
-      scope: keyword.operator.haskell
+      scope: keyword.control.definition.haskell
       set: data_type_constructor_start
     - match: \{
       scope: punctuation.section.record.begin.haskell
@@ -313,10 +316,13 @@ contexts:
     - match: \}
       scope: punctuation.section.record.end.haskell
       pop: true
-    - match: '{{upper_ident}}'
-      scope: storage.type.haskell
-    - match: '{{lower_ident}}'
-      scope: variable.other.type.haskell
+    - include: type
+
+  data_type_alias_declaration:
+    - include: pop_when_deindent
+    - include: type
+    - match: '='
+      scope: keyword.control.definition.haskell
 
   ### Functions ###
 
@@ -374,7 +380,7 @@ contexts:
 
   function_signature_type:
     - include: pop_when_deindent
-    # TODO
+    - include: type
 
   ### Expressions ###
 
@@ -566,7 +572,7 @@ contexts:
       match: '({{lower_ident}})\s*(=)'
       captures:
         1: variable.other.member.haskell
-        2: keyword.operator.haskell
+        2: keyword.operator.assignment.haskell
       push: pattern_match_record_nested
     - # Person{boss} (NamedFieldPuns)
       #        ^^^^
@@ -579,3 +585,26 @@ contexts:
     - match: '(?=[,}])'
       pop: true
     - include: pattern_match
+
+  ### Types ###
+
+  type:
+    - match: '->'
+      scope: keyword.operator.type.haskell
+    - match: '\['
+      scope: |-
+        punctuation.section.brackets.begin.haskell
+        keyword.other.type.haskell
+      push: type_list_body
+    - match: '{{upper_ident}}'
+      scope: storage.type.haskell
+    - match: '{{lower_ident}}'
+      scope: variable.other.type.haskell
+
+  type_list_body:
+    - match: '\]'
+      scope: |-
+        punctuation.section.brackets.end.haskell
+        keyword.other.type.haskell
+      pop: true
+    - include: type

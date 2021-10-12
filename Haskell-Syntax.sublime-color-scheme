@@ -25,7 +25,8 @@
 
     // value-level identifiers
     "constructors": "var(teal)",
-    "constructor_declaration": "color(var(teal) blend(var(green) 60%))",
+    "constructor_declaration": "var(teal)",
+    "constructor_declaration_field": "var(orange_light)",
     "constructor_pattern": "var(olive)",
     "variables": "var(green)",
     "parameter": "var(orange_light)",
@@ -183,12 +184,8 @@
 
     // Data types
     {
-      "scope": "variable.other.type",
-      "foreground": "var(parameter_type)",
-    },
-    {
       "scope": "meta.datatype.record variable.other.member",
-      "foreground": "var(teal)",
+      "foreground": "var(constructor_declaration_field)",
     },
     {
       "scope": "entity.name.constructor",
@@ -197,6 +194,16 @@
     {
       "scope": "punctuation.section.record, punctuation.separator.record",
       "foreground": "var(constructor_declaration)",
+    },
+
+    // Types
+    {
+      "scope": "variable.other.type",
+      "foreground": "var(parameter_type)",
+    },
+    {
+      "scope": "keyword.other.type",
+      "foreground": "var(gold)",
     },
   ],
 }

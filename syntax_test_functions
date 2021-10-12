@@ -5,6 +5,10 @@
 addOne :: Int -> Int
 --^^^^ variable.function.signature.haskell
 --     ^^ keyword.other.function.signature.haskell
+--        ^^^ storage.type.haskell
+--            ^^ keyword.operator.type.haskell
+--               ^^^ storage.type.haskell
+
 addOne x = x + 1
 --^^^^ entity.name.function.haskell
 --     ^ meta.function.parameters.haskell meta.pattern.haskell variable.other.haskell
@@ -43,16 +47,16 @@ testPatternMatch
 --      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.pattern.record.haskell
 --      ^ punctuation.section.braces.begin.haskell
 --       ^^^^ variable.other.member.haskell
---            ^ keyword.operator.haskell
+--            ^ keyword.operator.assignment.haskell
 --              ^^^^ variable.other.haskell
 --                  ^ punctuation.separator.haskell
 --                    ^^^^ variable.other.member.haskell
---                         ^ keyword.operator.haskell
+--                         ^ keyword.operator.assignment.haskell
 --                           ^^^^ variable.other.constructor.haskell
 --                                ^^^^^^ variable.other.constructor.haskell
 --                                      ^ punctuation.section.braces.begin.haskell
 --                                       ^^^^ variable.other.member.haskell
---                                            ^ keyword.operator.haskell
+--                                            ^ keyword.operator.assignment.haskell
 --                                              ^^^^ variable.other.haskell
 --                                                  ^^ punctuation.section.braces.end.haskell
   Person{name, age}
@@ -66,7 +70,7 @@ testPatternMatch
 --^^^^^^ variable.other.constructor.haskell
 --      ^ punctuation.section.braces.begin.haskell
 --       ^^^^ variable.other.member.haskell
---            ^ keyword.operator.haskell
+--            ^ keyword.operator.assignment.haskell
 --              ^^^^ variable.other.haskell
 --                  ^ punctuation.separator.haskell
 --                    ^^ keyword.other.wildcard.record.haskell

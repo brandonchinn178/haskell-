@@ -27,9 +27,3 @@ data Foo a b
 newtype Path = Path Text
 
 newtype AppM a = AppM { unAppM :: ReaderT AppEnv IO a }
-
-{--------------------------------------------------------------------------------
-  Type aliases
---------------------------------------------------------------------------------}
-
-type String = [Char]
