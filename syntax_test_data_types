@@ -5,25 +5,112 @@
 --------------------------------------------------------------------------------}
 
 data Color = Red | Blue | Green | Yellow | White | Black
+--^^ keyword.control.type.haskell
+--   ^^^^^ storage.type.haskell
+--         ^ keyword.control.definition.haskell
+--           ^^^ entity.name.constructor.haskell
+--               ^ keyword.control.definition.haskell
+--                 ^^^^ entity.name.constructor.haskell
+--                      ^ keyword.control.definition.haskell
+--                        ^^^^^ entity.name.constructor.haskell
+--                              ^ keyword.control.definition.haskell
+--                                ^^^^^^ entity.name.constructor.haskell
+--                                       ^ keyword.control.definition.haskell
+--                                         ^^^^^ entity.name.constructor.haskell
+--                                               ^ keyword.control.definition.haskell
+--                                                 ^^^^^ entity.name.constructor.haskell
 
 data Maybe a = Nothing | Just a
+--^^ keyword.control.type.haskell
+--   ^^^^^ storage.type.haskell
+--         ^ variable.other.type.haskell
+--           ^ keyword.control.definition.haskell
+--             ^^^^^^^ entity.name.constructor.haskell
+--                     ^ keyword.control.definition.haskell
+--                       ^^^^ entity.name.constructor.haskell
+--                            ^ variable.other.type.haskell
 
 data Person = Person
+--            ^^^^^^ entity.name.constructor.haskell
   { name :: Text
+--^ meta.datatype.record.haskell punctuation.section.record.begin.haskell
+--  ^^^^ meta.datatype.record.haskell variable.other.member.haskell
+--       ^^ meta.datatype.record.haskell keyword.declaration.haskell
+--          ^^^^ storage.type.haskell
   , age :: Int
+--^ meta.datatype.record.haskell punctuation.separator.record.haskell
+--  ^^^ variable.other.member.haskell
+--      ^^ keyword.declaration.haskell
+--         ^^^ storage.type.haskell
   , nicknames :: [Text]
+--  ^^^^^^^^^ variable.other.member.haskell
+--            ^^ meta.datatype.record.haskell keyword.declaration.haskell
   }
+--^ punctuation.section.record.end.haskell
 
 data Foo a b
   = Foo a (Int, Maybe b)
+--^ keyword.control.definition.haskell
+--  ^^^ entity.name.constructor.haskell
+--      ^ variable.other.type.haskell
+--        ^ punctuation.section.parens.begin.haskell keyword.other.type.haskell
+--         ^^^ storage.type.haskell
+--            ^ punctuation.separator.type.tuple.haskell
+--              ^^^^^ storage.type.haskell
+--                    ^ variable.other.type.haskell
+--                     ^ punctuation.section.parens.end.haskell keyword.other.type.haskell
   | Bar Int Double
+--^ keyword.control.definition.haskell
+--  ^^^ entity.name.constructor.haskell
+--      ^^^ storage.type.haskell
+--          ^^^^^^ storage.type.haskell
   | Baz { a :: Int }
+--^ keyword.control.definition.haskell
+--  ^^^ entity.name.constructor.haskell
+--      ^ punctuation.section.record.begin.haskell
+--        ^ variable.other.member.haskell
+--          ^^ keyword.declaration.haskell
+--             ^^^ storage.type.haskell
+--                 ^ punctuation.section.record.end.haskell
   | Foo2 b
+--^ keyword.control.definition.haskell
+--  ^^^^ entity.name.constructor.haskell
+--       ^ variable.other.type.haskell
+
+data SomeFoo = forall a. Foo a => SomeFoo a
+--   ^^^^^^^ storage.type.haskell
+--           ^ keyword.control.definition.haskell
+--             ^^^^^^ keyword.control.forall.haskell
+--                    ^ variable.other.type.haskell
+--                     ^ keyword.control.forall.haskell
+--                       ^^^ storage.type.haskell
+--                           ^ variable.other.type.haskell
+--                             ^^ keyword.operator.type.haskell
+--                                ^^^^^^^ entity.name.constructor.haskell
+--                                        ^ variable.other.type.haskell
 
 {--------------------------------------------------------------------------------
   Newtypes
 --------------------------------------------------------------------------------}
 
 newtype Path = Path Text
+--^^^^^ keyword.control.type.haskell
+--      ^^^^ storage.type.haskell
+--           ^ keyword.control.definition.haskell
+--             ^^^^ entity.name.constructor.haskell
+--                  ^^^^ storage.type.haskell
 
 newtype AppM a = AppM { unAppM :: ReaderT AppEnv IO a }
+--^^^^^ keyword.control.type.haskell
+--      ^^^^ storage.type.haskell
+--           ^ variable.other.type.haskell
+--             ^ keyword.control.definition.haskell
+--               ^^^^ entity.name.constructor.haskell
+--                    ^ punctuation.section.record.begin.haskell
+--                      ^^^^^^ variable.other.member.haskell
+--                             ^^ keyword.declaration.haskell
+--                                ^^^^^^^ storage.type.haskell
+--                                        ^^^^^^ storage.type.haskell
+--                                               ^^ storage.type.haskell
+--                                                  ^ variable.other.type.haskell
+--                                                    ^ punctuation.section.record.end.haskell

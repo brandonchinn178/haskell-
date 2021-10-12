@@ -278,8 +278,18 @@ contexts:
       scope: variable.other.type.haskell
     - match: '='
       scope: keyword.control.definition.haskell
-      set: data_type_constructor_start
+      branch_point: data_type_declaration
+      branch:
+        - data_type_constructor_start
+        - data_type_constructor_start_with_constraints
     # TODO: GADTs
+
+  data_type_constructor_start_with_constraints:
+    - include: pop_when_deindent
+    - match: '=>'
+      scope: keyword.operator.type.haskell
+      set: data_type_constructor_start
+    - include: type
 
   data_type_constructor_start:
     - include: pop_when_deindent
@@ -289,16 +299,15 @@ contexts:
 
   data_type_constructor:
     - include: pop_when_deindent
+    - match: '=>'
+      fail: data_type_declaration
     - match: \|
       scope: keyword.control.definition.haskell
       set: data_type_constructor_start
     - match: \{
       scope: punctuation.section.record.begin.haskell
       push: data_type_record
-    - match: '{{upper_ident}}'
-      scope: storage.type.haskell
-    - match: '{{lower_ident}}'
-      scope: variable.other.type.haskell
+    - include: type
     # TODO: deriving
 
   data_type_record:
@@ -602,14 +611,23 @@ contexts:
         punctuation.section.parens.begin.haskell
         keyword.other.type.haskell
       push: type_tuple_body
-    - match: '\bforall{{post_non_ident}}|\.'
-      scope: keyword.control.forall.haskell
+    - include: type_forall
     - match: '(({{upper_ident}}\.)*)({{upper_ident}})'
       captures:
         1: storage.module.haskell
         3: storage.type.haskell
     - match: '{{lower_ident}}'
       scope: variable.other.type.haskell
+
+  type_forall:
+    - match: '\bforall{{post_non_ident}}'
+      scope: keyword.control.forall.haskell
+      push:
+        - match: '{{lower_ident}}'
+          scope: variable.other.type.haskell
+        - match: '\.'
+          scope: keyword.control.forall.haskell
+          pop: true
 
   type_list_body:
     - match: '\]'
