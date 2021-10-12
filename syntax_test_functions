@@ -2,6 +2,9 @@
 
 -- TODO: support indented functions
 
+addOne :: Int -> Int
+--^^^^ variable.function.signature.haskell
+--     ^^ keyword.other.function.signature.haskell
 addOne x = x + 1
 --^^^^ entity.name.function.haskell
 --     ^ meta.function.parameters.haskell meta.pattern.haskell variable.other.haskell
@@ -72,6 +75,12 @@ testPatternMatch
 --   ^^^^ variable.other.constructor.haskell
   = undefined
 --^ keyword.other.function.definition.haskell
+
+-- Works for signatures on multiple functions
+test1, test2 :: Int
+--^^^ variable.function.signature.haskell
+--   ^ punctuation.separator.signature.haskell
+--     ^^^^^ variable.function.signature.haskell
 
 {--------------------------------------------------------------------------------
   Check some valid identifiers

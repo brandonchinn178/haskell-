@@ -31,6 +31,13 @@ contexts:
     - match: '^(?!\1\s)'
       pop: true
 
+    # TODO: the back reference above currently only works for contexts pushed immediately
+    # after the match capturing the spaces. This is a workaround to explicitly reset
+    # when there are zero indentations
+    # https://forum.sublimetext.com/t/syntax-definition-explicitly-specify-backref-context/60899
+    - match: '^(?!\s)'
+      pop: true
+
   ### Comments ###
 
   comment:
@@ -314,9 +321,7 @@ contexts:
   ### Functions ###
 
   function:
-    - match: '^(\s*)({{lower_ident}})'
-      captures:
-        2: entity.name.function.haskell
+    - match: '^(?=\s*{{lower_ident}})'
       branch_point: function
       branch:
         # try signature first, since it's easier to check if it fails
@@ -325,6 +330,12 @@ contexts:
         - function_definition
 
   function_definition:
+    - match: '^(\s*)({{lower_ident}})'
+      captures:
+        2: entity.name.function.haskell
+      set: function_definition_params
+
+  function_definition_params:
     - meta_content_scope: |-
         meta.function.parameters.haskell
         meta.pattern.haskell
@@ -339,11 +350,25 @@ contexts:
     - include: expression
 
   function_signature:
-    - match: '\s(::)\s'
-      captures:
-        1: keyword.other.function.signature.haskell
-      set: function_signature_type
+    - match: '^(\s*)'
+      set: function_signature_start
+
+  function_signature_start:
     - include: pop_when_deindent
+    - match: '{{lower_ident}}'
+      scope: variable.function.signature.haskell
+      set: function_signature_sep
+    - match: '\S'
+      fail: function
+
+  function_signature_sep:
+    - include: pop_when_deindent
+    - match: ','
+      scope: punctuation.separator.signature.haskell
+      set: function_signature_start
+    - match: '::'
+      scope: keyword.other.function.signature.haskell
+      set: function_signature_type
     - match: '\S'
       fail: function
 

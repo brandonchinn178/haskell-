@@ -145,7 +145,7 @@
       "foreground": "var(salmon)",
     },
 
-    // Function parameters
+    // Functions
     {
       "scope": "meta.function.parameters variable.other",
       "foreground": "var(parameter)",
@@ -161,6 +161,10 @@
     {
       "scope": "meta.function.parameters & (punctuation.section.parens, keyword.other.as_pattern)",
       "foreground": "var(yellow)",
+    },
+    {
+      "scope": "variable.function.signature",
+      "foreground": "var(variables)",
     },
 
     // Pattern matching
