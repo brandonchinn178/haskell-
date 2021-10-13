@@ -1,0 +1,50 @@
+-- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
+
+class Show a where
+--^^^ keyword.control.type.haskell
+--    ^^^^ storage.type.haskell
+--         ^ variable.other.type.haskell
+--           ^^^^^ keyword.control.context.haskell
+  show :: a -> String
+  show a = showsPrec 0 a ""
+
+  showsPrec :: Int -> a -> ShowS
+  showsPrec _ x s = show x ++ s
+
+instance Show Bool where
+--^^^^^^ keyword.control.type.haskell
+--       ^^^^ storage.type.haskell
+--            ^^^^ storage.type.haskell
+--                 ^^^^^ keyword.control.context.haskell
+  show True = "True"
+  show False = "False"
+
+instance Show a => Show (Maybe a) where
+--^^^^^^ keyword.control.type.haskell
+--       ^^^^ storage.type.haskell
+--            ^ variable.other.type.haskell
+--              ^^ keyword.operator.type.haskell
+--                 ^^^^ storage.type.haskell
+--                      ^ keyword.other.type.haskell
+--                       ^^^^^ storage.type.haskell
+--                             ^ variable.other.type.haskell
+--                              ^ keyword.other.type.haskell
+--                                ^^^^^ keyword.control.context.haskell
+
+  show Nothing = "Nothing"
+  show (Just a) = "Just " ++ show a
+
+class IsList l where
+  type Item l :: * -> *
+  fromList :: [Item l] -> l
+  toList :: l -> [Item l]
+
+class GMapKey k where
+  data GMap k v :: Type
+  lookup :: k -> GMap k v -> Maybe v
+
+-- Test that type variables can start with "where"
+class Foo whereA where' where
+--        ^^^^^^ variable.other.type.haskell
+--               ^^^^^^ variable.other.type.haskell
+--                      ^^^^^ keyword.control.context.haskell

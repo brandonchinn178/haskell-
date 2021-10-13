@@ -26,8 +26,8 @@ contexts:
   main:
     - include: module_header
     - include: import
-    - include: data_types
-    # TODO: typeclasses, instances, standalone deriving
+    - include: data_type
+    - include: type_class
     - include: function
 
   ### Utilities ###
@@ -265,7 +265,7 @@ contexts:
 
   ### Data types ###
 
-  data_types:
+  data_type:
     - match: '^(\s*)(data|newtype){{post_non_ident}}'
       captures:
         2: keyword.control.type.haskell
@@ -738,3 +738,26 @@ contexts:
     - match: ','
       scope: punctuation.separator.type.tuple.haskell
     - include: type
+
+  ### Type classes, instances, and standalone deriving ###
+
+  type_class:
+    - match: '^(\s*)(class|instance){{post_non_ident}}'
+      captures:
+        2: keyword.control.type.haskell
+      push:
+        - include: pop_when_deindent
+        - match: '\b(where){{post_non_ident}}'
+          captures:
+            1: keyword.control.context.haskell
+          set: type_class_body
+        - include: type
+    # TODO: standalone deriving
+    # TODO: type families/instances
+
+  type_class_body:
+    # TODO: change back to pop_when_deindent
+    - match: '^(?!\s)'
+      pop: true
+    # TODO: Type/data families
+    - include: function
