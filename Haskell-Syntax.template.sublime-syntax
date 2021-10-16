@@ -37,13 +37,6 @@ contexts:
     - match: '^(?!\1\s)'
       pop: true
 
-    # TODO: the back reference above currently only works for contexts pushed immediately
-    # after the match capturing the spaces. This is a workaround to explicitly reset
-    # when there are zero indentations
-    # https://forum.sublimetext.com/t/syntax-definition-explicitly-specify-backref-context/60899
-    - match: '^(?!\s)'
-      pop: true
-
   ### Comments ###
 
   comment:
@@ -129,7 +122,7 @@ contexts:
   ### Module header ##
 
   module_header:
-    - match: ^(\s*)(module){{post_non_ident}}
+    - match: ^({{INDENTATION}})(module){{post_non_ident}}
       captures:
         2: keyword.declaration.namespace.haskell
       push: module_header_line
@@ -192,7 +185,7 @@ contexts:
   ### Imports ###
 
   import:
-    - match: ^(\s*)(import){{post_non_ident}}
+    - match: ^({{INDENTATION}})(import){{post_non_ident}}
       captures:
         2: keyword.control.import.haskell
       push: import_line
@@ -267,11 +260,11 @@ contexts:
   ### Data types ###
 
   data_type:
-    - match: '^(\s*)(data|newtype){{post_non_ident}}'
+    - match: '^({{INDENTATION}})(data|newtype){{post_non_ident}}'
       captures:
         2: keyword.control.type.haskell
       push: data_type_declaration
-    - match: '^(\s*)(type){{post_non_ident}}'
+    - match: '^({{INDENTATION}})(type){{post_non_ident}}'
       captures:
         2: keyword.control.type.haskell
       push: data_type_alias_declaration
@@ -351,7 +344,7 @@ contexts:
         - function_definition
 
   function_definition:
-    - match: '^(\s*)({{lower_ident}})'
+    - match: '^({{INDENTATION}})({{lower_ident}})'
       captures:
         2: entity.name.function.haskell
       set: function_definition_params
@@ -372,7 +365,7 @@ contexts:
     - include: expression
 
   function_signature:
-    - match: '^(\s*)'
+    - match: '^({{INDENTATION}})'
       set: function_signature_start
 
   function_signature_start:
@@ -743,7 +736,7 @@ contexts:
   ### Type classes, instances, and standalone deriving ###
 
   type_class:
-    - match: '^(\s*)(class|instance){{post_non_ident}}'
+    - match: '^({{INDENTATION}})(class|instance){{post_non_ident}}'
       captures:
         2: keyword.control.type.haskell
       push:
@@ -757,9 +750,7 @@ contexts:
     # TODO: type families/instances
 
   type_class_body:
-    # TODO: change back to pop_when_deindent
-    - match: '^(?!\s)'
-      pop: true
+    - include: pop_when_deindent
     # TODO: Type/data families
     - include: function
 
