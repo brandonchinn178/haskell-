@@ -1,1 +1,4 @@
 .DS_Store
+
+# Remove when no longer generating
+Haskell-Syntax.sublime-syntax
