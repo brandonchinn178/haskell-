@@ -13,6 +13,7 @@ https://forum.sublimetext.com/t/syntax-definition-explicitly-specify-backref-con
 
 import yaml
 from pathlib import Path
+from typing import Any, Callable
 
 HERE = Path(__file__).parent
 TEMPLATE = HERE / "Haskell-Syntax.template.sublime-syntax"
@@ -169,32 +170,10 @@ def get_indented_contexts(contexts: dict[ContextName, Patterns]) -> set[ContextN
 def get_contexts_in_pattern(pattern: Pattern) -> list[ContextName]:
     contexts = []
 
-    pattern_include = pattern.get("include")
-    if pattern_include:
-        contexts.append(pattern_include)
-
-    pattern_match = pattern.get("match")
-    if pattern_match:
-        pattern_embed = pattern.get("embed")
-        if pattern_embed:
-            contexts.append(pattern_embed)
-
-        contexts.extend(pattern.get("branch", []))
-
-        for key in ["push", "set"]:
-            pattern_next = pattern.get(key)
-            if pattern_next is None:
-                continue
-            if isinstance(pattern_next, str):
-                contexts.append(pattern_next)
-            elif all(isinstance(p, str) for p in pattern_next):
-                contexts.extend(pattern_next)
-            else:
-                contexts.extend(
-                    p
-                    for pattern in pattern_next
-                    for p in get_contexts_in_pattern(pattern)
-                )
+    transform_pattern(
+        pattern,
+        on_subcontext=contexts.append,
+    )
 
     return contexts
 
@@ -202,52 +181,53 @@ def get_contexts_in_pattern(pattern: Pattern) -> list[ContextName]:
 
 # TODO(extraneous): fix when this context is duplicated but pushed context isn't
 def pattern_with_indent(pattern: dict, indent: int) -> dict:
+    return transform_pattern(
+        pattern,
+        on_subcontext=lambda context: name_with_indent(context, indent),
+    )
+
+def transform_pattern(
+    pattern: Pattern,
+    *,
+    on_subcontext: Callable[[ContextName], Any],
+) -> dict:
+    new_pattern = {}
+
     pattern_include = pattern.get("include")
     if pattern_include:
-        return {
-            "include": name_with_indent(pattern_include, indent),
-        }
+        new_pattern["include"] = on_subcontext(pattern_include)
 
     pattern_match = pattern.get("match")
     if pattern_match:
-        new_pattern = pattern.copy()
-
         pattern_embed = pattern.get("embed")
         if pattern_embed:
-            new_pattern["embed"] = name_with_indent(pattern_embed, indent)
+            new_pattern["embed"] = on_subcontext(pattern_embed)
 
-        pattern_branch = pattern.get("branch")
-        if pattern_branch:
+        pattern_branches = pattern.get("branch")
+        if pattern_branches:
             new_pattern["branch"] = [
-                name_with_indent(branch, indent)
-                for branch in pattern_branch
+                on_subcontext(pattern_branch)
+                for pattern_branch in pattern_branches
             ]
 
         for key in ["push", "set"]:
             pattern_next = pattern.get(key)
-            if not pattern_next:
+            if pattern_next is None:
                 continue
             if isinstance(pattern_next, str):
-                new_pattern[key] = name_with_indent(pattern_next, indent)
+                new_pattern[key] = on_subcontext(pattern_next)
             elif all(isinstance(p, str) for p in pattern_next):
                 new_pattern[key] = [
-                    name_with_indent(p, indent)
+                    on_subcontext(p)
                     for p in pattern_next
                 ]
             else:
                 new_pattern[key] = [
-                    pattern_with_indent(p, indent)
+                    transform_pattern(p, on_subcontext=on_subcontext)
                     for p in pattern_next
                 ]
 
-        # TODO(extraneous): fix when this context is duplicated but the branch point isn't
-        pattern_fail = pattern.get("fail")
-        if pattern_fail:
-            new_pattern["fail"] = name_with_indent(pattern_fail, indent)
-
-        return new_pattern
-
-    return pattern
+    return { **pattern, **new_pattern }
 
 ### YAML ###
 

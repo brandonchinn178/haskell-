@@ -77,6 +77,9 @@ data Foo a b
 --  ^^^^ entity.name.constructor.haskell
 --       ^ variable.other.type.haskell
 
+-- TODO
+-- data SomeTable = forall (status :: TableStatus). SomeTable (Table status)
+
 data SomeFoo = forall a. Foo a => SomeFoo a
 --   ^^^^^^^ storage.type.haskell
 --           ^ keyword.control.definition.haskell
