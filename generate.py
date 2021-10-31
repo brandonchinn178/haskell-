@@ -13,7 +13,7 @@ https://forum.sublimetext.com/t/syntax-definition-explicitly-specify-backref-con
 
 import yaml
 from pathlib import Path
-from typing import Any, Callable, Optional
+from typing import Any, Optional
 
 HERE = Path(__file__).parent
 TEMPLATE = HERE / "Haskell-Syntax.template.sublime-syntax"
@@ -23,6 +23,10 @@ MAX_INDENTATION = 40
 INDENTATIONS = list(range(0, MAX_INDENTATION + 1))[::-1]
 
 INDENTATION_MARKER = "{{INDENTATION}}"
+
+Pattern = dict
+Patterns = list[Pattern]
+ContextName = str
 
 def main():
     # read in old data
@@ -39,6 +43,13 @@ def main():
             branch_point = pattern.get("branch_point")
             if branch_point:
                 branch_points_to_duplicate.add(branch_point)
+
+    def pattern_with_indent(pattern, indent):
+        return PatternVisitorIndent.run(
+            pattern,
+            indent=indent,
+            branch_points_to_duplicate=branch_points_to_duplicate,
+        )
 
     new_contexts = {}
     def _add_new_context(context_name, indent, patterns):
@@ -67,11 +78,7 @@ def main():
                 if INDENTATION_MARKER in pattern_match:
                     # TODO(nested-indent): handle when `indent is not None`
                     for indent_inner in INDENTATIONS:
-                        new_pattern = pattern_with_indent(
-                            pattern,
-                            indent_inner,
-                            branch_points_to_duplicate=branch_points_to_duplicate,
-                        )
+                        new_pattern = pattern_with_indent(pattern, indent_inner)
                         new_pattern["match"] = pattern_match.replace(
                             INDENTATION_MARKER,
                             # special case; '\s{0}' doesn't seem to work here
@@ -79,11 +86,7 @@ def main():
                         )
                         new_patterns.append(new_pattern)
                 else:
-                    new_pattern = pattern_with_indent(
-                        pattern,
-                        indent,
-                        branch_points_to_duplicate=branch_points_to_duplicate,
-                    )
+                    new_pattern = pattern_with_indent(pattern, indent)
                     new_patterns.append(new_pattern)
 
             _add_new_context(context, indent, new_patterns)
@@ -114,10 +117,6 @@ def indent_regex(indent: int) -> str:
     return r"\s{%d}" % indent
 
 ### Finding indented contexts ###
-
-Pattern = dict
-Patterns = list[Pattern]
-ContextName = str
 
 def get_indented_contexts(contexts: dict[ContextName, Patterns]) -> set[ContextName]:
     indented_contexts = set()
@@ -151,93 +150,102 @@ def get_indented_contexts(contexts: dict[ContextName, Patterns]) -> set[ContextN
                 next_path = path
 
             context_queue.extend(
-                (next_context, next_path)
-                for next_context in get_contexts_in_pattern(pattern)
+                (subcontext, next_path)
+                for subcontext in PatternVisitorGetSubcontexts.run(pattern)
             )
 
     return indented_contexts
 
-def get_contexts_in_pattern(pattern: Pattern) -> list[ContextName]:
-    contexts = []
-
-    transform_pattern(
-        pattern,
-        on_subcontext=contexts.append,
-    )
-
-    return contexts
-
 ### Pattern ###
 
-# TODO(extraneous): fix when this context is duplicated but pushed context isn't
-def pattern_with_indent(
-    pattern: dict,
-    indent: Optional[int],
-    *,
-    branch_points_to_duplicate: list[str],
-) -> dict:
-    if indent is None:
-        return pattern
+class PatternVisitor:
+    def on_subcontext(self, subcontext: ContextName) -> Any:
+        return subcontext
 
-    new_pattern = transform_pattern(
-        pattern,
-        on_subcontext=lambda context: name_with_indent(context, indent),
-    )
+    def on_branch_label(self, branch_label: str) -> Any:
+        return branch_label
+
+    def _run(self, pattern: Pattern) -> dict:
+        new_pattern = {}
+
+        pattern_include = pattern.get("include")
+        if pattern_include:
+            new_pattern["include"] = self.on_subcontext(pattern_include)
+
+        pattern_match = pattern.get("match")
+        if pattern_match:
+            pattern_embed = pattern.get("embed")
+            if pattern_embed:
+                new_pattern["embed"] = self.on_subcontext(pattern_embed)
+
+            pattern_branches = pattern.get("branch")
+            if pattern_branches:
+                new_pattern["branch"] = [
+                    self.on_subcontext(pattern_branch)
+                    for pattern_branch in pattern_branches
+                ]
+
+            branch_point = pattern.get("branch_point")
+            if branch_point:
+                new_pattern["branch_point"] = self.on_branch_label(branch_point)
+
+            branch_fail = pattern.get("fail")
+            if branch_fail:
+                new_pattern["fail"] = self.on_branch_label(branch_fail)
+
+            for key in ["push", "set"]:
+                pattern_next = pattern.get(key)
+                if pattern_next is None:
+                    continue
+                if isinstance(pattern_next, str):
+                    new_pattern[key] = self.on_subcontext(pattern_next)
+                elif all(isinstance(p, str) for p in pattern_next):
+                    new_pattern[key] = [self.on_subcontext(p) for p in pattern_next]
+                else:
+                    new_pattern[key] = [self._run(p) for p in pattern_next]
+
+        return { **pattern, **new_pattern }
+
+class PatternVisitorGetSubcontexts(PatternVisitor):
+    @classmethod
+    def run(cls, pattern: Pattern) -> list[ContextName]:
+        visitor = cls()
+        visitor._run(pattern)
+        return visitor._subcontexts
+
+    def __init__(self):
+        self._subcontexts = []
+
+    def on_subcontext(self, subcontext: ContextName):
+        self._subcontexts.append(subcontext)
+
+class PatternVisitorIndent(PatternVisitor):
+    @classmethod
+    def run(cls, pattern: Pattern, **kwargs) -> dict:
+        visitor = cls(**kwargs)
+        if visitor._indent is None:
+            return pattern
+        return visitor._run(pattern)
+
+    def __init__(
+        self,
+        *,
+        indent: Optional[int],
+        branch_points_to_duplicate: set[str],
+    ):
+        self._indent = indent
+        self._branch_points_to_duplicate = branch_points_to_duplicate
+
+    # TODO(extraneous): fix when this context is duplicated but pushed context isn't
+    def on_subcontext(self, context_name: ContextName) -> ContextName:
+        return name_with_indent(context_name, self._indent)
 
     # TODO(nested-indent): generalize this to set indentation of branch_point
     # to the appropriate indentation, instead of the current indentation
-    branch_point = new_pattern.get("branch_point")
-    if branch_point and branch_point in branch_points_to_duplicate:
-        new_pattern["branch_point"] = name_with_indent(branch_point, indent)
-
-    branch_fail = new_pattern.get("fail")
-    if branch_fail and branch_fail in branch_points_to_duplicate:
-        new_pattern["fail"] = name_with_indent(branch_fail, indent)
-
-    return new_pattern
-
-def transform_pattern(
-    pattern: Pattern,
-    *,
-    on_subcontext: Callable[[ContextName], Any],
-) -> dict:
-    new_pattern = {}
-
-    pattern_include = pattern.get("include")
-    if pattern_include:
-        new_pattern["include"] = on_subcontext(pattern_include)
-
-    pattern_match = pattern.get("match")
-    if pattern_match:
-        pattern_embed = pattern.get("embed")
-        if pattern_embed:
-            new_pattern["embed"] = on_subcontext(pattern_embed)
-
-        pattern_branches = pattern.get("branch")
-        if pattern_branches:
-            new_pattern["branch"] = [
-                on_subcontext(pattern_branch)
-                for pattern_branch in pattern_branches
-            ]
-
-        for key in ["push", "set"]:
-            pattern_next = pattern.get(key)
-            if pattern_next is None:
-                continue
-            if isinstance(pattern_next, str):
-                new_pattern[key] = on_subcontext(pattern_next)
-            elif all(isinstance(p, str) for p in pattern_next):
-                new_pattern[key] = [
-                    on_subcontext(p)
-                    for p in pattern_next
-                ]
-            else:
-                new_pattern[key] = [
-                    transform_pattern(p, on_subcontext=on_subcontext)
-                    for p in pattern_next
-                ]
-
-    return { **pattern, **new_pattern }
+    def on_branch_label(self, branch_label: str) -> str:
+        if branch_label not in self._branch_points_to_duplicate:
+            return super().on_branch_label(branch_label)
+        return name_with_indent(branch_label, self._indent)
 
 ### YAML ###
 
