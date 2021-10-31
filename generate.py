@@ -13,7 +13,7 @@ https://forum.sublimetext.com/t/syntax-definition-explicitly-specify-backref-con
 
 import yaml
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, Optional
 
 HERE = Path(__file__).parent
 TEMPLATE = HERE / "Haskell-Syntax.template.sublime-syntax"
@@ -62,30 +62,16 @@ def main():
         for indent in indentations:
             new_patterns = []
 
-            def _pattern_with_indent(pattern, indent):
-                if indent is None:
-                    return pattern
-
-                new_pattern = pattern_with_indent(pattern, indent)
-
-                # TODO(nested-indent): generalize this to set indentation of branch_point
-                # to the appropriate indentation, instead of the current indentation
-                branch_point = new_pattern.get("branch_point")
-                if branch_point and branch_point in branch_points_to_duplicate:
-                    new_pattern["branch_point"] = name_with_indent(branch_point, indent)
-
-                branch_fail = new_pattern.get("fail")
-                if branch_fail and branch_fail in branch_points_to_duplicate:
-                    new_pattern["fail"] = name_with_indent(branch_fail, indent)
-
-                return new_pattern
-
             for pattern in patterns:
                 pattern_match = pattern.get("match", "")
                 if INDENTATION_MARKER in pattern_match:
                     # TODO(nested-indent): handle when `indent is not None`
                     for indent_inner in INDENTATIONS:
-                        new_pattern = _pattern_with_indent(pattern, indent_inner)
+                        new_pattern = pattern_with_indent(
+                            pattern,
+                            indent_inner,
+                            branch_points_to_duplicate=branch_points_to_duplicate,
+                        )
                         new_pattern["match"] = pattern_match.replace(
                             INDENTATION_MARKER,
                             # special case; '\s{0}' doesn't seem to work here
@@ -93,7 +79,11 @@ def main():
                         )
                         new_patterns.append(new_pattern)
                 else:
-                    new_pattern = _pattern_with_indent(pattern, indent)
+                    new_pattern = pattern_with_indent(
+                        pattern,
+                        indent,
+                        branch_points_to_duplicate=branch_points_to_duplicate,
+                    )
                     new_patterns.append(new_pattern)
 
             _add_new_context(context, indent, new_patterns)
@@ -180,11 +170,31 @@ def get_contexts_in_pattern(pattern: Pattern) -> list[ContextName]:
 ### Pattern ###
 
 # TODO(extraneous): fix when this context is duplicated but pushed context isn't
-def pattern_with_indent(pattern: dict, indent: int) -> dict:
-    return transform_pattern(
+def pattern_with_indent(
+    pattern: dict,
+    indent: Optional[int],
+    *,
+    branch_points_to_duplicate: list[str],
+) -> dict:
+    if indent is None:
+        return pattern
+
+    new_pattern = transform_pattern(
         pattern,
         on_subcontext=lambda context: name_with_indent(context, indent),
     )
+
+    # TODO(nested-indent): generalize this to set indentation of branch_point
+    # to the appropriate indentation, instead of the current indentation
+    branch_point = new_pattern.get("branch_point")
+    if branch_point and branch_point in branch_points_to_duplicate:
+        new_pattern["branch_point"] = name_with_indent(branch_point, indent)
+
+    branch_fail = new_pattern.get("fail")
+    if branch_fail and branch_fail in branch_points_to_duplicate:
+        new_pattern["fail"] = name_with_indent(branch_fail, indent)
+
+    return new_pattern
 
 def transform_pattern(
     pattern: Pattern,
