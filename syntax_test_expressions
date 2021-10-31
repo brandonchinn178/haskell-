@@ -29,10 +29,11 @@ foo = do
     '(Prelude.+)
 --  ^^^^^^^^^^^^ variable.other.constant.name.haskell
 
-  let r = Record
-        { a = 1
-        , b = 2
-        }
+  -- TODO: record construction
+  -- let r = Record
+  --       { a = 1
+  --       , b = 2
+  --       }
 
   let x = Data.Text.unpack foo
 --        ^^^^^^^^^^ storage.module.haskell
