@@ -13,7 +13,7 @@ https://forum.sublimetext.com/t/syntax-definition-explicitly-specify-backref-con
 
 import yaml
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, NamedTuple, Optional
 
 HERE = Path(__file__).parent
 TEMPLATE = HERE / "Haskell-Syntax.template.sublime-syntax"
@@ -27,28 +27,20 @@ INDENTATION_MARKER = "{{INDENTATION}}"
 Pattern = dict
 Patterns = list[Pattern]
 ContextName = str
+BranchLabel = str
 
 def main():
     # read in old data
     data = decode_yaml(TEMPLATE.read_text())
-    old_contexts = data["contexts"]
 
     # find all indented contexts
-    indented_contexts = get_indented_contexts(old_contexts)
-
-    # find all branch points within duplicated context
-    branch_points_to_duplicate = set()
-    for context in indented_contexts:
-        for pattern in old_contexts[context]:
-            branch_point = pattern.get("branch_point")
-            if branch_point:
-                branch_points_to_duplicate.add(branch_point)
+    indented_contexts = IndentedContexts.load(data)
 
     def pattern_with_indent(pattern, indent):
         return PatternVisitorIndent.run(
             pattern,
             indent=indent,
-            branch_points_to_duplicate=branch_points_to_duplicate,
+            branch_points_to_duplicate=indented_contexts.branch_points,
         )
 
     new_contexts = {}
@@ -57,7 +49,7 @@ def main():
             context_name = name_with_indent(context_name, indent)
         new_contexts[context_name] = patterns
 
-    for context, patterns in old_contexts.items():
+    for context, patterns in data["contexts"].items():
         # duplicate "pop_when_deindent" manually
         if context == "pop_when_deindent":
             for i in INDENTATIONS:
@@ -69,7 +61,7 @@ def main():
                 ])
             continue
 
-        indentations = INDENTATIONS if context in indented_contexts else [None]
+        indentations = INDENTATIONS if context in indented_contexts.names else [None]
         for indent in indentations:
             new_patterns = []
 
@@ -118,43 +110,59 @@ def indent_regex(indent: int) -> str:
 
 ### Finding indented contexts ###
 
-def get_indented_contexts(contexts: dict[ContextName, Patterns]) -> set[ContextName]:
-    indented_contexts = set()
+class IndentedContexts(NamedTuple):
+    names: set[ContextName]
+    branch_points: set[BranchLabel]
 
-    context_queue = [("main", None), ("prototype", None)]
-    seen = set()
-    while len(context_queue) > 0:
-        context, path = context_queue.pop(0)
+    @classmethod
+    def load(cls, data: dict) -> "IndentedContexts":
+        indented_context_names = set()
+        context_to_branch_point = {}
 
-        if context in indented_contexts:
-            indented_contexts.update(path or [])
-            continue
+        context_queue = [("main", None), ("prototype", None)]
+        seen = set()
+        while len(context_queue) > 0:
+            context, path = context_queue.pop(0)
 
-        # check cycles
-        node = (context, None if path is None else tuple(path))
-        if (node in seen) or (path and context in path):
-            continue
-        seen.add(node)
+            if context in indented_context_names:
+                indented_context_names.update(path or [])
+                continue
 
-        path = None if path is None else path + [context]
-        for pattern in contexts[context]:
-            if pattern.get("include") == "pop_when_deindent":
-                indented_contexts.update(path or [])
+            # check cycles
+            node = (context, None if path is None else tuple(path))
+            if (node in seen) or (path and context in path):
+                continue
+            seen.add(node)
 
-            # TODO(nested-indent): when matching indentation within indented context,
-            # nest indentation indicators; e.g. `function_signature_start__2__4`, so
-            # that we can use 'function__2' as a branch point
-            if INDENTATION_MARKER in pattern.get("match", "") and path is None:
-                next_path = []
-            else:
-                next_path = path
+            path = None if path is None else path + [context]
+            for pattern in data["contexts"][context]:
+                if pattern.get("include") == "pop_when_deindent":
+                    indented_context_names.update(path or [])
 
-            context_queue.extend(
-                (subcontext, next_path)
-                for subcontext in PatternVisitorGetSubcontexts.run(pattern)
-            )
+                branch_point = pattern.get("branch_point")
+                if branch_point:
+                    context_to_branch_point[context] = branch_point
 
-    return indented_contexts
+                # TODO(nested-indent): when matching indentation within indented context,
+                # nest indentation indicators; e.g. `function_signature_start__2__4`, so
+                # that we can use 'function__2' as a branch point
+                if INDENTATION_MARKER in pattern.get("match", "") and path is None:
+                    next_path = []
+                else:
+                    next_path = path
+
+                context_queue.extend(
+                    (subcontext, next_path)
+                    for subcontext in PatternVisitorGetSubcontexts.run(pattern)
+                )
+
+        branch_points = {
+            context_to_branch_point[context]
+            for context in indented_context_names
+            if context in context_to_branch_point
+        }
+
+        return cls(indented_context_names, branch_points)
 
 ### Pattern ###
 
@@ -162,7 +170,7 @@ class PatternVisitor:
     def on_subcontext(self, subcontext: ContextName) -> Any:
         return subcontext
 
-    def on_branch_label(self, branch_label: str) -> Any:
+    def on_branch_label(self, branch_label: BranchLabel) -> Any:
         return branch_label
 
     def _run(self, pattern: Pattern) -> dict:
@@ -231,7 +239,7 @@ class PatternVisitorIndent(PatternVisitor):
         self,
         *,
         indent: Optional[int],
-        branch_points_to_duplicate: set[str],
+        branch_points_to_duplicate: set[BranchLabel],
     ):
         self._indent = indent
         self._branch_points_to_duplicate = branch_points_to_duplicate
@@ -242,7 +250,7 @@ class PatternVisitorIndent(PatternVisitor):
 
     # TODO(nested-indent): generalize this to set indentation of branch_point
     # to the appropriate indentation, instead of the current indentation
-    def on_branch_label(self, branch_label: str) -> str:
+    def on_branch_label(self, branch_label: BranchLabel) -> BranchLabel:
         if branch_label not in self._branch_points_to_duplicate:
             return super().on_branch_label(branch_label)
         return name_with_indent(branch_label, self._indent)
