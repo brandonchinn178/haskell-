@@ -40,6 +40,7 @@ def main():
         return PatternVisitorIndent.run(
             pattern,
             indent=indent,
+            contexts_to_duplicate=indented_contexts.names,
             branch_points_to_duplicate=indented_contexts.branch_points,
         )
 
@@ -91,17 +92,8 @@ def main():
 ### Indentation strings ###
 
 def name_with_indent(name: str, indent: int) -> str:
-    # TODO(extraneous): remove this manual workaround
-    if name in (
-        "data_type_record",
-        "expression",
-        "function",
-        "import_list",
-        "module_header_line",
-        "pattern_match",
-        "pattern_match_record",
-        "type",
-    ):
+    # TODO(nested-indent): remove workaround
+    if name == "function":
         return name
 
     return f"{name}__{indent}"
@@ -117,7 +109,7 @@ class IndentedContexts(NamedTuple):
 
     @classmethod
     def load(cls, data: dict) -> "IndentedContexts":
-        indented_context_names = set()
+        indented_context_names = {"pop_when_deindent"}
         context_to_branch_point = {}
 
         context_queue = [("main", None), ("prototype", None)]
@@ -240,13 +232,16 @@ class PatternVisitorIndent(PatternVisitor):
         self,
         *,
         indent: Optional[int],
+        contexts_to_duplicate: set[ContextName],
         branch_points_to_duplicate: set[BranchLabel],
     ):
         self._indent = indent
+        self._contexts_to_duplicate = contexts_to_duplicate
         self._branch_points_to_duplicate = branch_points_to_duplicate
 
-    # TODO(extraneous): fix when this context is duplicated but pushed context isn't
     def on_subcontext(self, context_name: ContextName) -> ContextName:
+        if context_name not in self._contexts_to_duplicate:
+            return super().on_subcontext(context_name)
         return name_with_indent(context_name, self._indent)
 
     # TODO(nested-indent): generalize this to set indentation of branch_point
