@@ -11,6 +11,7 @@ indentation hardcoded.
 https://forum.sublimetext.com/t/syntax-definition-explicitly-specify-backref-context/60899
 """
 
+import functools
 import yaml
 from pathlib import Path
 from typing import Any, NamedTuple, Optional
@@ -36,13 +37,11 @@ def main():
     # find all indented contexts
     indented_contexts = IndentedContexts.load(data)
 
-    def _pattern_with_indent(pattern, indent):
-        return PatternVisitorIndent.run(
-            pattern,
-            indent=indent,
-            contexts_to_duplicate=indented_contexts.names,
-            branch_points_to_duplicate=indented_contexts.branch_points,
-        )
+    _pattern_with_indent = functools.partial(
+        PatternVisitorIndent.run,
+        contexts_to_duplicate=indented_contexts.names,
+        branch_points_to_duplicate=indented_contexts.branch_points,
+    )
 
     new_contexts = {}
     def _add_new_context(context_name, indent, patterns):
@@ -103,6 +102,14 @@ def indent_regex(indent: int) -> str:
 
 ### Finding indented contexts ###
 
+# If the context is in an indented state, this represents the path
+# from the context that initially added indentation to the current
+# context, to be saved if we ever encounter a "pop_when_deindent"
+# context.
+#
+# None if we're currently along a path that isn't indented yet
+IndentedContextPath = Optional[list[ContextName]]
+
 class IndentedContexts(NamedTuple):
     names: set[ContextName]
     branch_points: set[BranchLabel]
@@ -112,7 +119,10 @@ class IndentedContexts(NamedTuple):
         indented_context_names = {"pop_when_deindent"}
         context_to_branch_point = {}
 
-        context_queue = [("main", None), ("prototype", None)]
+        context_queue: list[tuple[ContextName, IndentedContextPath]] = [
+            ("main", None),
+            ("prototype", None),
+        ]
         seen = set()
         while len(context_queue) > 0:
             context, path = context_queue.pop(0)
@@ -129,9 +139,6 @@ class IndentedContexts(NamedTuple):
 
             path = None if path is None else path + [context]
             for pattern in data["contexts"][context]:
-                if pattern.get("include") == "pop_when_deindent":
-                    indented_context_names.update(path or [])
-
                 branch_point = pattern.get("branch_point")
                 if branch_point:
                     context_to_branch_point[context] = branch_point
@@ -139,6 +146,7 @@ class IndentedContexts(NamedTuple):
                 # TODO(nested-indent): when matching indentation within indented context,
                 # nest indentation indicators; e.g. `function_signature_start__2__4`, so
                 # that we can use 'function__2' as a branch point
+                next_path: IndentedContextPath
                 if INDENTATION_MARKER in pattern.get("match", "") and path is None:
                     next_path = []
                 else:
@@ -222,16 +230,15 @@ class PatternVisitorGetSubcontexts(PatternVisitor):
 
 class PatternVisitorIndent(PatternVisitor):
     @classmethod
-    def run(cls, pattern: Pattern, **kwargs) -> dict:
-        visitor = cls(**kwargs)
-        if visitor._indent is None:
+    def run(cls, pattern: Pattern, indent: Optional[int], **kwargs) -> dict:
+        if indent is None:
             return pattern
-        return visitor._run(pattern)
+        return cls(indent=indent, **kwargs)._run(pattern)
 
     def __init__(
         self,
         *,
-        indent: Optional[int],
+        indent: int,
         contexts_to_duplicate: set[ContextName],
         branch_points_to_duplicate: set[BranchLabel],
     ):
