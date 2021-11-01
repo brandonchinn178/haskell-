@@ -36,7 +36,7 @@ def main():
     # find all indented contexts
     indented_contexts = IndentedContexts.load(data)
 
-    def pattern_with_indent(pattern, indent):
+    def _pattern_with_indent(pattern, indent):
         return PatternVisitorIndent.run(
             pattern,
             indent=indent,
@@ -49,6 +49,7 @@ def main():
             context_name = name_with_indent(context_name, indent)
         new_contexts[context_name] = patterns
 
+    # generate new contexts
     for context, patterns in data["contexts"].items():
         # duplicate "pop_when_deindent" manually
         if context == "pop_when_deindent":
@@ -70,7 +71,7 @@ def main():
                 if INDENTATION_MARKER in pattern_match:
                     # TODO(nested-indent): handle when `indent is not None`
                     for indent_inner in INDENTATIONS:
-                        new_pattern = pattern_with_indent(pattern, indent_inner)
+                        new_pattern = _pattern_with_indent(pattern, indent_inner)
                         new_pattern["match"] = pattern_match.replace(
                             INDENTATION_MARKER,
                             # special case; '\s{0}' doesn't seem to work here
@@ -78,7 +79,7 @@ def main():
                         )
                         new_patterns.append(new_pattern)
                 else:
-                    new_pattern = pattern_with_indent(pattern, indent)
+                    new_pattern = _pattern_with_indent(pattern, indent)
                     new_patterns.append(new_pattern)
 
             _add_new_context(context, indent, new_patterns)
