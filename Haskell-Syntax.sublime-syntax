@@ -22,6 +22,7 @@ variables:
 contexts:
   prototype:
     - include: comment
+    - include: cpp
 
   main:
     - include: module_header
@@ -761,3 +762,12 @@ contexts:
       pop: true
     # TODO: Type/data families
     - include: function
+
+  ### CPP ###
+
+  cpp:
+    - match: '#(if|elif|else|endif)\b'
+      push:
+        - meta_scope: meta.preprocessor.haskell
+        - match: \n
+          pop: true

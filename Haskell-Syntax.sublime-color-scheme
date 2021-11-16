@@ -28,6 +28,7 @@
     "constant": "var(blue)",
     "constructor": "var(teal)",
     "constructor_record_field": "var(orange_light)",
+    "cpp": "var(red)",
     "error": "var(orange)",
     "import_type_members_punctuation": "var(green)",
     "invalid": "var(red)",
@@ -75,6 +76,7 @@
     { "scope": "string", "foreground": "var(string)" },
     { "scope": "constant", "foreground": "var(constant)" },
     { "scope": "invalid", "foreground": "var(invalid)" },
+    { "scope": "meta.preprocessor", "foreground": "var(cpp)", "font_style": "italic" },
 
     // Pragmas
     {
