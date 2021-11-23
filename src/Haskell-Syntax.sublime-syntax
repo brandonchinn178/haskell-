@@ -2158,6 +2158,7 @@ contexts:
   - branch:
     - function_signature__0
     - function_definition__0
+    - operator_definition__0
     branch_point: function
     match: ^(?=\s*\S)
   function_definition__0:
@@ -9052,366 +9053,530 @@ contexts:
   - meta_content_scope: 'meta.function.parameters.haskell
 
       meta.pattern.haskell'
+  - include: function_definition_params_base__0
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__1:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__1
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__10:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__10
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__11:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__11
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__12:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__12
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__13:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__13
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__14:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__14
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__15:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__15
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__16:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__16
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__17:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__17
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__18:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__18
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__19:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__19
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__2:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__2
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__20:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__20
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__21:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__21
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__22:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__22
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__23:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__23
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__24:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__24
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__25:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__25
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__26:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__26
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__27:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__27
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__28:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__28
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__29:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__29
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__3:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__3
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__30:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__30
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__31:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__31
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__32:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__32
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__33:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__33
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__34:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__34
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__35:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__35
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__36:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__36
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__37:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__37
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__38:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__38
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__39:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__39
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__4:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__4
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__40:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__40
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__5:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__5
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__6:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__6
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__7:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__7
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__8:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__8
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params__9:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__9
+  - fail: function
+    match: '{{operator}}'
+  function_definition_params_base__0:
   - include: pop_when_deindent__0
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__0
   - include: pattern_match
-  function_definition_params__1:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__1:
   - include: pop_when_deindent__1
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__1
   - include: pattern_match
-  function_definition_params__10:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__10:
   - include: pop_when_deindent__10
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__10
   - include: pattern_match
-  function_definition_params__11:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__11:
   - include: pop_when_deindent__11
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__11
   - include: pattern_match
-  function_definition_params__12:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__12:
   - include: pop_when_deindent__12
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__12
   - include: pattern_match
-  function_definition_params__13:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__13:
   - include: pop_when_deindent__13
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__13
   - include: pattern_match
-  function_definition_params__14:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__14:
   - include: pop_when_deindent__14
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__14
   - include: pattern_match
-  function_definition_params__15:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__15:
   - include: pop_when_deindent__15
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__15
   - include: pattern_match
-  function_definition_params__16:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__16:
   - include: pop_when_deindent__16
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__16
   - include: pattern_match
-  function_definition_params__17:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__17:
   - include: pop_when_deindent__17
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__17
   - include: pattern_match
-  function_definition_params__18:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__18:
   - include: pop_when_deindent__18
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__18
   - include: pattern_match
-  function_definition_params__19:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__19:
   - include: pop_when_deindent__19
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__19
   - include: pattern_match
-  function_definition_params__2:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__2:
   - include: pop_when_deindent__2
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__2
   - include: pattern_match
-  function_definition_params__20:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__20:
   - include: pop_when_deindent__20
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__20
   - include: pattern_match
-  function_definition_params__21:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__21:
   - include: pop_when_deindent__21
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__21
   - include: pattern_match
-  function_definition_params__22:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__22:
   - include: pop_when_deindent__22
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__22
   - include: pattern_match
-  function_definition_params__23:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__23:
   - include: pop_when_deindent__23
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__23
   - include: pattern_match
-  function_definition_params__24:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__24:
   - include: pop_when_deindent__24
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__24
   - include: pattern_match
-  function_definition_params__25:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__25:
   - include: pop_when_deindent__25
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__25
   - include: pattern_match
-  function_definition_params__26:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__26:
   - include: pop_when_deindent__26
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__26
   - include: pattern_match
-  function_definition_params__27:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__27:
   - include: pop_when_deindent__27
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__27
   - include: pattern_match
-  function_definition_params__28:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__28:
   - include: pop_when_deindent__28
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__28
   - include: pattern_match
-  function_definition_params__29:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__29:
   - include: pop_when_deindent__29
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__29
   - include: pattern_match
-  function_definition_params__3:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__3:
   - include: pop_when_deindent__3
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__3
   - include: pattern_match
-  function_definition_params__30:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__30:
   - include: pop_when_deindent__30
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__30
   - include: pattern_match
-  function_definition_params__31:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__31:
   - include: pop_when_deindent__31
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__31
   - include: pattern_match
-  function_definition_params__32:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__32:
   - include: pop_when_deindent__32
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__32
   - include: pattern_match
-  function_definition_params__33:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__33:
   - include: pop_when_deindent__33
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__33
   - include: pattern_match
-  function_definition_params__34:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__34:
   - include: pop_when_deindent__34
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__34
   - include: pattern_match
-  function_definition_params__35:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__35:
   - include: pop_when_deindent__35
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__35
   - include: pattern_match
-  function_definition_params__36:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__36:
   - include: pop_when_deindent__36
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__36
   - include: pattern_match
-  function_definition_params__37:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__37:
   - include: pop_when_deindent__37
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__37
   - include: pattern_match
-  function_definition_params__38:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__38:
   - include: pop_when_deindent__38
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__38
   - include: pattern_match
-  function_definition_params__39:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__39:
   - include: pop_when_deindent__39
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__39
   - include: pattern_match
-  function_definition_params__4:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__4:
   - include: pop_when_deindent__4
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__4
   - include: pattern_match
-  function_definition_params__40:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__40:
   - include: pop_when_deindent__40
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__40
   - include: pattern_match
-  function_definition_params__5:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__5:
   - include: pop_when_deindent__5
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__5
   - include: pattern_match
-  function_definition_params__6:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__6:
   - include: pop_when_deindent__6
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__6
   - include: pattern_match
-  function_definition_params__7:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__7:
   - include: pop_when_deindent__7
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__7
   - include: pattern_match
-  function_definition_params__8:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__8:
   - include: pop_when_deindent__8
   - match: '='
     scope: keyword.other.function.definition.haskell
     set: function_definition_body__8
   - include: pattern_match
-  function_definition_params__9:
-  - meta_content_scope: 'meta.function.parameters.haskell
-
-      meta.pattern.haskell'
+  function_definition_params_base__9:
   - include: pop_when_deindent__9
   - match: '='
     scope: keyword.other.function.definition.haskell
@@ -14602,6 +14767,3696 @@ contexts:
   - match: \b(where)\b
     pop: true
     scope: keyword.control.context.haskell
+  operator_definition__0:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__1:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__10:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__11:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__12:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__13:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__14:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__15:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__16:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__17:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__18:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__19:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__2:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__20:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__21:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__22:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__23:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__24:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__25:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__26:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__27:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__28:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__29:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__3:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__30:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__31:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__32:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__33:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__34:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__35:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__36:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__37:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__38:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__39:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__4:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__40:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__5:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__6:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__7:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__8:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition__9:
+  - match: ^(\s{40})
+    set: operator_definition_params__40
+  - match: ^(\s{39})
+    set: operator_definition_params__39
+  - match: ^(\s{38})
+    set: operator_definition_params__38
+  - match: ^(\s{37})
+    set: operator_definition_params__37
+  - match: ^(\s{36})
+    set: operator_definition_params__36
+  - match: ^(\s{35})
+    set: operator_definition_params__35
+  - match: ^(\s{34})
+    set: operator_definition_params__34
+  - match: ^(\s{33})
+    set: operator_definition_params__33
+  - match: ^(\s{32})
+    set: operator_definition_params__32
+  - match: ^(\s{31})
+    set: operator_definition_params__31
+  - match: ^(\s{30})
+    set: operator_definition_params__30
+  - match: ^(\s{29})
+    set: operator_definition_params__29
+  - match: ^(\s{28})
+    set: operator_definition_params__28
+  - match: ^(\s{27})
+    set: operator_definition_params__27
+  - match: ^(\s{26})
+    set: operator_definition_params__26
+  - match: ^(\s{25})
+    set: operator_definition_params__25
+  - match: ^(\s{24})
+    set: operator_definition_params__24
+  - match: ^(\s{23})
+    set: operator_definition_params__23
+  - match: ^(\s{22})
+    set: operator_definition_params__22
+  - match: ^(\s{21})
+    set: operator_definition_params__21
+  - match: ^(\s{20})
+    set: operator_definition_params__20
+  - match: ^(\s{19})
+    set: operator_definition_params__19
+  - match: ^(\s{18})
+    set: operator_definition_params__18
+  - match: ^(\s{17})
+    set: operator_definition_params__17
+  - match: ^(\s{16})
+    set: operator_definition_params__16
+  - match: ^(\s{15})
+    set: operator_definition_params__15
+  - match: ^(\s{14})
+    set: operator_definition_params__14
+  - match: ^(\s{13})
+    set: operator_definition_params__13
+  - match: ^(\s{12})
+    set: operator_definition_params__12
+  - match: ^(\s{11})
+    set: operator_definition_params__11
+  - match: ^(\s{10})
+    set: operator_definition_params__10
+  - match: ^(\s{9})
+    set: operator_definition_params__9
+  - match: ^(\s{8})
+    set: operator_definition_params__8
+  - match: ^(\s{7})
+    set: operator_definition_params__7
+  - match: ^(\s{6})
+    set: operator_definition_params__6
+  - match: ^(\s{5})
+    set: operator_definition_params__5
+  - match: ^(\s{4})
+    set: operator_definition_params__4
+  - match: ^(\s{3})
+    set: operator_definition_params__3
+  - match: ^(\s{2})
+    set: operator_definition_params__2
+  - match: ^(\s{1})
+    set: operator_definition_params__1
+  - match: ^((?!\s))
+    set: operator_definition_params__0
+  operator_definition_params__0:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__0
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__1:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__1
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__10:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__10
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__11:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__11
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__12:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__12
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__13:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__13
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__14:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__14
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__15:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__15
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__16:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__16
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__17:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__17
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__18:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__18
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__19:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__19
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__2:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__2
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__20:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__20
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__21:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__21
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__22:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__22
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__23:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__23
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__24:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__24
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__25:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__25
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__26:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__26
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__27:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__27
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__28:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__28
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__29:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__29
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__3:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__3
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__30:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__30
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__31:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__31
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__32:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__32
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__33:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__33
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__34:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__34
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__35:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__35
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__36:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__36
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__37:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__37
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__38:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__38
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__39:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__39
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__4:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__4
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__40:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__40
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__5:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__5
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__6:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__6
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__7:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__7
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__8:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__8
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
+  operator_definition_params__9:
+  - meta_content_scope: 'meta.function.parameters.haskell
+
+      meta.pattern.haskell'
+  - include: function_definition_params_base__9
+  - match: '{{operator}}'
+    scope: entity.name.function.haskell
   pattern_match:
   - match: \b_{{post_non_ident}}
     scope: keyword.other.wildcard.haskell

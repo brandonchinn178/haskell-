@@ -97,11 +97,13 @@ test1, test2 :: Int
 --^ variable.function.signature.haskell
 --  ^^ keyword.other.function.signature.haskell
 --     ^^^ storage.type.haskell
+x + y = 42
 
 (#) :: Int -> Int -> Int
 --^ variable.function.signature.haskell
 --  ^^ keyword.other.function.signature.haskell
 --     ^^^ storage.type.haskell
+_ # y = 2 + y
 
 {--------------------------------------------------------------------------------
   MagicHash
@@ -118,7 +120,7 @@ x# = 42
 
 -- not magic hash; needs to be at the end
 x#a = 42
- -- <- meta.function.parameters.haskell meta.pattern.haskell
+-- <- variable.other.haskell
 
 {--------------------------------------------------------------------------------
   Check some valid identifiers

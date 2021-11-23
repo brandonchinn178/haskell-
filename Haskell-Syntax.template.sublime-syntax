@@ -344,6 +344,7 @@ contexts:
         # (nothing can go between the identifier and the '::')
         - function_signature
         - function_definition
+        - operator_definition
 
   function_definition:
     - match: '^({{INDENTATION}})({{lower_ident}})'
@@ -351,15 +352,20 @@ contexts:
         2: entity.name.function.haskell
       set: function_definition_params
 
-  function_definition_params:
-    - meta_content_scope: |-
-        meta.function.parameters.haskell
-        meta.pattern.haskell
+  function_definition_params_base:
     - include: pop_when_deindent
     - match: '='
       scope: keyword.other.function.definition.haskell
       set: function_definition_body
     - include: pattern_match
+
+  function_definition_params:
+    - meta_content_scope: |-
+        meta.function.parameters.haskell
+        meta.pattern.haskell
+    - include: function_definition_params_base
+    - match: '{{operator}}'
+      fail: function
 
   function_definition_body:
     - include: pop_when_deindent
@@ -395,6 +401,18 @@ contexts:
   function_signature_type:
     - include: pop_when_deindent
     - include: type
+
+  operator_definition:
+    - match: '^({{INDENTATION}})'
+      set: operator_definition_params
+
+  operator_definition_params:
+    - meta_content_scope: |-
+        meta.function.parameters.haskell
+        meta.pattern.haskell
+    - include: function_definition_params_base
+    - match: '{{operator}}'
+      scope: entity.name.function.haskell
 
   ### Expressions ###
 
