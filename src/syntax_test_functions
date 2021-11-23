@@ -100,7 +100,18 @@ test1, test2 :: Int
 --^ variable.function.signature.haskell
 --  ^^ keyword.other.function.signature.haskell
 --     ^^^ storage.type.haskell
-x + y = 42
+x + 1 = 10
+-- <- variable.other.haskell
+--^ entity.name.function.haskell
+--  ^ constant.numeric.integer.decimal.haskell
+
+(+) x y = 42
+-- <- entity.name.function.haskell
+ -- <- entity.name.function.haskell
+--^ entity.name.function.haskell
+--  ^ variable.other.haskell
+--    ^ variable.other.haskell
+--      ^ keyword.other.function.definition.haskell
 
 (#) :: Int -> Int -> Int
 --^ variable.function.signature.haskell

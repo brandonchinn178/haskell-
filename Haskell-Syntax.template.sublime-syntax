@@ -347,7 +347,7 @@ contexts:
         - operator_definition
 
   function_definition:
-    - match: '^({{INDENTATION}})({{lower_ident}})'
+    - match: '^({{INDENTATION}})({{lower_ident}}|\({{operator}}\))'
       captures:
         2: entity.name.function.haskell
       set: function_definition_params
