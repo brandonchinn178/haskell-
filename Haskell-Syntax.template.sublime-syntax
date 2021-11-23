@@ -10,12 +10,14 @@ variables:
   post_non_ident: |-
     (?=[^\w'])
   lower_ident: |-
-    \b[a-z_][\w']*{{post_non_ident}}
+    \b[a-z_][\w']*{{magic_hash}}{{post_non_ident}}
   upper_ident: |-
-    \b[A-Z][\w']*{{post_non_ident}}
+    \b[A-Z][\w']*{{magic_hash}}{{post_non_ident}}
   symbol_char: '[!#$%&*+./<=>?@\\^|\-~:]'
   operator: '(?!:){{symbol_char}}+'
   operator_con: ':{{symbol_char}}*'
+  # -XMagicHash
+  magic_hash: '#?'
 
   module_prefix: '({{upper_ident}}\.)*'
 

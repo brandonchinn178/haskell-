@@ -90,6 +90,23 @@ test1, test2 :: Int
 --     ^^^^^ variable.function.signature.haskell
 
 {--------------------------------------------------------------------------------
+  MagicHash
+--------------------------------------------------------------------------------}
+
+-- magic hash
+x# :: Int
+-- <- variable.function.signature.haskell
+ -- <- variable.function.signature.haskell
+-- ^^ keyword.other.function.signature.haskell
+--    ^^^ storage.type.haskell
+x# = 42
+ -- <- entity.name.function.haskell
+
+-- not magic hash; needs to be at the end
+x#a = 42
+ -- <- meta.function.parameters.haskell meta.pattern.haskell
+
+{--------------------------------------------------------------------------------
   Check some valid identifiers
 --------------------------------------------------------------------------------}
 

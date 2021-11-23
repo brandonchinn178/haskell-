@@ -15258,10 +15258,11 @@ file_extensions:
 name: Haskell Syntax
 scope: source.haskell
 variables:
-  lower_ident: \b[a-z_][\w']*{{post_non_ident}}
+  lower_ident: \b[a-z_][\w']*{{magic_hash}}{{post_non_ident}}
+  magic_hash: '#?'
   module_prefix: ({{upper_ident}}\.)*
   operator: (?!:){{symbol_char}}+
   operator_con: :{{symbol_char}}*
   post_non_ident: (?=[^\w'])
   symbol_char: '[!#$%&*+./<=>?@\\^|\-~:]'
-  upper_ident: \b[A-Z][\w']*{{post_non_ident}}
+  upper_ident: \b[A-Z][\w']*{{magic_hash}}{{post_non_ident}}
