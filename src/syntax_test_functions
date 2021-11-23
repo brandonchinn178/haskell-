@@ -9,6 +9,9 @@ addOne :: Int -> Int
 --            ^^ keyword.operator.type.haskell
 --               ^^^ storage.type.haskell
 
+addOne 0x0 = 1
+--     ^^^ meta.function.parameters.haskell meta.pattern.haskell constant.numeric.integer.hexadecimal.haskell
+
 addOne x = x + 1
 --^^^^ entity.name.function.haskell
 --     ^ meta.function.parameters.haskell meta.pattern.haskell variable.other.haskell

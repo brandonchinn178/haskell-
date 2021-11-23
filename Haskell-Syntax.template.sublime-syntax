@@ -651,6 +651,7 @@ contexts:
   ### Pattern matching ###
 
   pattern_match:
+    - include: expression_numeric
     - match: '\b_{{post_non_ident}}'
       scope: keyword.other.wildcard.haskell
     - match: '{{lower_ident}}'
