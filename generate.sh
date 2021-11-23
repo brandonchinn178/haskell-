@@ -2,11 +2,11 @@
 
 set -eux -o pipefail
 
-VENV_DIR=/tmp/venv
+VENV_DIR="${TMPDIR}/haskell-sublime-syntax-venv"
 if [[ ! -d "${VENV_DIR}" ]]; then
     python3 -m venv "${VENV_DIR}"
     "${VENV_DIR}/bin/pip" install PyYAML flake8 mypy
-    "${VENV_DIR}/bin/mypy" --install-types --non-interactive
+    "${VENV_DIR}/bin/mypy" --install-types --non-interactive .
 fi
 
 # run linting, but don't fail on failures
