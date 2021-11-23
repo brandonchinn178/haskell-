@@ -18,7 +18,7 @@ from typing import Any, NamedTuple, Optional
 
 HERE = Path(__file__).parent
 TEMPLATE = HERE / "Haskell-Syntax.template.sublime-syntax"
-OUTPUT = HERE / "Haskell-Syntax.sublime-syntax"
+OUTPUT = HERE / "src" / "Haskell-Syntax.sublime-syntax"
 
 MAX_INDENTATION = 40
 INDENTATIONS = list(range(0, MAX_INDENTATION + 1))[::-1]
