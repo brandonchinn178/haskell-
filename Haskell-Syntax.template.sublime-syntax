@@ -337,7 +337,7 @@ contexts:
   ### Functions ###
 
   function:
-    - match: '^(?=\s*{{lower_ident}})'
+    - match: '^(?=\s*\S)'
       branch_point: function
       branch:
         # try signature first, since it's easier to check if it fails
@@ -373,6 +373,9 @@ contexts:
   function_signature_start:
     - include: pop_when_deindent
     - match: '{{lower_ident}}'
+      scope: variable.function.signature.haskell
+      set: function_signature_sep
+    - match: '\({{operator}}\)'
       scope: variable.function.signature.haskell
       set: function_signature_sep
     - match: '\S'

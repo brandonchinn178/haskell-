@@ -2159,7 +2159,7 @@ contexts:
     - function_signature__0
     - function_definition__0
     branch_point: function
-    match: ^(?=\s*{{lower_ident}})
+    match: ^(?=\s*\S)
   function_definition__0:
   - captures:
       2: entity.name.function.haskell
@@ -13235,11 +13235,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__0
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__0
   - fail: function
     match: \S
   function_signature_start__1:
   - include: pop_when_deindent__1
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__1
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__1
   - fail: function
@@ -13249,11 +13255,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__10
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__10
   - fail: function
     match: \S
   function_signature_start__11:
   - include: pop_when_deindent__11
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__11
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__11
   - fail: function
@@ -13263,11 +13275,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__12
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__12
   - fail: function
     match: \S
   function_signature_start__13:
   - include: pop_when_deindent__13
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__13
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__13
   - fail: function
@@ -13277,11 +13295,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__14
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__14
   - fail: function
     match: \S
   function_signature_start__15:
   - include: pop_when_deindent__15
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__15
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__15
   - fail: function
@@ -13291,11 +13315,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__16
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__16
   - fail: function
     match: \S
   function_signature_start__17:
   - include: pop_when_deindent__17
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__17
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__17
   - fail: function
@@ -13305,11 +13335,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__18
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__18
   - fail: function
     match: \S
   function_signature_start__19:
   - include: pop_when_deindent__19
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__19
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__19
   - fail: function
@@ -13319,11 +13355,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__2
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__2
   - fail: function
     match: \S
   function_signature_start__20:
   - include: pop_when_deindent__20
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__20
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__20
   - fail: function
@@ -13333,11 +13375,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__21
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__21
   - fail: function
     match: \S
   function_signature_start__22:
   - include: pop_when_deindent__22
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__22
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__22
   - fail: function
@@ -13347,11 +13395,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__23
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__23
   - fail: function
     match: \S
   function_signature_start__24:
   - include: pop_when_deindent__24
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__24
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__24
   - fail: function
@@ -13361,11 +13415,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__25
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__25
   - fail: function
     match: \S
   function_signature_start__26:
   - include: pop_when_deindent__26
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__26
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__26
   - fail: function
@@ -13375,11 +13435,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__27
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__27
   - fail: function
     match: \S
   function_signature_start__28:
   - include: pop_when_deindent__28
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__28
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__28
   - fail: function
@@ -13389,11 +13455,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__29
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__29
   - fail: function
     match: \S
   function_signature_start__3:
   - include: pop_when_deindent__3
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__3
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__3
   - fail: function
@@ -13403,11 +13475,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__30
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__30
   - fail: function
     match: \S
   function_signature_start__31:
   - include: pop_when_deindent__31
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__31
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__31
   - fail: function
@@ -13417,11 +13495,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__32
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__32
   - fail: function
     match: \S
   function_signature_start__33:
   - include: pop_when_deindent__33
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__33
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__33
   - fail: function
@@ -13431,11 +13515,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__34
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__34
   - fail: function
     match: \S
   function_signature_start__35:
   - include: pop_when_deindent__35
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__35
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__35
   - fail: function
@@ -13445,11 +13535,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__36
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__36
   - fail: function
     match: \S
   function_signature_start__37:
   - include: pop_when_deindent__37
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__37
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__37
   - fail: function
@@ -13459,11 +13555,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__38
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__38
   - fail: function
     match: \S
   function_signature_start__39:
   - include: pop_when_deindent__39
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__39
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__39
   - fail: function
@@ -13473,11 +13575,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__4
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__4
   - fail: function
     match: \S
   function_signature_start__40:
   - include: pop_when_deindent__40
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__40
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__40
   - fail: function
@@ -13487,11 +13595,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__5
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__5
   - fail: function
     match: \S
   function_signature_start__6:
   - include: pop_when_deindent__6
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__6
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__6
   - fail: function
@@ -13501,6 +13615,9 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__7
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__7
   - fail: function
     match: \S
   function_signature_start__8:
@@ -13508,11 +13625,17 @@ contexts:
   - match: '{{lower_ident}}'
     scope: variable.function.signature.haskell
     set: function_signature_sep__8
+  - match: \({{operator}}\)
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__8
   - fail: function
     match: \S
   function_signature_start__9:
   - include: pop_when_deindent__9
   - match: '{{lower_ident}}'
+    scope: variable.function.signature.haskell
+    set: function_signature_sep__9
+  - match: \({{operator}}\)
     scope: variable.function.signature.haskell
     set: function_signature_sep__9
   - fail: function

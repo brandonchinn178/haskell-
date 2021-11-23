@@ -90,6 +90,20 @@ test1, test2 :: Int
 --     ^^^^^ variable.function.signature.haskell
 
 {--------------------------------------------------------------------------------
+  Operators
+--------------------------------------------------------------------------------}
+
+(+) :: Int -> Int -> Int
+--^ variable.function.signature.haskell
+--  ^^ keyword.other.function.signature.haskell
+--     ^^^ storage.type.haskell
+
+(#) :: Int -> Int -> Int
+--^ variable.function.signature.haskell
+--  ^^ keyword.other.function.signature.haskell
+--     ^^^ storage.type.haskell
+
+{--------------------------------------------------------------------------------
   MagicHash
 --------------------------------------------------------------------------------}
 
