@@ -35,6 +35,7 @@ foo = do
   --       , b = 2
   --       }
 
+  -- TODO: support multi-line let
   let x = Data.Text.unpack foo
 --        ^^^^^^^^^^ storage.module.haskell
       y = 1
@@ -341,3 +342,7 @@ foo = do
 --      ^^^ keyword.control.extension_dependent.haskell
    mdo { a <- pure b; b <- pure 1; return a }
 -- ^^^ keyword.control.extension_dependent.haskell
+
+  -- TODO: support operators in let definitions
+  let _ # y = x * 2 + y
+      _ ## y = x # y # y

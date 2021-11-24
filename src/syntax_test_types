@@ -38,3 +38,6 @@ type TupleKind = '(Int, Double)
 
 type Foo forall' = Int
 --       ^^^^^^^ variable.other.type.haskell
+
+-- TODO: symbols + type operators
+type ServantRoute = Capture "userId" Int :> Get '[JSON] User
