@@ -1,7 +1,7 @@
 -- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
 
 class Show a where
---^^^ keyword.control.type.haskell
+-- ^^ keyword.control.type.haskell
 --    ^^^^ storage.type.haskell
 --         ^ variable.other.type.haskell
 --           ^^^^^ keyword.control.context.haskell
@@ -12,7 +12,7 @@ class Show a where
   showsPrec _ x s = show x ++ s
 
 instance Show Bool where
---^^^^^^ keyword.control.type.haskell
+-- ^^^^^ keyword.control.type.haskell
 --       ^^^^ storage.type.haskell
 --            ^^^^ storage.type.haskell
 --                 ^^^^^ keyword.control.context.haskell
@@ -20,7 +20,7 @@ instance Show Bool where
   show False = "False"
 
 instance Show a => Show (Maybe a) where
---^^^^^^ keyword.control.type.haskell
+-- ^^^^^ keyword.control.type.haskell
 --       ^^^^ storage.type.haskell
 --            ^ variable.other.type.haskell
 --              ^^ keyword.operator.type.haskell

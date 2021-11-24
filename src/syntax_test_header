@@ -1,11 +1,11 @@
 -- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
 
   module Foo.Bar (foo, bar) where
---^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.declaration.module.haskell
+-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.declaration.module.haskell
 --               ^^^^^^^^^^ meta.declaration.exports.haskell
 
   module Foo (
---^^^^^^ keyword.declaration.namespace.haskell
+-- ^^^^^ keyword.declaration.namespace.haskell
 --       ^^^ entity.name.namespace.haskell
 --           ^ punctuation.section.parens.begin.haskell
 
@@ -49,5 +49,5 @@
 --  ^^^^^^^^ storage.module.haskell
 --          ^^^^^^^ variable.function.haskell
   ) where
---^ punctuation.section.parens.end.haskell
+  -- <- punctuation.section.parens.end.haskell
 --  ^^^^^ keyword.control.context.haskell

@@ -1,12 +1,12 @@
 -- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
 
-type String = [Char]
---^^ keyword.control.type.haskell
---   ^^^^^^
---          ^ keyword.control.definition.haskell
---            ^ punctuation.section.brackets.begin.haskell keyword.other.type.haskell
---             ^^^^ storage.type.haskell
---                 ^ punctuation.section.brackets.end.haskell keyword.other.type.haskell
+   type String = [Char]
+-- ^^^^ keyword.control.type.haskell
+--      ^^^^^^
+--             ^ keyword.control.definition.haskell
+--               ^ punctuation.section.brackets.begin.haskell keyword.other.type.haskell
+--                ^^^^ storage.type.haskell
+--                    ^ punctuation.section.brackets.end.haskell keyword.other.type.haskell
 
 type URL = (Network.HTTP.URI, Bool)
 --         ^ punctuation.section.parens.begin.haskell keyword.other.type.haskell

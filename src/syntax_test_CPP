@@ -1,13 +1,14 @@
 -- SYNTAX TEST "Haskell-Syntax.sublime-syntax"
 
 module Foo (
-#if MIN_VERSION_base(4,0,0)
---^^^^^^^^^^^^^^^^^^^^^^^^^ meta.preprocessor.haskell
-  Foo (..),
---^^^ meta.declaration.exports.haskell storage.type.haskell
-  foo,
---^^^ meta.declaration.exports.haskell variable.function.haskell
-#endif
+   #if MIN_VERSION_base(4,0,0)
+-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.preprocessor.haskell
+   Foo (..),
+-- ^^^ meta.declaration.exports.haskell storage.type.haskell
+   foo,
+-- ^^^ meta.declaration.exports.haskell variable.function.haskell
+   #endif
+-- ^^^^^^ meta.preprocessor.haskell
 ) where
 
 import Foo.Bar (
@@ -17,20 +18,20 @@ import Foo.Bar (
  )
 import
 #if MIN_VERSION_base(4,0,0)
---^^^^^^^^^^^^^^^^^^^^^^^^^ meta.preprocessor.haskell
-  Foo.Bar.BazOld
---^^^^^^^^^^^^^^ storage.module.haskell
+-- ^^^^^^^^^^^^^^^^^^^^^^^^ meta.preprocessor.haskell
+   Foo.Bar.BazOld
+-- ^^^^^^^^^^^^^^ storage.module.haskell
 #else
---^^^ meta.preprocessor.haskell
-  Foo.Bar.Baz
+-- ^^ meta.preprocessor.haskell
+   Foo.Bar.Baz
 #endif
---^^^^ meta.preprocessor.haskell
-  (
---^ meta.declaration.imports.haskell punctuation.section.parens.begin.haskell
-    baz,
---  ^^^ meta.declaration.imports.haskell variable.function.haskell
-    baz2,
-  )
+-- ^^^ meta.preprocessor.haskell
+   (
+-- ^ meta.declaration.imports.haskell punctuation.section.parens.begin.haskell
+     baz,
+--   ^^^ meta.declaration.imports.haskell variable.function.haskell
+     baz2,
+   )
 
 #if MIN_VERSION_base(4,0,0)
 foo = 1

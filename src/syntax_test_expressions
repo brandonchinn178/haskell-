@@ -3,7 +3,7 @@
 -- TODO: remove when top-level expressions are allowed
 foo = do
   makeLenses
---^^^^^^^^^^ variable.other.haskell
+-- ^^^^^^^^^ variable.other.haskell
     ''Foo
 --  ^^^^^ variable.other.constant.name.type.haskell
     ''Foo.Bar
@@ -38,6 +38,9 @@ foo = do
   let x = Data.Text.unpack foo
 --        ^^^^^^^^^^ storage.module.haskell
       y = 1
+      Just a = 2
+      Person{name = x} = 3
+      x@(asdf : _) = 4
 
   x <> show y
 --  ^^ keyword.operator.haskell
@@ -49,9 +52,9 @@ foo = do
 --  ^^^^^^^^^^ keyword.operator.haskell
 
   (==) a b
---^^^^ keyword.operator.prefix.haskell
+-- ^^^ keyword.operator.prefix.haskell
   (Prelude.==) a b
---^^^^^^^^^^^^ keyword.operator.prefix.haskell
+-- ^^^^^^^^^^^ keyword.operator.prefix.haskell
 
   asdf @?= sdaofi
 --     ^^^ keyword.operator.haskell
@@ -75,7 +78,7 @@ foo = do
 --              ^ keyword.operator.haskell
 
   let Foo a = undefined
---^^^ keyword.control.haskell
+-- ^^ keyword.control.haskell
 --    ^^^^^ meta.pattern.haskell
 --    ^^^ variable.other.constructor.haskell
 --        ^ variable.other.haskell
@@ -83,47 +86,47 @@ foo = do
 
   let x@(_, y) = \Person{..} -> asdf in a person
 
-  alet + letA + in' + in2
---^^^^ variable.other.haskell
---       ^^^^ variable.other.haskell
---              ^^^ variable.other.haskell
---                    ^^^ variable.other.haskell
+  1 + alet + letA + in' + in2
+--    ^^^^ variable.other.haskell
+--           ^^^^ variable.other.haskell
+--                  ^^^ variable.other.haskell
+--                        ^^^ variable.other.haskell
 
-  if a then b else c
---^^ keyword.control.haskell
---     ^^^^ keyword.control.haskell
---            ^^^^ keyword.control.haskell
+  1 + if a then b else c
+--    ^^ keyword.control.haskell
+--         ^^^^ keyword.control.haskell
+--                ^^^^ keyword.control.haskell
 
-  error $ "This is an error: " ++ show a
---^^^^^ variable.other.error.haskell
-  undefined
---^^^^^^^^^ variable.other.error.haskell
+  show $ error $ "This is an error: " ++ show a
+--       ^^^^^ variable.other.error.haskell
+  show undefined
+--     ^^^^^^^^^ variable.other.error.haskell
 
-  case x of
---^^^^ keyword.control.haskell
---       ^^ keyword.control.haskell
+  show $ case x of
+--       ^^^^ keyword.control.haskell
+--              ^^ keyword.control.haskell
     (a, b) -> undefined
     Just b -> undefined
     _ -> undefined
 
-  10000
---^^^^^ constant.numeric.integer.decimal.haskell
-  0b01
---^^^^ constant.numeric.integer.binary.haskell
-  0o01234567
---^^^^^^^^^^ constant.numeric.integer.octal.haskell
-  0x0123456789abcdef
---^^^^^^^^^^^^^^^^^^ constant.numeric.integer.hexadecimal.haskell
-  0.123
---^^^^^ constant.numeric.float.haskell
-  -1230.23
---^^^^^^^^ constant.numeric.float.haskell
-  123
---^^^ constant.numeric.integer.decimal.haskell
-  1e-20
---^^^^^ constant.numeric.float.haskell
-  1.5e20
---^^^^^^ constant.numeric.float.haskell
+   10000
+-- ^^^^^ constant.numeric.integer.decimal.haskell
+   0b01
+-- ^^^^ constant.numeric.integer.binary.haskell
+   0o01234567
+-- ^^^^^^^^^^ constant.numeric.integer.octal.haskell
+   0x0123456789abcdef
+-- ^^^^^^^^^^^^^^^^^^ constant.numeric.integer.hexadecimal.haskell
+   0.123
+-- ^^^^^ constant.numeric.float.haskell
+   -1230.23
+-- ^^^^^^^^ constant.numeric.float.haskell
+   123
+-- ^^^ constant.numeric.integer.decimal.haskell
+   1e-20
+-- ^^^^^ constant.numeric.float.haskell
+   1.5e20
+-- ^^^^^^ constant.numeric.float.haskell
 
   a `foo` b
 --  ^^^^^ variable.other.infix.haskell
@@ -142,34 +145,34 @@ foo = do
 --  ^^ keyword.operator.constructor.haskell
   a NonEmpty.:| []
 --  ^^^^^^^^^^^ keyword.operator.constructor.haskell
-  (:|) a []
---^^^^ keyword.operator.constructor.prefix.haskell
-  (NonEmpty.:|) a []
---^^^^^^^^^^^^^ keyword.operator.constructor.prefix.haskell
+  show $ (:|) a []
+--       ^^^^ keyword.operator.constructor.prefix.haskell
+  show $ (NonEmpty.:|) a []
+--       ^^^^^^^^^^^^^ keyword.operator.constructor.prefix.haskell
 
-  (,) 1 2
---^^^ keyword.operator.constructor.prefix.haskell
-  (,,) <$> Just 1 <*> Nothing <*> Nothing
---^^^^ keyword.operator.constructor.prefix.haskell
+  show $ (,) 1 2
+--       ^^^ keyword.operator.constructor.prefix.haskell
+  show $ (,,) <$> Just 1 <*> Nothing <*> Nothing
+--       ^^^^ keyword.operator.constructor.prefix.haskell
   pure ()
 --     ^^ keyword.operator.constructor.prefix.haskell
 
   -- works for unspaced expressions
-  a-1
---^ variable.other.haskell
--- ^ keyword.operator.haskell
---  ^ constant.numeric.integer.decimal.haskell
-  100+100
---^^^ constant.numeric.integer.decimal.haskell
---   ^ keyword.operator.haskell
---    ^^^ constant.numeric.integer.decimal.haskell
+  show $ a-1
+--       ^ variable.other.haskell
+--        ^ keyword.operator.haskell
+--         ^ constant.numeric.integer.decimal.haskell
+  show $ 100+100
+--       ^^^ constant.numeric.integer.decimal.haskell
+--          ^ keyword.operator.haskell
+--           ^^^ constant.numeric.integer.decimal.haskell
 
-  Just 10 >>= Just . (* 10) >> Nothing
---^^^^ variable.function.constructor.haskell
---        ^^^ keyword.operator.haskell
---            ^^^^ variable.function.constructor.haskell
---                          ^^ keyword.operator.haskell
---                             ^^^^^^^ variable.function.constructor.haskell
+  show $ Just 10 >>= Just . (* 10) >> Nothing
+--       ^^^^ variable.function.constructor.haskell
+--               ^^^ keyword.operator.haskell
+--                   ^^^^ variable.function.constructor.haskell
+--                                 ^^ keyword.operator.haskell
+--                                    ^^^^^^^ variable.function.constructor.haskell
 
   ['a', 'b', '\n', '\o123', '\x123abc']
 -- ^^^ string.quoted.single.haskell
@@ -178,80 +181,80 @@ foo = do
 --                 ^^^^^^^ string.quoted.single.haskell
 --                          ^^^^^^^^^^ string.quoted.single.haskell
 
-  "hello " ++ "world " <> "other"
---^^^^^^^^ string.quoted.double.haskell
---            ^^^^^^^^ string.quoted.double.haskell
---                        ^^^^^^^ string.quoted.double.haskell
+  show $ "hello " ++ "world " <> "other"
+--       ^^^^^^^^ string.quoted.double.haskell
+--                   ^^^^^^^^ string.quoted.double.haskell
+--                               ^^^^^^^ string.quoted.double.haskell
 
-  (1, 2, "asdf")
---^ punctuation.section.tuple.begin.haskell
---  ^ punctuation.separator.tuple.haskell
---     ^ punctuation.separator.tuple.haskell
---             ^ punctuation.section.tuple.end.haskell
+  show (1, 2, "asdf")
+--     ^ punctuation.section.tuple.begin.haskell
+--       ^ punctuation.separator.tuple.haskell
+--          ^ punctuation.separator.tuple.haskell
+--                  ^ punctuation.section.tuple.end.haskell
 
-  []
---^ punctuation.section.list.begin.haskell
--- ^ punctuation.section.list.end.haskell
-  [1, 2, 3]
---^ punctuation.section.list.begin.haskell
--- ^ constant.numeric.integer.decimal.haskell
---  ^ punctuation.separator.list.haskell
---    ^ constant.numeric.integer.decimal.haskell
+  show []
+--     ^ punctuation.section.list.begin.haskell
+--      ^ punctuation.section.list.end.haskell
+  show [1, 2, 3]
+--     ^ punctuation.section.list.begin.haskell
+--      ^ constant.numeric.integer.decimal.haskell
+--       ^ punctuation.separator.list.haskell
+--         ^ constant.numeric.integer.decimal.haskell
+--          ^ punctuation.separator.list.haskell
+--            ^ constant.numeric.integer.decimal.haskell
+--             ^ punctuation.section.list.end.haskell
+   [ [1, 2], [3] ]
+-- ^ punctuation.section.list.begin.haskell
+--   ^ punctuation.section.list.begin.haskell
 --     ^ punctuation.separator.list.haskell
---       ^ constant.numeric.integer.decimal.haskell
 --        ^ punctuation.section.list.end.haskell
-  [ [1, 2], [3] ]
---^ punctuation.section.list.begin.haskell
---  ^ punctuation.section.list.begin.haskell
---    ^ punctuation.separator.list.haskell
---       ^ punctuation.section.list.end.haskell
---        ^ punctuation.separator.list.haskell
---          ^ punctuation.section.list.begin.haskell
---            ^ punctuation.section.list.end.haskell
---              ^ punctuation.section.list.end.haskell
-  [(x, x + 1) | x <- [0..10], x > 2]
---^ punctuation.section.list.begin.haskell
--- ^ punctuation.section.tuple.begin.haskell
---  ^ variable.other.haskell
---   ^ punctuation.separator.tuple.haskell
---          ^ punctuation.section.tuple.end.haskell
---                   ^ punctuation.section.list.begin.haskell
---                         ^ punctuation.section.list.end.haskell
---                                 ^ punctuation.section.list.end.haskell
-  [ (x * 10, y)
-  | Just x <- [1..10]
---^ punctuation.separator.list.haskell
---  ^^^^ meta.pattern.haskell variable.other.constructor.haskell
+--         ^ punctuation.separator.list.haskell
+--           ^ punctuation.section.list.begin.haskell
+--             ^ punctuation.section.list.end.haskell
+--               ^ punctuation.section.list.end.haskell
+   [(x, x + 1) | x <- [0..10], x > 2]
+-- ^ punctuation.section.list.begin.haskell
+--  ^ punctuation.section.tuple.begin.haskell
+--   ^ variable.other.haskell
+--    ^ punctuation.separator.tuple.haskell
+--           ^ punctuation.section.tuple.end.haskell
+--                    ^ punctuation.section.list.begin.haskell
+--                          ^ punctuation.section.list.end.haskell
+--                                  ^ punctuation.section.list.end.haskell
+   [ (x * 10, y)
+   | Just x <- [1..10]
+-- ^ punctuation.separator.list.haskell
+--   ^^^^ meta.pattern.haskell variable.other.constructor.haskell
+--        ^ variable.other.haskell
+--          ^^ keyword.operator.haskell
+--             ^ punctuation.section.list.begin.haskell
+--              ^ constant.numeric.integer.decimal.haskell
+--               ^^ keyword.operator.haskell
+--                 ^^ constant.numeric.integer.decimal.haskell
+--                   ^ punctuation.section.list.end.haskell
+   , let Just y = Just (2 + 4)
+-- ^ punctuation.separator.list.haskell
+--   ^^^ keyword.control.haskell
+--       ^^^^ meta.pattern.haskell variable.other.constructor.haskell
+--            ^ meta.pattern.haskell variable.other.haskell
+--              ^ keyword.operator.haskell
+--                ^^^^ variable.function.constructor.haskell
+--                     ^ punctuation.section.tuple.begin.haskell
+--                      ^ constant.numeric.integer.decimal.haskell
+--                        ^ keyword.operator.haskell
+--                          ^ constant.numeric.integer.decimal.haskell
+--                           ^ punctuation.section.tuple.end.haskell
+   , x + y > 20
+-- ^ punctuation.separator.list.haskell
+--   ^ variable.other.haskell
+--     ^ keyword.operator.haskell
 --       ^ variable.other.haskell
---         ^^ keyword.operator.haskell
---            ^ punctuation.section.list.begin.haskell
---             ^ constant.numeric.integer.decimal.haskell
---              ^^ keyword.operator.haskell
---                ^^ constant.numeric.integer.decimal.haskell
---                  ^ punctuation.section.list.end.haskell
-  , let Just y = Just (2 + 4)
---^ punctuation.separator.list.haskell
---  ^^^ keyword.control.haskell
---      ^^^^ meta.pattern.haskell variable.other.constructor.haskell
---           ^ meta.pattern.haskell variable.other.haskell
---             ^ keyword.operator.haskell
---               ^^^^ variable.function.constructor.haskell
---                    ^ punctuation.section.tuple.begin.haskell
---                     ^ constant.numeric.integer.decimal.haskell
---                       ^ keyword.operator.haskell
---                         ^ constant.numeric.integer.decimal.haskell
---                          ^ punctuation.section.tuple.end.haskell
-  , x + y > 20
---^ punctuation.separator.list.haskell
---  ^ variable.other.haskell
---    ^ keyword.operator.haskell
---      ^ variable.other.haskell
---        ^ keyword.operator.haskell
---          ^^ constant.numeric.integer.decimal.haskell
-  ]
+--         ^ keyword.operator.haskell
+--           ^^ constant.numeric.integer.decimal.haskell
+   ]
 
-  "a -- b"
---^^^^^^^^ string.quoted.double.haskell
+   "a -- b"
+-- ^^^^^^^^ string.quoted.double.haskell
 
   [ a -- asdf
 --    ^^^^^^^ comment.line.haskell
@@ -265,30 +268,30 @@ foo = do
 --    ^^^^^^^ comment.line.haskell
   )
 
-  [|["a", 3, 12.1, False] ++ $(other 1 2)|]
---^^ punctuation.section.quasiquote.template_haskell.begin.haskell
---  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.template_haskell.haskell
---  ^ punctuation.section.list.begin.haskell
---   ^^^ string.quoted.double.haskell
---                           ^^ punctuation.section.th_splice.begin.haskell
---                                   ^ constant.numeric.integer.decimal.haskell
---                                     ^ constant.numeric.integer.decimal.haskell
---                                      ^ punctuation.section.th_splice.end.haskell
---                                       ^^ punctuation.section.quasiquote.template_haskell.end.haskell
-  [e|["a", 3, 12.1, False] ++ $(other)|]
---^^^ punctuation.section.quasiquote.template_haskell.begin.haskell
---                                    ^^ punctuation.section.quasiquote.template_haskell.end.haskell
-  [d| asdf |]
-  [text| asdf -- basdf |]
---      ^^^^^^^^^^^^^^^ string.quoted.quasiquote.haskell
-  [text| asdf |]
---^^^^^^ punctuation.section.quasiquote.begin.haskell
---      ^^^^^^ string.quoted.quasiquote.haskell
---            ^^ punctuation.section.quasiquote.end.haskell
-  [Foo.text| asdf |]
---^^^^^^^^^^ punctuation.section.quasiquote.begin.haskell
---          ^^^^^^ string.quoted.quasiquote.haskell
---                ^^ punctuation.section.quasiquote.end.haskell
+   [|["a", 3, 12.1, False] ++ $(other 1 2)|]
+-- ^^ punctuation.section.quasiquote.template_haskell.begin.haskell
+--   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.template_haskell.haskell
+--   ^ punctuation.section.list.begin.haskell
+--    ^^^ string.quoted.double.haskell
+--                            ^^ punctuation.section.th_splice.begin.haskell
+--                                    ^ constant.numeric.integer.decimal.haskell
+--                                      ^ constant.numeric.integer.decimal.haskell
+--                                       ^ punctuation.section.th_splice.end.haskell
+--                                        ^^ punctuation.section.quasiquote.template_haskell.end.haskell
+   [e|["a", 3, 12.1, False] ++ $(other)|]
+-- ^^^ punctuation.section.quasiquote.template_haskell.begin.haskell
+--                                     ^^ punctuation.section.quasiquote.template_haskell.end.haskell
+   [d| asdf |]
+   [text| asdf -- basdf |]
+--       ^^^^^^^^^^^^^^^ string.quoted.quasiquote.haskell
+   [text| asdf |]
+-- ^^^^^^ punctuation.section.quasiquote.begin.haskell
+--       ^^^^^^ string.quoted.quasiquote.haskell
+--             ^^ punctuation.section.quasiquote.end.haskell
+   [Foo.text| asdf |]
+-- ^^^^^^^^^^ punctuation.section.quasiquote.begin.haskell
+--           ^^^^^^ string.quoted.quasiquote.haskell
+--                 ^^ punctuation.section.quasiquote.end.haskell
 
   (10 :: Int) + 10
 --    ^^ keyword.control.type_annotation.haskell
@@ -327,14 +330,14 @@ foo = do
 --                   ^^ constant.numeric.integer.decimal.haskell
 
   -- this should be a normal expression, after the above type annotation
-  x + 2
---^ variable.other.haskell
---  ^ keyword.operator.haskell
---    ^ constant.numeric.integer.decimal.haskell
+  show $ x + 2
+--       ^ variable.other.haskell
+--         ^ keyword.operator.haskell
+--           ^ constant.numeric.integer.decimal.haskell
 
-  do { a <- pure 1; return a }
---^^ keyword.control.haskell
-  do { rec { a <- pure b; b <- pure 1; return a } }
---     ^^^ keyword.control.extension_dependent.haskell
-  mdo { a <- pure b; b <- pure 1; return a }
---^^^ keyword.control.extension_dependent.haskell
+   do { a <- pure 1; return a }
+-- ^^ keyword.control.haskell
+   do { rec { a <- pure b; b <- pure 1; return a } }
+--      ^^^ keyword.control.extension_dependent.haskell
+   mdo { a <- pure b; b <- pure 1; return a }
+-- ^^^ keyword.control.extension_dependent.haskell

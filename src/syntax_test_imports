@@ -2,13 +2,13 @@
 
 import Foo.Bar
 -- <- keyword.control.import.haskell
---^^^^^^^^^^^^ meta.import.haskell
+-- ^^^^^^^^^^^ meta.import.haskell
 --     ^^^^^^^ storage.module.haskell
 
 module Separate.Unindented.From.Indented.Import.Lines where
 
   import Foo.Bar
---^^^^^^ keyword.control.import.haskell
+-- ^^^^^ keyword.control.import.haskell
     qualified
 --  ^^^^^^^^^ keyword.control.import.modifiers.haskell
 
@@ -16,7 +16,7 @@ module Separate.Unindented.From.Indented.Import.Lines where
 -- of the import context. qualified here should be a function
 -- name, not an import-context keyword.
   qualified = undefined
---^^^^^^^^^ entity.name.function.haskell
+-- ^^^^^^^^ entity.name.function.haskell
 
 -- check that it works across multiple lines
 import
@@ -38,69 +38,69 @@ import Foo.Bar (
 --     ^^^^^^^ storage.module.haskell
 --             ^ punctuation.section.parens.begin.haskell
 
-  Test,
---^^^^ storage.type.haskell
---    ^ punctuation.separator.haskell
+   Test,
+-- ^^^^ storage.type.haskell
+--     ^ punctuation.separator.haskell
 
-  Test2 (..),
---^^^^^ storage.type.haskell
---      ^^^^ meta.import.type_members.haskell
---      ^ punctuation.section.parens.begin.haskell
---       ^^ keyword.other.wildcard.import.haskell
---         ^ punctuation.section.parens.end.haskell
---          ^ punctuation.separator.haskell
+   Test2 (..),
+-- ^^^^^ storage.type.haskell
+--       ^^^^ meta.import.type_members.haskell
+--       ^ punctuation.section.parens.begin.haskell
+--        ^^ keyword.other.wildcard.import.haskell
+--          ^ punctuation.section.parens.end.haskell
+--           ^ punctuation.separator.haskell
 
-  Test3 (Test3, a, b, c),
---^^^^^ storage.type.haskell
---      ^^^^^^^^^^^^^^^^ meta.import.type_members.haskell
---      ^ punctuation.section.parens.begin.haskell
---       ^^^^^ variable.function.constructor.haskell
---            ^ punctuation.separator.haskell
---              ^ variable.function.haskell
---               ^ punctuation.separator.haskell
---                 ^ variable.function.haskell
---                  ^ punctuation.separator.haskell
---                    ^ variable.function.haskell
---                     ^ punctuation.section.parens.end.haskell
---                      ^ punctuation.separator.haskell
+   Test3 (Test3, a, b, c),
+-- ^^^^^ storage.type.haskell
+--       ^^^^^^^^^^^^^^^^ meta.import.type_members.haskell
+--       ^ punctuation.section.parens.begin.haskell
+--        ^^^^^ variable.function.constructor.haskell
+--             ^ punctuation.separator.haskell
+--               ^ variable.function.haskell
+--                ^ punctuation.separator.haskell
+--                  ^ variable.function.haskell
+--                   ^ punctuation.separator.haskell
+--                     ^ variable.function.haskell
+--                      ^ punctuation.section.parens.end.haskell
+--                       ^ punctuation.separator.haskell
 
-  NonEmpty ((:|)),
---^^^^^^^^ storage.type.haskell
+   NonEmpty ((:|)),
+-- ^^^^^^^^ storage.type.haskell
+--          ^^^^^^ meta.import.type_members.haskell
+--          ^ punctuation.section.parens.begin.haskell
+--           ^^^^ keyword.operator.constructor.haskell
+--               ^ punctuation.section.parens.end.haskell
+--                ^ punctuation.separator.haskell
+
+   Addable ((+>)),
+-- ^^^^^^^ storage.type.haskell
 --         ^^^^^^ meta.import.type_members.haskell
 --         ^ punctuation.section.parens.begin.haskell
---          ^^^^ keyword.operator.constructor.haskell
+--          ^^^^ keyword.operator.haskell
 --              ^ punctuation.section.parens.end.haskell
 --               ^ punctuation.separator.haskell
 
-  Addable ((+>)),
---^^^^^^^ storage.type.haskell
---        ^^^^^^ meta.import.type_members.haskell
---        ^ punctuation.section.parens.begin.haskell
---         ^^^^ keyword.operator.haskell
+   Named ((:::)),
+-- ^^^^^ storage.type.haskell
+--       ^^^^^^^ meta.import.type_members.haskell
+--       ^ punctuation.section.parens.begin.haskell
+--        ^^^^^ keyword.operator.constructor.haskell
 --             ^ punctuation.section.parens.end.haskell
 --              ^ punctuation.separator.haskell
 
-  Named ((:::)),
---^^^^^ storage.type.haskell
---      ^^^^^^^ meta.import.type_members.haskell
---      ^ punctuation.section.parens.begin.haskell
---       ^^^^^ keyword.operator.constructor.haskell
---            ^ punctuation.section.parens.end.haskell
---             ^ punctuation.separator.haskell
+   a,
+-- ^ variable.function.haskell
 
-  a,
---^ variable.function.haskell
+   (++),
+-- ^^^^ keyword.operator.haskell
 
-  (++),
---^^^^ keyword.operator.haskell
+   type (++),
+-- ^^^^ keyword.other.import.haskell
+--      ^^^^ keyword.operator.type.haskell
 
-  type (++),
---^^^^ keyword.other.import.haskell
---     ^^^^ keyword.operator.type.haskell
-
-  pattern HELP,
---^^^^^^^ keyword.other.import.haskell
---        ^^^^ variable.function.pattern.haskell
+   pattern HELP,
+-- ^^^^^^^ keyword.other.import.haskell
+--         ^^^^ variable.function.pattern.haskell
 
  )
  -- <- punctuation.section.parens.end.haskell

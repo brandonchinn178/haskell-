@@ -3,7 +3,7 @@
 -- TODO: support indented functions
 
 addOne :: Int -> Int
---^^^^ variable.function.signature.haskell
+-- ^^^ variable.function.signature.haskell
 --     ^^ keyword.other.function.signature.haskell
 --        ^^^ storage.type.haskell
 --            ^^ keyword.operator.type.haskell
@@ -13,82 +13,82 @@ addOne 0x0 = 1
 --     ^^^ meta.function.parameters.haskell meta.pattern.haskell constant.numeric.integer.hexadecimal.haskell
 
 addOne x = x + 1
---^^^^ entity.name.function.haskell
+-- ^^^ entity.name.function.haskell
 --     ^ meta.function.parameters.haskell meta.pattern.haskell variable.other.haskell
 --       ^ keyword.other.function.definition.haskell
 
 addMultiple
---^^^^^^^^^ entity.name.function.haskell
+-- ^^^^^^^^ entity.name.function.haskell
   x
---^ variable.other.haskell
+  -- <- variable.other.haskell
   y
---^ variable.other.haskell
+  -- <- variable.other.haskell
   z
---^ variable.other.haskell
+  -- <- variable.other.haskell
   = x + y + z
---^ keyword.other.function.definition.haskell
+  -- <- keyword.other.function.definition.haskell
 
 test (Just x) = Right x
 test Nothing = Left ()
 
 testPatternMatch
---^^^^^^^^^^^^^^ entity.name.function.haskell
-  (Just a)
---^ punctuation.section.parens.begin.haskell
--- ^^^^ variable.other.constructor.haskell
---      ^ variable.other.haskell
---       ^ punctuation.section.parens.end.haskell
-  Nothing
---^^^^^^^ variable.other.constructor.haskell
-  xs@(x : _)
---^^ variable.other.haskell
---  ^ keyword.other.as_pattern.haskell
---   ^ punctuation.section.parens.begin.haskell
---    ^ variable.other.haskell
---      ^ keyword.operator.constructor.haskell
---        ^ keyword.other.wildcard.haskell
---         ^ punctuation.section.parens.end.haskell
-  Person{name = name, boss = Just Person{name = name}}
---^^^^^^ variable.other.constructor.haskell
---      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.pattern.record.haskell
---      ^ punctuation.section.braces.begin.haskell
---       ^^^^ variable.other.member.haskell
---            ^ keyword.operator.assignment.haskell
---              ^^^^ variable.other.haskell
---                  ^ punctuation.separator.haskell
---                    ^^^^ variable.other.member.haskell
---                         ^ keyword.operator.assignment.haskell
---                           ^^^^ variable.other.constructor.haskell
---                                ^^^^^^ variable.other.constructor.haskell
---                                      ^ punctuation.section.braces.begin.haskell
---                                       ^^^^ variable.other.member.haskell
---                                            ^ keyword.operator.assignment.haskell
---                                              ^^^^ variable.other.haskell
---                                                  ^^ punctuation.section.braces.end.haskell
-  Person{name, age}
---^^^^^^ variable.other.constructor.haskell
---      ^ punctuation.section.braces.begin.haskell
---       ^^^^ variable.other.haskell
---           ^ punctuation.separator.haskell
---             ^^^ variable.other.haskell
---                ^ punctuation.section.braces.end.haskell
-  Person{name = name, ..}
---^^^^^^ variable.other.constructor.haskell
---      ^ punctuation.section.braces.begin.haskell
---       ^^^^ variable.other.member.haskell
---            ^ keyword.operator.assignment.haskell
---              ^^^^ variable.other.haskell
---                  ^ punctuation.separator.haskell
---                    ^^ keyword.other.wildcard.record.haskell
---                      ^ punctuation.section.braces.end.haskell
-  (a `AS` b)
---   ^^^^ variable.other.constructor.haskell
-  = undefined
---^ keyword.other.function.definition.haskell
+-- ^^^^^^^^^^^^^ entity.name.function.haskell
+   (Just a)
+-- ^ punctuation.section.parens.begin.haskell
+--  ^^^^ variable.other.constructor.haskell
+--       ^ variable.other.haskell
+--        ^ punctuation.section.parens.end.haskell
+   Nothing
+-- ^^^^^^^ variable.other.constructor.haskell
+   xs@(x : _)
+-- ^^ variable.other.haskell
+--   ^ keyword.other.as_pattern.haskell
+--    ^ punctuation.section.parens.begin.haskell
+--     ^ variable.other.haskell
+--       ^ keyword.operator.constructor.haskell
+--         ^ keyword.other.wildcard.haskell
+--          ^ punctuation.section.parens.end.haskell
+   Person{name = name, boss = Just Person{name = name}}
+-- ^^^^^^ variable.other.constructor.haskell
+--       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.pattern.record.haskell
+--       ^ punctuation.section.braces.begin.haskell
+--        ^^^^ variable.other.member.haskell
+--             ^ keyword.operator.assignment.haskell
+--               ^^^^ variable.other.haskell
+--                   ^ punctuation.separator.haskell
+--                     ^^^^ variable.other.member.haskell
+--                          ^ keyword.operator.assignment.haskell
+--                            ^^^^ variable.other.constructor.haskell
+--                                 ^^^^^^ variable.other.constructor.haskell
+--                                       ^ punctuation.section.braces.begin.haskell
+--                                        ^^^^ variable.other.member.haskell
+--                                             ^ keyword.operator.assignment.haskell
+--                                               ^^^^ variable.other.haskell
+--                                                   ^^ punctuation.section.braces.end.haskell
+   Person{name, age}
+-- ^^^^^^ variable.other.constructor.haskell
+--       ^ punctuation.section.braces.begin.haskell
+--        ^^^^ variable.other.haskell
+--            ^ punctuation.separator.haskell
+--              ^^^ variable.other.haskell
+--                 ^ punctuation.section.braces.end.haskell
+   Person{name = name, ..}
+-- ^^^^^^ variable.other.constructor.haskell
+--       ^ punctuation.section.braces.begin.haskell
+--        ^^^^ variable.other.member.haskell
+--             ^ keyword.operator.assignment.haskell
+--               ^^^^ variable.other.haskell
+--                   ^ punctuation.separator.haskell
+--                     ^^ keyword.other.wildcard.record.haskell
+--                       ^ punctuation.section.braces.end.haskell
+   (a `AS` b)
+--    ^^^^ variable.other.constructor.haskell
+   = undefined
+-- ^ keyword.other.function.definition.haskell
 
 -- Works for signatures on multiple functions
 test1, test2 :: Int
---^^^ variable.function.signature.haskell
+-- ^^ variable.function.signature.haskell
 --   ^ punctuation.separator.signature.haskell
 --     ^^^^^ variable.function.signature.haskell
 
@@ -97,24 +97,26 @@ test1, test2 :: Int
 --------------------------------------------------------------------------------}
 
 (+) :: Int -> Int -> Int
---^ variable.function.signature.haskell
+-- <- variable.function.signature.haskell
+ -- <- variable.function.signature.haskell
+  -- <- variable.function.signature.haskell
 --  ^^ keyword.other.function.signature.haskell
 --     ^^^ storage.type.haskell
 x + 1 = 10
 -- <- variable.other.haskell
---^ entity.name.function.haskell
+  -- <- entity.name.function.haskell
 --  ^ constant.numeric.integer.decimal.haskell
 
 (+) x y = 42
 -- <- entity.name.function.haskell
  -- <- entity.name.function.haskell
---^ entity.name.function.haskell
+  -- <- entity.name.function.haskell
 --  ^ variable.other.haskell
 --    ^ variable.other.haskell
 --      ^ keyword.other.function.definition.haskell
 
 (#) :: Int -> Int -> Int
---^ variable.function.signature.haskell
+-- <- variable.function.signature.haskell
 --  ^^ keyword.other.function.signature.haskell
 --     ^^^ storage.type.haskell
 _ # y = 2 + y
@@ -140,11 +142,15 @@ x#a = 42
   Check some valid identifiers
 --------------------------------------------------------------------------------}
 
+a --^ b = 1
+  -- <- entity.name.function.haskell
+-- ^^ entity.name.function.haskell
+
 foo _' = undefined
 --  ^^ variable.other.haskell
 
 module' = undefined
---^^^^^ entity.name.function.haskell
+-- ^^^^ entity.name.function.haskell
 
 import' = undefined
---^^^^^ entity.name.function.haskell
+-- ^^^^ entity.name.function.haskell
