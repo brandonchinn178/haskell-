@@ -92,6 +92,14 @@ test1, test2 :: Int
 --   ^ punctuation.separator.signature.haskell
 --     ^^^^^ variable.function.signature.haskell
 
+a = b + b
+  where
+-- ^^^^ keyword.control.where.haskell
+    b = 2
+--  ^ entity.name.function.haskell
+
+c = 2
+
 {--------------------------------------------------------------------------------
   Operators
 --------------------------------------------------------------------------------}

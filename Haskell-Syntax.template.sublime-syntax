@@ -420,7 +420,13 @@ contexts:
 
   function_definition_body:
     - include: pop_when_deindent
-    # TODO: where clause
+    - match: '\b(where){{post_non_ident}}'
+      captures:
+        1: keyword.control.where.haskell
+      set:
+        - include: pop_when_deindent
+        - include: function
+        # TODO: support arbitrary patterns
     - include: expression
 
   function_signature:

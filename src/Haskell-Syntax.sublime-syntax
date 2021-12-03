@@ -10937,126 +10937,372 @@ contexts:
     set: function_definition_params__0
   function_definition_body__0:
   - include: pop_when_deindent__0
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__0
+    - include: function
   - include: expression
   function_definition_body__1:
   - include: pop_when_deindent__1
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__1
+    - include: function
   - include: expression
   function_definition_body__10:
   - include: pop_when_deindent__10
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__10
+    - include: function
   - include: expression
   function_definition_body__11:
   - include: pop_when_deindent__11
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__11
+    - include: function
   - include: expression
   function_definition_body__12:
   - include: pop_when_deindent__12
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__12
+    - include: function
   - include: expression
   function_definition_body__13:
   - include: pop_when_deindent__13
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__13
+    - include: function
   - include: expression
   function_definition_body__14:
   - include: pop_when_deindent__14
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__14
+    - include: function
   - include: expression
   function_definition_body__15:
   - include: pop_when_deindent__15
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__15
+    - include: function
   - include: expression
   function_definition_body__16:
   - include: pop_when_deindent__16
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__16
+    - include: function
   - include: expression
   function_definition_body__17:
   - include: pop_when_deindent__17
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__17
+    - include: function
   - include: expression
   function_definition_body__18:
   - include: pop_when_deindent__18
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__18
+    - include: function
   - include: expression
   function_definition_body__19:
   - include: pop_when_deindent__19
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__19
+    - include: function
   - include: expression
   function_definition_body__2:
   - include: pop_when_deindent__2
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__2
+    - include: function
   - include: expression
   function_definition_body__20:
   - include: pop_when_deindent__20
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__20
+    - include: function
   - include: expression
   function_definition_body__21:
   - include: pop_when_deindent__21
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__21
+    - include: function
   - include: expression
   function_definition_body__22:
   - include: pop_when_deindent__22
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__22
+    - include: function
   - include: expression
   function_definition_body__23:
   - include: pop_when_deindent__23
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__23
+    - include: function
   - include: expression
   function_definition_body__24:
   - include: pop_when_deindent__24
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__24
+    - include: function
   - include: expression
   function_definition_body__25:
   - include: pop_when_deindent__25
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__25
+    - include: function
   - include: expression
   function_definition_body__26:
   - include: pop_when_deindent__26
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__26
+    - include: function
   - include: expression
   function_definition_body__27:
   - include: pop_when_deindent__27
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__27
+    - include: function
   - include: expression
   function_definition_body__28:
   - include: pop_when_deindent__28
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__28
+    - include: function
   - include: expression
   function_definition_body__29:
   - include: pop_when_deindent__29
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__29
+    - include: function
   - include: expression
   function_definition_body__3:
   - include: pop_when_deindent__3
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__3
+    - include: function
   - include: expression
   function_definition_body__30:
   - include: pop_when_deindent__30
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__30
+    - include: function
   - include: expression
   function_definition_body__31:
   - include: pop_when_deindent__31
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__31
+    - include: function
   - include: expression
   function_definition_body__32:
   - include: pop_when_deindent__32
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__32
+    - include: function
   - include: expression
   function_definition_body__33:
   - include: pop_when_deindent__33
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__33
+    - include: function
   - include: expression
   function_definition_body__34:
   - include: pop_when_deindent__34
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__34
+    - include: function
   - include: expression
   function_definition_body__35:
   - include: pop_when_deindent__35
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__35
+    - include: function
   - include: expression
   function_definition_body__36:
   - include: pop_when_deindent__36
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__36
+    - include: function
   - include: expression
   function_definition_body__37:
   - include: pop_when_deindent__37
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__37
+    - include: function
   - include: expression
   function_definition_body__38:
   - include: pop_when_deindent__38
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__38
+    - include: function
   - include: expression
   function_definition_body__39:
   - include: pop_when_deindent__39
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__39
+    - include: function
   - include: expression
   function_definition_body__4:
   - include: pop_when_deindent__4
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__4
+    - include: function
   - include: expression
   function_definition_body__40:
   - include: pop_when_deindent__40
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__40
+    - include: function
   - include: expression
   function_definition_body__5:
   - include: pop_when_deindent__5
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__5
+    - include: function
   - include: expression
   function_definition_body__6:
   - include: pop_when_deindent__6
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__6
+    - include: function
   - include: expression
   function_definition_body__7:
   - include: pop_when_deindent__7
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__7
+    - include: function
   - include: expression
   function_definition_body__8:
   - include: pop_when_deindent__8
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__8
+    - include: function
   - include: expression
   function_definition_body__9:
   - include: pop_when_deindent__9
+  - captures:
+      1: keyword.control.where.haskell
+    match: \b(where){{post_non_ident}}
+    set:
+    - include: pop_when_deindent__9
+    - include: function
   - include: expression
   function_definition_params__0:
   - meta_content_scope: 'meta.function.parameters.haskell
