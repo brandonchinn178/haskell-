@@ -366,206 +366,288 @@ contexts:
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__1:
   - include: pop_when_deindent__1
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__10:
   - include: pop_when_deindent__10
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__11:
   - include: pop_when_deindent__11
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__12:
   - include: pop_when_deindent__12
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__13:
   - include: pop_when_deindent__13
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__14:
   - include: pop_when_deindent__14
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__15:
   - include: pop_when_deindent__15
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__16:
   - include: pop_when_deindent__16
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__17:
   - include: pop_when_deindent__17
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__18:
   - include: pop_when_deindent__18
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__19:
   - include: pop_when_deindent__19
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__2:
   - include: pop_when_deindent__2
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__20:
   - include: pop_when_deindent__20
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__21:
   - include: pop_when_deindent__21
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__22:
   - include: pop_when_deindent__22
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__23:
   - include: pop_when_deindent__23
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__24:
   - include: pop_when_deindent__24
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__25:
   - include: pop_when_deindent__25
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__26:
   - include: pop_when_deindent__26
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__27:
   - include: pop_when_deindent__27
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__28:
   - include: pop_when_deindent__28
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__29:
   - include: pop_when_deindent__29
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__3:
   - include: pop_when_deindent__3
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__30:
   - include: pop_when_deindent__30
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__31:
   - include: pop_when_deindent__31
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__32:
   - include: pop_when_deindent__32
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__33:
   - include: pop_when_deindent__33
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__34:
   - include: pop_when_deindent__34
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__35:
   - include: pop_when_deindent__35
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__36:
   - include: pop_when_deindent__36
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__37:
   - include: pop_when_deindent__37
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__38:
   - include: pop_when_deindent__38
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__39:
   - include: pop_when_deindent__39
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__4:
   - include: pop_when_deindent__4
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__40:
   - include: pop_when_deindent__40
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__5:
   - include: pop_when_deindent__5
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__6:
   - include: pop_when_deindent__6
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__7:
   - include: pop_when_deindent__7
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__8:
   - include: pop_when_deindent__8
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_alias_declaration__9:
   - include: pop_when_deindent__9
   - include: type
   - match: '='
     scope: keyword.control.definition.haskell
+  - match: '::'
+    scope: keyword.control.kind_annotation.haskell
   data_type_constructor__0:
   - include: pop_when_deindent__0
   - fail: data_type_constructor__0

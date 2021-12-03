@@ -48,6 +48,14 @@ type TupleKind = '(Int, Double)
 --                    ^ punctuation.separator.type.tuple.haskell
 --                            ^ punctuation.section.parens.end.haskell keyword.other.type.haskell
 
+-- Standalone kind signature
+type Foo :: Type -> Type
+--   ^^^ storage.type.haskell
+--       ^^ keyword.control.kind_annotation.haskell
+--          ^^^^ storage.type.haskell
+--               ^^ keyword.operator.type.haskell
+--                  ^^^^ storage.type.haskell
+
 type Foo forall' = Int
 --       ^^^^^^^ variable.other.type.haskell
 
