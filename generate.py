@@ -13,6 +13,7 @@ https://forum.sublimetext.com/t/syntax-definition-explicitly-specify-backref-con
 
 import functools
 import yaml
+from collections import defaultdict
 from pathlib import Path
 from typing import Any, NamedTuple, Optional
 
@@ -117,7 +118,7 @@ class IndentedContexts(NamedTuple):
     @classmethod
     def load(cls, data: dict) -> "IndentedContexts":
         indented_context_names = {"pop_when_deindent"}
-        context_to_branch_point = {}
+        context_to_branch_points = defaultdict(list)
 
         context_queue: list[tuple[ContextName, IndentedContextPath]] = [
             ("main", None),
@@ -139,9 +140,7 @@ class IndentedContexts(NamedTuple):
 
             path = None if path is None else path + [context]
             for pattern in data["contexts"][context]:
-                branch_point = pattern.get("branch_point")
-                if branch_point:
-                    context_to_branch_point[context] = branch_point
+                context_to_branch_points[context].extend(PatternVisitorGetBranchPoints.run(pattern))
 
                 # TODO(nested-indent): when matching indentation within indented context,
                 # nest indentation indicators; e.g. `function_signature_start__2__4`, so
@@ -158,9 +157,9 @@ class IndentedContexts(NamedTuple):
                 )
 
         branch_points = {
-            context_to_branch_point[context]
+            branch_point
             for context in indented_context_names
-            if context in context_to_branch_point
+            for branch_point in context_to_branch_points[context]
         }
 
         return cls(indented_context_names, branch_points)
@@ -214,6 +213,19 @@ class PatternVisitor:
                     new_pattern[key] = [self._run(p) for p in pattern_next]
 
         return { **pattern, **new_pattern }
+
+class PatternVisitorGetBranchPoints(PatternVisitor):
+    @classmethod
+    def run(cls, pattern: Pattern) -> list[ContextName]:
+        visitor = cls()
+        visitor._run(pattern)
+        return visitor._branch_points
+
+    def __init__(self):
+        self._branch_points = []
+
+    def on_branch_label(self, branch: BranchLabel):
+        self._branch_points.append(branch)
 
 class PatternVisitorGetSubcontexts(PatternVisitor):
     @classmethod
