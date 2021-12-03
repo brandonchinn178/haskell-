@@ -736,6 +736,24 @@ contexts:
         - match: '\.'
           scope: keyword.control.forall.haskell
           pop: true
+        - match: '\('
+          scope: punctuation.section.parens.begin.haskell
+          push:
+            - match: '\)'
+              scope: punctuation.section.parens.end.haskell
+              pop: true
+            - match: '{{lower_ident}}'
+              scope: variable.other.type.haskell
+            - match: '::'
+              scope: keyword.control.kind_annotation.haskell
+              set:
+                - match: '\)'
+                  scope: punctuation.section.parens.end.haskell
+                  pop: true
+                - match: '{{lower_ident}}'
+                  scope: variable.other.type.haskell
+                - match: '{{upper_ident}}'
+                  scope: storage.type.haskell
 
   type_list_body:
     - match: '\]'

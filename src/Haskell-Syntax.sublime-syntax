@@ -19213,6 +19213,24 @@ contexts:
     - match: \.
       pop: true
       scope: keyword.control.forall.haskell
+    - match: \(
+      push:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '::'
+        scope: keyword.control.kind_annotation.haskell
+        set:
+        - match: \)
+          pop: true
+          scope: punctuation.section.parens.end.haskell
+        - match: '{{lower_ident}}'
+          scope: variable.other.type.haskell
+        - match: '{{upper_ident}}'
+          scope: storage.type.haskell
+      scope: punctuation.section.parens.begin.haskell
     scope: keyword.control.forall.haskell
   type_list_body:
   - match: \]
