@@ -18,7 +18,7 @@ contexts:
     pop: true
     scope: punctuation.definition.comment
   comment_line:
-  - match: --+[\sa-zA-Z_']
+  - match: --+(?=[\sa-zA-Z_'])
     push: comment_line_body
     scope: punctuation.definition.comment
   comment_line_body:

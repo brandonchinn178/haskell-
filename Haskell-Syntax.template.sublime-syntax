@@ -47,7 +47,7 @@ contexts:
     - include: comment_block
 
   comment_line:
-    - match: --+[\sa-zA-Z_']
+    - match: --+(?=[\sa-zA-Z_'])
       scope: punctuation.definition.comment
       push: comment_line_body
 
