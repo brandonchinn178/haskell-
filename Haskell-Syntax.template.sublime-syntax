@@ -276,6 +276,7 @@ contexts:
     - match: '{{upper_ident}}'
       scope: storage.type.haskell
       set:
+        - include: pop_when_deindent
         - include: data_type_declaration_typevars
         - match: '='
           scope: keyword.control.definition.haskell
@@ -368,11 +369,21 @@ contexts:
 
   data_type_alias_declaration:
     - include: pop_when_deindent
-    - include: type
-    - match: '='
-      scope: keyword.control.definition.haskell
-    - match: '::'
-      scope: keyword.control.kind_annotation.haskell
+    - match: '{{upper_ident}}'
+      scope: storage.type.haskell
+      set:
+        - include: pop_when_deindent
+        - include: data_type_declaration_typevars
+        - match: '='
+          scope: keyword.control.definition.haskell
+          set:
+            - include: pop_when_deindent
+            - include: type
+        - match: '::'
+          scope: keyword.control.kind_annotation.haskell
+          set:
+            - include: pop_when_deindent
+            - include: type
 
   ### Functions ###
 
@@ -766,8 +777,19 @@ contexts:
       captures:
         1: storage.module.haskell
         3: storage.type.haskell
+    - include: expression_numeric
+    - match: '"'
+      push:
+        - meta_include_prototype: false
+        - meta_scope: string.quoted.double.haskell
+        - match: '\\.'
+          scope: constant.character.escape.haskell
+        - match: '"'
+          pop: true
     - match: '{{lower_ident}}'
       scope: variable.other.type.haskell
+    - match: '{{symbol_char}}+'
+      scope: keyword.operator.type.haskell
 
   type_forall:
     - match: '{{lower_ident}}'

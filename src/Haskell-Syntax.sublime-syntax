@@ -363,291 +363,701 @@ contexts:
     push: data_type_alias_declaration__0
   data_type_alias_declaration__0:
   - include: pop_when_deindent__0
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__0
+    - include: data_type_declaration_typevars__0
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__0
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__0
+      - include: type
   data_type_alias_declaration__1:
   - include: pop_when_deindent__1
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__1
+    - include: data_type_declaration_typevars__1
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__1
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__1
+      - include: type
   data_type_alias_declaration__10:
   - include: pop_when_deindent__10
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__10
+    - include: data_type_declaration_typevars__10
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__10
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__10
+      - include: type
   data_type_alias_declaration__11:
   - include: pop_when_deindent__11
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__11
+    - include: data_type_declaration_typevars__11
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__11
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__11
+      - include: type
   data_type_alias_declaration__12:
   - include: pop_when_deindent__12
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__12
+    - include: data_type_declaration_typevars__12
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__12
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__12
+      - include: type
   data_type_alias_declaration__13:
   - include: pop_when_deindent__13
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__13
+    - include: data_type_declaration_typevars__13
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__13
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__13
+      - include: type
   data_type_alias_declaration__14:
   - include: pop_when_deindent__14
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__14
+    - include: data_type_declaration_typevars__14
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__14
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__14
+      - include: type
   data_type_alias_declaration__15:
   - include: pop_when_deindent__15
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__15
+    - include: data_type_declaration_typevars__15
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__15
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__15
+      - include: type
   data_type_alias_declaration__16:
   - include: pop_when_deindent__16
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__16
+    - include: data_type_declaration_typevars__16
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__16
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__16
+      - include: type
   data_type_alias_declaration__17:
   - include: pop_when_deindent__17
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__17
+    - include: data_type_declaration_typevars__17
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__17
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__17
+      - include: type
   data_type_alias_declaration__18:
   - include: pop_when_deindent__18
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__18
+    - include: data_type_declaration_typevars__18
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__18
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__18
+      - include: type
   data_type_alias_declaration__19:
   - include: pop_when_deindent__19
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__19
+    - include: data_type_declaration_typevars__19
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__19
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__19
+      - include: type
   data_type_alias_declaration__2:
   - include: pop_when_deindent__2
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__2
+    - include: data_type_declaration_typevars__2
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__2
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__2
+      - include: type
   data_type_alias_declaration__20:
   - include: pop_when_deindent__20
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__20
+    - include: data_type_declaration_typevars__20
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__20
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__20
+      - include: type
   data_type_alias_declaration__21:
   - include: pop_when_deindent__21
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__21
+    - include: data_type_declaration_typevars__21
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__21
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__21
+      - include: type
   data_type_alias_declaration__22:
   - include: pop_when_deindent__22
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__22
+    - include: data_type_declaration_typevars__22
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__22
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__22
+      - include: type
   data_type_alias_declaration__23:
   - include: pop_when_deindent__23
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__23
+    - include: data_type_declaration_typevars__23
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__23
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__23
+      - include: type
   data_type_alias_declaration__24:
   - include: pop_when_deindent__24
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__24
+    - include: data_type_declaration_typevars__24
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__24
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__24
+      - include: type
   data_type_alias_declaration__25:
   - include: pop_when_deindent__25
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__25
+    - include: data_type_declaration_typevars__25
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__25
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__25
+      - include: type
   data_type_alias_declaration__26:
   - include: pop_when_deindent__26
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__26
+    - include: data_type_declaration_typevars__26
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__26
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__26
+      - include: type
   data_type_alias_declaration__27:
   - include: pop_when_deindent__27
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__27
+    - include: data_type_declaration_typevars__27
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__27
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__27
+      - include: type
   data_type_alias_declaration__28:
   - include: pop_when_deindent__28
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__28
+    - include: data_type_declaration_typevars__28
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__28
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__28
+      - include: type
   data_type_alias_declaration__29:
   - include: pop_when_deindent__29
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__29
+    - include: data_type_declaration_typevars__29
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__29
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__29
+      - include: type
   data_type_alias_declaration__3:
   - include: pop_when_deindent__3
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__3
+    - include: data_type_declaration_typevars__3
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__3
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__3
+      - include: type
   data_type_alias_declaration__30:
   - include: pop_when_deindent__30
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__30
+    - include: data_type_declaration_typevars__30
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__30
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__30
+      - include: type
   data_type_alias_declaration__31:
   - include: pop_when_deindent__31
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__31
+    - include: data_type_declaration_typevars__31
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__31
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__31
+      - include: type
   data_type_alias_declaration__32:
   - include: pop_when_deindent__32
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__32
+    - include: data_type_declaration_typevars__32
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__32
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__32
+      - include: type
   data_type_alias_declaration__33:
   - include: pop_when_deindent__33
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__33
+    - include: data_type_declaration_typevars__33
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__33
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__33
+      - include: type
   data_type_alias_declaration__34:
   - include: pop_when_deindent__34
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__34
+    - include: data_type_declaration_typevars__34
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__34
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__34
+      - include: type
   data_type_alias_declaration__35:
   - include: pop_when_deindent__35
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__35
+    - include: data_type_declaration_typevars__35
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__35
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__35
+      - include: type
   data_type_alias_declaration__36:
   - include: pop_when_deindent__36
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__36
+    - include: data_type_declaration_typevars__36
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__36
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__36
+      - include: type
   data_type_alias_declaration__37:
   - include: pop_when_deindent__37
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__37
+    - include: data_type_declaration_typevars__37
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__37
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__37
+      - include: type
   data_type_alias_declaration__38:
   - include: pop_when_deindent__38
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__38
+    - include: data_type_declaration_typevars__38
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__38
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__38
+      - include: type
   data_type_alias_declaration__39:
   - include: pop_when_deindent__39
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__39
+    - include: data_type_declaration_typevars__39
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__39
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__39
+      - include: type
   data_type_alias_declaration__4:
   - include: pop_when_deindent__4
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__4
+    - include: data_type_declaration_typevars__4
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__4
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__4
+      - include: type
   data_type_alias_declaration__40:
   - include: pop_when_deindent__40
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__40
+    - include: data_type_declaration_typevars__40
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__40
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__40
+      - include: type
   data_type_alias_declaration__5:
   - include: pop_when_deindent__5
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__5
+    - include: data_type_declaration_typevars__5
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__5
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__5
+      - include: type
   data_type_alias_declaration__6:
   - include: pop_when_deindent__6
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__6
+    - include: data_type_declaration_typevars__6
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__6
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__6
+      - include: type
   data_type_alias_declaration__7:
   - include: pop_when_deindent__7
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__7
+    - include: data_type_declaration_typevars__7
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__7
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__7
+      - include: type
   data_type_alias_declaration__8:
   - include: pop_when_deindent__8
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__8
+    - include: data_type_declaration_typevars__8
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__8
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__8
+      - include: type
   data_type_alias_declaration__9:
   - include: pop_when_deindent__9
-  - include: type
-  - match: '='
-    scope: keyword.control.definition.haskell
-  - match: '::'
-    scope: keyword.control.kind_annotation.haskell
+  - match: '{{upper_ident}}'
+    scope: storage.type.haskell
+    set:
+    - include: pop_when_deindent__9
+    - include: data_type_declaration_typevars__9
+    - match: '='
+      scope: keyword.control.definition.haskell
+      set:
+      - include: pop_when_deindent__9
+      - include: type
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - include: pop_when_deindent__9
+      - include: type
   data_type_constructor__0:
   - include: pop_when_deindent__0
   - fail: data_type_constructor__0
@@ -2170,6 +2580,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__0
     - include: data_type_declaration_typevars__0
     - branch:
       - data_type_constructor_start_existential__0
@@ -2182,6 +2593,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__1
     - include: data_type_declaration_typevars__1
     - branch:
       - data_type_constructor_start_existential__1
@@ -2194,6 +2606,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__10
     - include: data_type_declaration_typevars__10
     - branch:
       - data_type_constructor_start_existential__10
@@ -2206,6 +2619,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__11
     - include: data_type_declaration_typevars__11
     - branch:
       - data_type_constructor_start_existential__11
@@ -2218,6 +2632,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__12
     - include: data_type_declaration_typevars__12
     - branch:
       - data_type_constructor_start_existential__12
@@ -2230,6 +2645,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__13
     - include: data_type_declaration_typevars__13
     - branch:
       - data_type_constructor_start_existential__13
@@ -2242,6 +2658,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__14
     - include: data_type_declaration_typevars__14
     - branch:
       - data_type_constructor_start_existential__14
@@ -2254,6 +2671,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__15
     - include: data_type_declaration_typevars__15
     - branch:
       - data_type_constructor_start_existential__15
@@ -2266,6 +2684,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__16
     - include: data_type_declaration_typevars__16
     - branch:
       - data_type_constructor_start_existential__16
@@ -2278,6 +2697,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__17
     - include: data_type_declaration_typevars__17
     - branch:
       - data_type_constructor_start_existential__17
@@ -2290,6 +2710,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__18
     - include: data_type_declaration_typevars__18
     - branch:
       - data_type_constructor_start_existential__18
@@ -2302,6 +2723,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__19
     - include: data_type_declaration_typevars__19
     - branch:
       - data_type_constructor_start_existential__19
@@ -2314,6 +2736,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__2
     - include: data_type_declaration_typevars__2
     - branch:
       - data_type_constructor_start_existential__2
@@ -2326,6 +2749,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__20
     - include: data_type_declaration_typevars__20
     - branch:
       - data_type_constructor_start_existential__20
@@ -2338,6 +2762,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__21
     - include: data_type_declaration_typevars__21
     - branch:
       - data_type_constructor_start_existential__21
@@ -2350,6 +2775,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__22
     - include: data_type_declaration_typevars__22
     - branch:
       - data_type_constructor_start_existential__22
@@ -2362,6 +2788,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__23
     - include: data_type_declaration_typevars__23
     - branch:
       - data_type_constructor_start_existential__23
@@ -2374,6 +2801,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__24
     - include: data_type_declaration_typevars__24
     - branch:
       - data_type_constructor_start_existential__24
@@ -2386,6 +2814,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__25
     - include: data_type_declaration_typevars__25
     - branch:
       - data_type_constructor_start_existential__25
@@ -2398,6 +2827,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__26
     - include: data_type_declaration_typevars__26
     - branch:
       - data_type_constructor_start_existential__26
@@ -2410,6 +2840,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__27
     - include: data_type_declaration_typevars__27
     - branch:
       - data_type_constructor_start_existential__27
@@ -2422,6 +2853,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__28
     - include: data_type_declaration_typevars__28
     - branch:
       - data_type_constructor_start_existential__28
@@ -2434,6 +2866,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__29
     - include: data_type_declaration_typevars__29
     - branch:
       - data_type_constructor_start_existential__29
@@ -2446,6 +2879,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__3
     - include: data_type_declaration_typevars__3
     - branch:
       - data_type_constructor_start_existential__3
@@ -2458,6 +2892,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__30
     - include: data_type_declaration_typevars__30
     - branch:
       - data_type_constructor_start_existential__30
@@ -2470,6 +2905,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__31
     - include: data_type_declaration_typevars__31
     - branch:
       - data_type_constructor_start_existential__31
@@ -2482,6 +2918,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__32
     - include: data_type_declaration_typevars__32
     - branch:
       - data_type_constructor_start_existential__32
@@ -2494,6 +2931,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__33
     - include: data_type_declaration_typevars__33
     - branch:
       - data_type_constructor_start_existential__33
@@ -2506,6 +2944,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__34
     - include: data_type_declaration_typevars__34
     - branch:
       - data_type_constructor_start_existential__34
@@ -2518,6 +2957,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__35
     - include: data_type_declaration_typevars__35
     - branch:
       - data_type_constructor_start_existential__35
@@ -2530,6 +2970,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__36
     - include: data_type_declaration_typevars__36
     - branch:
       - data_type_constructor_start_existential__36
@@ -2542,6 +2983,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__37
     - include: data_type_declaration_typevars__37
     - branch:
       - data_type_constructor_start_existential__37
@@ -2554,6 +2996,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__38
     - include: data_type_declaration_typevars__38
     - branch:
       - data_type_constructor_start_existential__38
@@ -2566,6 +3009,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__39
     - include: data_type_declaration_typevars__39
     - branch:
       - data_type_constructor_start_existential__39
@@ -2578,6 +3022,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__4
     - include: data_type_declaration_typevars__4
     - branch:
       - data_type_constructor_start_existential__4
@@ -2590,6 +3035,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__40
     - include: data_type_declaration_typevars__40
     - branch:
       - data_type_constructor_start_existential__40
@@ -2602,6 +3048,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__5
     - include: data_type_declaration_typevars__5
     - branch:
       - data_type_constructor_start_existential__5
@@ -2614,6 +3061,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__6
     - include: data_type_declaration_typevars__6
     - branch:
       - data_type_constructor_start_existential__6
@@ -2626,6 +3074,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__7
     - include: data_type_declaration_typevars__7
     - branch:
       - data_type_constructor_start_existential__7
@@ -2638,6 +3087,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__8
     - include: data_type_declaration_typevars__8
     - branch:
       - data_type_constructor_start_existential__8
@@ -2650,6 +3100,7 @@ contexts:
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
     set:
+    - include: pop_when_deindent__9
     - include: data_type_declaration_typevars__9
     - branch:
       - data_type_constructor_start_existential__9
@@ -20229,8 +20680,19 @@ contexts:
       1: storage.module.haskell
       3: storage.type.haskell
     match: ({{module_prefix}})({{upper_ident}})
+  - include: expression_numeric
+  - match: '"'
+    push:
+    - meta_include_prototype: false
+    - meta_scope: string.quoted.double.haskell
+    - match: \\.
+      scope: constant.character.escape.haskell
+    - match: '"'
+      pop: true
   - match: '{{lower_ident}}'
     scope: variable.other.type.haskell
+  - match: '{{symbol_char}}+'
+    scope: keyword.operator.type.haskell
   type_class:
   - captures:
       2: keyword.control.type.haskell

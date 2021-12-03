@@ -59,5 +59,14 @@ type Foo :: Type -> Type
 type Foo forall' = Int
 --       ^^^^^^^ variable.other.type.haskell
 
--- TODO: symbols + type operators
+type StringLit = "as -- bs"
+--               ^^^^^^^^^^ string.quoted.double.haskell
+
+type GreaterThan0 (x :: Nat) = x > 0
+--                   ^^ keyword.control.kind_annotation.haskell
+--                               ^ keyword.operator.type.haskell
+--                                 ^ constant.numeric.integer.decimal.haskell
+
 type ServantRoute = Capture "userId" Int :> Get '[JSON] User
+--                          ^^^^^^^^ string.quoted.double.haskell
+--                                       ^^ keyword.operator.type.haskell
