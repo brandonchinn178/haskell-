@@ -80,8 +80,34 @@ data Foo a b
 --   ^^^^ entity.name.constructor.haskell
 --        ^ variable.other.type.haskell
 
--- TODO
--- data SomeTable = forall (status :: TableStatus). SomeTable (Table status)
+data Proxy (a :: k) = Proxy
+--         ^ keyword.other.type.haskell
+--          ^ variable.other.type.haskell
+--            ^^ keyword.control.kind_annotation.haskell
+--               ^ variable.other.type.haskell
+--                ^ keyword.other.type.haskell
+
+data Store (isOpen :: Bool) = Store
+--          ^^^^^^ variable.other.type.haskell
+--                 ^^ keyword.control.kind_annotation.haskell
+--                    ^^^^ storage.type.haskell
+
+data SomeFoo = forall a. SomeFoo (Foo a)
+--             ^^^^^^ keyword.control.forall.haskell
+--                    ^ variable.other.type.haskell
+--                     ^ keyword.control.forall.haskell
+--                       ^^^^^^^ entity.name.constructor.haskell
+--                               ^ punctuation.section.parens.begin.haskell keyword.other.type.haskell
+--                                ^^^ storage.type.haskell
+--                                    ^ variable.other.type.haskell
+--                                     ^ punctuation.section.parens.end.haskell keyword.other.type.haskell
+
+data SomeFoo = forall (a :: Int). SomeFoo (Foo a)
+--             ^^^^^^ keyword.control.forall.haskell
+--                     ^ variable.other.type.haskell
+--                       ^^ keyword.control.kind_annotation.haskell
+--                          ^^^ storage.type.haskell
+--                                ^^^^^^^ entity.name.constructor.haskell
 
 data SomeFoo = forall a. Foo a => SomeFoo a
 --   ^^^^^^^ storage.type.haskell

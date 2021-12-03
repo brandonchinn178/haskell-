@@ -154,3 +154,12 @@ module' = undefined
 
 import' = undefined
 -- ^^^^ entity.name.function.haskell
+
+data' = undefined
+-- ^^ entity.name.function.haskell
+
+newtype' = undefined
+-- ^^^^^ entity.name.function.haskell
+
+type' = undefined
+-- ^^ entity.name.function.haskell

@@ -568,7 +568,7 @@ contexts:
     scope: keyword.control.definition.haskell
   data_type_constructor__0:
   - include: pop_when_deindent__0
-  - fail: data_type_declaration__0
+  - fail: data_type_constructor__0
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -579,7 +579,7 @@ contexts:
   - include: type
   data_type_constructor__1:
   - include: pop_when_deindent__1
-  - fail: data_type_declaration__1
+  - fail: data_type_constructor__1
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -590,7 +590,7 @@ contexts:
   - include: type
   data_type_constructor__10:
   - include: pop_when_deindent__10
-  - fail: data_type_declaration__10
+  - fail: data_type_constructor__10
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -601,7 +601,7 @@ contexts:
   - include: type
   data_type_constructor__11:
   - include: pop_when_deindent__11
-  - fail: data_type_declaration__11
+  - fail: data_type_constructor__11
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -612,7 +612,7 @@ contexts:
   - include: type
   data_type_constructor__12:
   - include: pop_when_deindent__12
-  - fail: data_type_declaration__12
+  - fail: data_type_constructor__12
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -623,7 +623,7 @@ contexts:
   - include: type
   data_type_constructor__13:
   - include: pop_when_deindent__13
-  - fail: data_type_declaration__13
+  - fail: data_type_constructor__13
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -634,7 +634,7 @@ contexts:
   - include: type
   data_type_constructor__14:
   - include: pop_when_deindent__14
-  - fail: data_type_declaration__14
+  - fail: data_type_constructor__14
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -645,7 +645,7 @@ contexts:
   - include: type
   data_type_constructor__15:
   - include: pop_when_deindent__15
-  - fail: data_type_declaration__15
+  - fail: data_type_constructor__15
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -656,7 +656,7 @@ contexts:
   - include: type
   data_type_constructor__16:
   - include: pop_when_deindent__16
-  - fail: data_type_declaration__16
+  - fail: data_type_constructor__16
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -667,7 +667,7 @@ contexts:
   - include: type
   data_type_constructor__17:
   - include: pop_when_deindent__17
-  - fail: data_type_declaration__17
+  - fail: data_type_constructor__17
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -678,7 +678,7 @@ contexts:
   - include: type
   data_type_constructor__18:
   - include: pop_when_deindent__18
-  - fail: data_type_declaration__18
+  - fail: data_type_constructor__18
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -689,7 +689,7 @@ contexts:
   - include: type
   data_type_constructor__19:
   - include: pop_when_deindent__19
-  - fail: data_type_declaration__19
+  - fail: data_type_constructor__19
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -700,7 +700,7 @@ contexts:
   - include: type
   data_type_constructor__2:
   - include: pop_when_deindent__2
-  - fail: data_type_declaration__2
+  - fail: data_type_constructor__2
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -711,7 +711,7 @@ contexts:
   - include: type
   data_type_constructor__20:
   - include: pop_when_deindent__20
-  - fail: data_type_declaration__20
+  - fail: data_type_constructor__20
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -722,7 +722,7 @@ contexts:
   - include: type
   data_type_constructor__21:
   - include: pop_when_deindent__21
-  - fail: data_type_declaration__21
+  - fail: data_type_constructor__21
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -733,7 +733,7 @@ contexts:
   - include: type
   data_type_constructor__22:
   - include: pop_when_deindent__22
-  - fail: data_type_declaration__22
+  - fail: data_type_constructor__22
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -744,7 +744,7 @@ contexts:
   - include: type
   data_type_constructor__23:
   - include: pop_when_deindent__23
-  - fail: data_type_declaration__23
+  - fail: data_type_constructor__23
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -755,7 +755,7 @@ contexts:
   - include: type
   data_type_constructor__24:
   - include: pop_when_deindent__24
-  - fail: data_type_declaration__24
+  - fail: data_type_constructor__24
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -766,7 +766,7 @@ contexts:
   - include: type
   data_type_constructor__25:
   - include: pop_when_deindent__25
-  - fail: data_type_declaration__25
+  - fail: data_type_constructor__25
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -777,7 +777,7 @@ contexts:
   - include: type
   data_type_constructor__26:
   - include: pop_when_deindent__26
-  - fail: data_type_declaration__26
+  - fail: data_type_constructor__26
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -788,7 +788,7 @@ contexts:
   - include: type
   data_type_constructor__27:
   - include: pop_when_deindent__27
-  - fail: data_type_declaration__27
+  - fail: data_type_constructor__27
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -799,7 +799,7 @@ contexts:
   - include: type
   data_type_constructor__28:
   - include: pop_when_deindent__28
-  - fail: data_type_declaration__28
+  - fail: data_type_constructor__28
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -810,7 +810,7 @@ contexts:
   - include: type
   data_type_constructor__29:
   - include: pop_when_deindent__29
-  - fail: data_type_declaration__29
+  - fail: data_type_constructor__29
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -821,7 +821,7 @@ contexts:
   - include: type
   data_type_constructor__3:
   - include: pop_when_deindent__3
-  - fail: data_type_declaration__3
+  - fail: data_type_constructor__3
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -832,7 +832,7 @@ contexts:
   - include: type
   data_type_constructor__30:
   - include: pop_when_deindent__30
-  - fail: data_type_declaration__30
+  - fail: data_type_constructor__30
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -843,7 +843,7 @@ contexts:
   - include: type
   data_type_constructor__31:
   - include: pop_when_deindent__31
-  - fail: data_type_declaration__31
+  - fail: data_type_constructor__31
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -854,7 +854,7 @@ contexts:
   - include: type
   data_type_constructor__32:
   - include: pop_when_deindent__32
-  - fail: data_type_declaration__32
+  - fail: data_type_constructor__32
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -865,7 +865,7 @@ contexts:
   - include: type
   data_type_constructor__33:
   - include: pop_when_deindent__33
-  - fail: data_type_declaration__33
+  - fail: data_type_constructor__33
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -876,7 +876,7 @@ contexts:
   - include: type
   data_type_constructor__34:
   - include: pop_when_deindent__34
-  - fail: data_type_declaration__34
+  - fail: data_type_constructor__34
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -887,7 +887,7 @@ contexts:
   - include: type
   data_type_constructor__35:
   - include: pop_when_deindent__35
-  - fail: data_type_declaration__35
+  - fail: data_type_constructor__35
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -898,7 +898,7 @@ contexts:
   - include: type
   data_type_constructor__36:
   - include: pop_when_deindent__36
-  - fail: data_type_declaration__36
+  - fail: data_type_constructor__36
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -909,7 +909,7 @@ contexts:
   - include: type
   data_type_constructor__37:
   - include: pop_when_deindent__37
-  - fail: data_type_declaration__37
+  - fail: data_type_constructor__37
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -920,7 +920,7 @@ contexts:
   - include: type
   data_type_constructor__38:
   - include: pop_when_deindent__38
-  - fail: data_type_declaration__38
+  - fail: data_type_constructor__38
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -931,7 +931,7 @@ contexts:
   - include: type
   data_type_constructor__39:
   - include: pop_when_deindent__39
-  - fail: data_type_declaration__39
+  - fail: data_type_constructor__39
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -942,7 +942,7 @@ contexts:
   - include: type
   data_type_constructor__4:
   - include: pop_when_deindent__4
-  - fail: data_type_declaration__4
+  - fail: data_type_constructor__4
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -953,7 +953,7 @@ contexts:
   - include: type
   data_type_constructor__40:
   - include: pop_when_deindent__40
-  - fail: data_type_declaration__40
+  - fail: data_type_constructor__40
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -964,7 +964,7 @@ contexts:
   - include: type
   data_type_constructor__5:
   - include: pop_when_deindent__5
-  - fail: data_type_declaration__5
+  - fail: data_type_constructor__5
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -975,7 +975,7 @@ contexts:
   - include: type
   data_type_constructor__6:
   - include: pop_when_deindent__6
-  - fail: data_type_declaration__6
+  - fail: data_type_constructor__6
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -986,7 +986,7 @@ contexts:
   - include: type
   data_type_constructor__7:
   - include: pop_when_deindent__7
-  - fail: data_type_declaration__7
+  - fail: data_type_constructor__7
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -997,7 +997,7 @@ contexts:
   - include: type
   data_type_constructor__8:
   - include: pop_when_deindent__8
-  - fail: data_type_declaration__8
+  - fail: data_type_constructor__8
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -1008,7 +1008,7 @@ contexts:
   - include: type
   data_type_constructor__9:
   - include: pop_when_deindent__9
-  - fail: data_type_declaration__9
+  - fail: data_type_constructor__9
     match: =>
   - match: \|
     scope: keyword.control.definition.haskell
@@ -1222,247 +1222,862 @@ contexts:
   - match: '{{upper_ident}}'
     scope: entity.name.constructor.haskell
     set: data_type_constructor__9
-  data_type_constructor_start_with_constraints__0:
+  data_type_constructor_start_existential__0:
+  - include: pop_when_deindent__0
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__0
+    - branch:
+      - data_type_constructor_start__0
+      - data_type_constructor_start_existential_constraints__0
+      branch_point: data_type_constructor__0
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__0
+    match: \S
+  data_type_constructor_start_existential__1:
+  - include: pop_when_deindent__1
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__1
+    - branch:
+      - data_type_constructor_start__1
+      - data_type_constructor_start_existential_constraints__1
+      branch_point: data_type_constructor__1
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__1
+    match: \S
+  data_type_constructor_start_existential__10:
+  - include: pop_when_deindent__10
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__10
+    - branch:
+      - data_type_constructor_start__10
+      - data_type_constructor_start_existential_constraints__10
+      branch_point: data_type_constructor__10
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__10
+    match: \S
+  data_type_constructor_start_existential__11:
+  - include: pop_when_deindent__11
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__11
+    - branch:
+      - data_type_constructor_start__11
+      - data_type_constructor_start_existential_constraints__11
+      branch_point: data_type_constructor__11
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__11
+    match: \S
+  data_type_constructor_start_existential__12:
+  - include: pop_when_deindent__12
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__12
+    - branch:
+      - data_type_constructor_start__12
+      - data_type_constructor_start_existential_constraints__12
+      branch_point: data_type_constructor__12
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__12
+    match: \S
+  data_type_constructor_start_existential__13:
+  - include: pop_when_deindent__13
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__13
+    - branch:
+      - data_type_constructor_start__13
+      - data_type_constructor_start_existential_constraints__13
+      branch_point: data_type_constructor__13
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__13
+    match: \S
+  data_type_constructor_start_existential__14:
+  - include: pop_when_deindent__14
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__14
+    - branch:
+      - data_type_constructor_start__14
+      - data_type_constructor_start_existential_constraints__14
+      branch_point: data_type_constructor__14
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__14
+    match: \S
+  data_type_constructor_start_existential__15:
+  - include: pop_when_deindent__15
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__15
+    - branch:
+      - data_type_constructor_start__15
+      - data_type_constructor_start_existential_constraints__15
+      branch_point: data_type_constructor__15
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__15
+    match: \S
+  data_type_constructor_start_existential__16:
+  - include: pop_when_deindent__16
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__16
+    - branch:
+      - data_type_constructor_start__16
+      - data_type_constructor_start_existential_constraints__16
+      branch_point: data_type_constructor__16
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__16
+    match: \S
+  data_type_constructor_start_existential__17:
+  - include: pop_when_deindent__17
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__17
+    - branch:
+      - data_type_constructor_start__17
+      - data_type_constructor_start_existential_constraints__17
+      branch_point: data_type_constructor__17
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__17
+    match: \S
+  data_type_constructor_start_existential__18:
+  - include: pop_when_deindent__18
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__18
+    - branch:
+      - data_type_constructor_start__18
+      - data_type_constructor_start_existential_constraints__18
+      branch_point: data_type_constructor__18
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__18
+    match: \S
+  data_type_constructor_start_existential__19:
+  - include: pop_when_deindent__19
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__19
+    - branch:
+      - data_type_constructor_start__19
+      - data_type_constructor_start_existential_constraints__19
+      branch_point: data_type_constructor__19
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__19
+    match: \S
+  data_type_constructor_start_existential__2:
+  - include: pop_when_deindent__2
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__2
+    - branch:
+      - data_type_constructor_start__2
+      - data_type_constructor_start_existential_constraints__2
+      branch_point: data_type_constructor__2
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__2
+    match: \S
+  data_type_constructor_start_existential__20:
+  - include: pop_when_deindent__20
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__20
+    - branch:
+      - data_type_constructor_start__20
+      - data_type_constructor_start_existential_constraints__20
+      branch_point: data_type_constructor__20
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__20
+    match: \S
+  data_type_constructor_start_existential__21:
+  - include: pop_when_deindent__21
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__21
+    - branch:
+      - data_type_constructor_start__21
+      - data_type_constructor_start_existential_constraints__21
+      branch_point: data_type_constructor__21
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__21
+    match: \S
+  data_type_constructor_start_existential__22:
+  - include: pop_when_deindent__22
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__22
+    - branch:
+      - data_type_constructor_start__22
+      - data_type_constructor_start_existential_constraints__22
+      branch_point: data_type_constructor__22
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__22
+    match: \S
+  data_type_constructor_start_existential__23:
+  - include: pop_when_deindent__23
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__23
+    - branch:
+      - data_type_constructor_start__23
+      - data_type_constructor_start_existential_constraints__23
+      branch_point: data_type_constructor__23
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__23
+    match: \S
+  data_type_constructor_start_existential__24:
+  - include: pop_when_deindent__24
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__24
+    - branch:
+      - data_type_constructor_start__24
+      - data_type_constructor_start_existential_constraints__24
+      branch_point: data_type_constructor__24
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__24
+    match: \S
+  data_type_constructor_start_existential__25:
+  - include: pop_when_deindent__25
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__25
+    - branch:
+      - data_type_constructor_start__25
+      - data_type_constructor_start_existential_constraints__25
+      branch_point: data_type_constructor__25
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__25
+    match: \S
+  data_type_constructor_start_existential__26:
+  - include: pop_when_deindent__26
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__26
+    - branch:
+      - data_type_constructor_start__26
+      - data_type_constructor_start_existential_constraints__26
+      branch_point: data_type_constructor__26
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__26
+    match: \S
+  data_type_constructor_start_existential__27:
+  - include: pop_when_deindent__27
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__27
+    - branch:
+      - data_type_constructor_start__27
+      - data_type_constructor_start_existential_constraints__27
+      branch_point: data_type_constructor__27
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__27
+    match: \S
+  data_type_constructor_start_existential__28:
+  - include: pop_when_deindent__28
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__28
+    - branch:
+      - data_type_constructor_start__28
+      - data_type_constructor_start_existential_constraints__28
+      branch_point: data_type_constructor__28
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__28
+    match: \S
+  data_type_constructor_start_existential__29:
+  - include: pop_when_deindent__29
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__29
+    - branch:
+      - data_type_constructor_start__29
+      - data_type_constructor_start_existential_constraints__29
+      branch_point: data_type_constructor__29
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__29
+    match: \S
+  data_type_constructor_start_existential__3:
+  - include: pop_when_deindent__3
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__3
+    - branch:
+      - data_type_constructor_start__3
+      - data_type_constructor_start_existential_constraints__3
+      branch_point: data_type_constructor__3
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__3
+    match: \S
+  data_type_constructor_start_existential__30:
+  - include: pop_when_deindent__30
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__30
+    - branch:
+      - data_type_constructor_start__30
+      - data_type_constructor_start_existential_constraints__30
+      branch_point: data_type_constructor__30
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__30
+    match: \S
+  data_type_constructor_start_existential__31:
+  - include: pop_when_deindent__31
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__31
+    - branch:
+      - data_type_constructor_start__31
+      - data_type_constructor_start_existential_constraints__31
+      branch_point: data_type_constructor__31
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__31
+    match: \S
+  data_type_constructor_start_existential__32:
+  - include: pop_when_deindent__32
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__32
+    - branch:
+      - data_type_constructor_start__32
+      - data_type_constructor_start_existential_constraints__32
+      branch_point: data_type_constructor__32
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__32
+    match: \S
+  data_type_constructor_start_existential__33:
+  - include: pop_when_deindent__33
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__33
+    - branch:
+      - data_type_constructor_start__33
+      - data_type_constructor_start_existential_constraints__33
+      branch_point: data_type_constructor__33
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__33
+    match: \S
+  data_type_constructor_start_existential__34:
+  - include: pop_when_deindent__34
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__34
+    - branch:
+      - data_type_constructor_start__34
+      - data_type_constructor_start_existential_constraints__34
+      branch_point: data_type_constructor__34
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__34
+    match: \S
+  data_type_constructor_start_existential__35:
+  - include: pop_when_deindent__35
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__35
+    - branch:
+      - data_type_constructor_start__35
+      - data_type_constructor_start_existential_constraints__35
+      branch_point: data_type_constructor__35
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__35
+    match: \S
+  data_type_constructor_start_existential__36:
+  - include: pop_when_deindent__36
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__36
+    - branch:
+      - data_type_constructor_start__36
+      - data_type_constructor_start_existential_constraints__36
+      branch_point: data_type_constructor__36
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__36
+    match: \S
+  data_type_constructor_start_existential__37:
+  - include: pop_when_deindent__37
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__37
+    - branch:
+      - data_type_constructor_start__37
+      - data_type_constructor_start_existential_constraints__37
+      branch_point: data_type_constructor__37
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__37
+    match: \S
+  data_type_constructor_start_existential__38:
+  - include: pop_when_deindent__38
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__38
+    - branch:
+      - data_type_constructor_start__38
+      - data_type_constructor_start_existential_constraints__38
+      branch_point: data_type_constructor__38
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__38
+    match: \S
+  data_type_constructor_start_existential__39:
+  - include: pop_when_deindent__39
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__39
+    - branch:
+      - data_type_constructor_start__39
+      - data_type_constructor_start_existential_constraints__39
+      branch_point: data_type_constructor__39
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__39
+    match: \S
+  data_type_constructor_start_existential__4:
+  - include: pop_when_deindent__4
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__4
+    - branch:
+      - data_type_constructor_start__4
+      - data_type_constructor_start_existential_constraints__4
+      branch_point: data_type_constructor__4
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__4
+    match: \S
+  data_type_constructor_start_existential__40:
+  - include: pop_when_deindent__40
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__40
+    - branch:
+      - data_type_constructor_start__40
+      - data_type_constructor_start_existential_constraints__40
+      branch_point: data_type_constructor__40
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__40
+    match: \S
+  data_type_constructor_start_existential__5:
+  - include: pop_when_deindent__5
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__5
+    - branch:
+      - data_type_constructor_start__5
+      - data_type_constructor_start_existential_constraints__5
+      branch_point: data_type_constructor__5
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__5
+    match: \S
+  data_type_constructor_start_existential__6:
+  - include: pop_when_deindent__6
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__6
+    - branch:
+      - data_type_constructor_start__6
+      - data_type_constructor_start_existential_constraints__6
+      branch_point: data_type_constructor__6
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__6
+    match: \S
+  data_type_constructor_start_existential__7:
+  - include: pop_when_deindent__7
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__7
+    - branch:
+      - data_type_constructor_start__7
+      - data_type_constructor_start_existential_constraints__7
+      branch_point: data_type_constructor__7
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__7
+    match: \S
+  data_type_constructor_start_existential__8:
+  - include: pop_when_deindent__8
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__8
+    - branch:
+      - data_type_constructor_start__8
+      - data_type_constructor_start_existential_constraints__8
+      branch_point: data_type_constructor__8
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__8
+    match: \S
+  data_type_constructor_start_existential__9:
+  - include: pop_when_deindent__9
+  - match: \bforall{{post_non_ident}}
+    scope: keyword.control.forall.haskell
+    set:
+    - include: pop_when_deindent__9
+    - branch:
+      - data_type_constructor_start__9
+      - data_type_constructor_start_existential_constraints__9
+      branch_point: data_type_constructor__9
+      match: \.
+      scope: keyword.control.forall.haskell
+    - include: type_forall
+  - fail: data_type_declaration__9
+    match: \S
+  data_type_constructor_start_existential_constraints__0:
   - include: pop_when_deindent__0
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__0
   - include: type
-  data_type_constructor_start_with_constraints__1:
+  data_type_constructor_start_existential_constraints__1:
   - include: pop_when_deindent__1
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__1
   - include: type
-  data_type_constructor_start_with_constraints__10:
+  data_type_constructor_start_existential_constraints__10:
   - include: pop_when_deindent__10
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__10
   - include: type
-  data_type_constructor_start_with_constraints__11:
+  data_type_constructor_start_existential_constraints__11:
   - include: pop_when_deindent__11
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__11
   - include: type
-  data_type_constructor_start_with_constraints__12:
+  data_type_constructor_start_existential_constraints__12:
   - include: pop_when_deindent__12
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__12
   - include: type
-  data_type_constructor_start_with_constraints__13:
+  data_type_constructor_start_existential_constraints__13:
   - include: pop_when_deindent__13
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__13
   - include: type
-  data_type_constructor_start_with_constraints__14:
+  data_type_constructor_start_existential_constraints__14:
   - include: pop_when_deindent__14
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__14
   - include: type
-  data_type_constructor_start_with_constraints__15:
+  data_type_constructor_start_existential_constraints__15:
   - include: pop_when_deindent__15
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__15
   - include: type
-  data_type_constructor_start_with_constraints__16:
+  data_type_constructor_start_existential_constraints__16:
   - include: pop_when_deindent__16
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__16
   - include: type
-  data_type_constructor_start_with_constraints__17:
+  data_type_constructor_start_existential_constraints__17:
   - include: pop_when_deindent__17
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__17
   - include: type
-  data_type_constructor_start_with_constraints__18:
+  data_type_constructor_start_existential_constraints__18:
   - include: pop_when_deindent__18
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__18
   - include: type
-  data_type_constructor_start_with_constraints__19:
+  data_type_constructor_start_existential_constraints__19:
   - include: pop_when_deindent__19
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__19
   - include: type
-  data_type_constructor_start_with_constraints__2:
+  data_type_constructor_start_existential_constraints__2:
   - include: pop_when_deindent__2
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__2
   - include: type
-  data_type_constructor_start_with_constraints__20:
+  data_type_constructor_start_existential_constraints__20:
   - include: pop_when_deindent__20
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__20
   - include: type
-  data_type_constructor_start_with_constraints__21:
+  data_type_constructor_start_existential_constraints__21:
   - include: pop_when_deindent__21
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__21
   - include: type
-  data_type_constructor_start_with_constraints__22:
+  data_type_constructor_start_existential_constraints__22:
   - include: pop_when_deindent__22
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__22
   - include: type
-  data_type_constructor_start_with_constraints__23:
+  data_type_constructor_start_existential_constraints__23:
   - include: pop_when_deindent__23
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__23
   - include: type
-  data_type_constructor_start_with_constraints__24:
+  data_type_constructor_start_existential_constraints__24:
   - include: pop_when_deindent__24
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__24
   - include: type
-  data_type_constructor_start_with_constraints__25:
+  data_type_constructor_start_existential_constraints__25:
   - include: pop_when_deindent__25
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__25
   - include: type
-  data_type_constructor_start_with_constraints__26:
+  data_type_constructor_start_existential_constraints__26:
   - include: pop_when_deindent__26
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__26
   - include: type
-  data_type_constructor_start_with_constraints__27:
+  data_type_constructor_start_existential_constraints__27:
   - include: pop_when_deindent__27
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__27
   - include: type
-  data_type_constructor_start_with_constraints__28:
+  data_type_constructor_start_existential_constraints__28:
   - include: pop_when_deindent__28
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__28
   - include: type
-  data_type_constructor_start_with_constraints__29:
+  data_type_constructor_start_existential_constraints__29:
   - include: pop_when_deindent__29
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__29
   - include: type
-  data_type_constructor_start_with_constraints__3:
+  data_type_constructor_start_existential_constraints__3:
   - include: pop_when_deindent__3
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__3
   - include: type
-  data_type_constructor_start_with_constraints__30:
+  data_type_constructor_start_existential_constraints__30:
   - include: pop_when_deindent__30
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__30
   - include: type
-  data_type_constructor_start_with_constraints__31:
+  data_type_constructor_start_existential_constraints__31:
   - include: pop_when_deindent__31
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__31
   - include: type
-  data_type_constructor_start_with_constraints__32:
+  data_type_constructor_start_existential_constraints__32:
   - include: pop_when_deindent__32
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__32
   - include: type
-  data_type_constructor_start_with_constraints__33:
+  data_type_constructor_start_existential_constraints__33:
   - include: pop_when_deindent__33
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__33
   - include: type
-  data_type_constructor_start_with_constraints__34:
+  data_type_constructor_start_existential_constraints__34:
   - include: pop_when_deindent__34
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__34
   - include: type
-  data_type_constructor_start_with_constraints__35:
+  data_type_constructor_start_existential_constraints__35:
   - include: pop_when_deindent__35
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__35
   - include: type
-  data_type_constructor_start_with_constraints__36:
+  data_type_constructor_start_existential_constraints__36:
   - include: pop_when_deindent__36
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__36
   - include: type
-  data_type_constructor_start_with_constraints__37:
+  data_type_constructor_start_existential_constraints__37:
   - include: pop_when_deindent__37
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__37
   - include: type
-  data_type_constructor_start_with_constraints__38:
+  data_type_constructor_start_existential_constraints__38:
   - include: pop_when_deindent__38
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__38
   - include: type
-  data_type_constructor_start_with_constraints__39:
+  data_type_constructor_start_existential_constraints__39:
   - include: pop_when_deindent__39
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__39
   - include: type
-  data_type_constructor_start_with_constraints__4:
+  data_type_constructor_start_existential_constraints__4:
   - include: pop_when_deindent__4
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__4
   - include: type
-  data_type_constructor_start_with_constraints__40:
+  data_type_constructor_start_existential_constraints__40:
   - include: pop_when_deindent__40
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__40
   - include: type
-  data_type_constructor_start_with_constraints__5:
+  data_type_constructor_start_existential_constraints__5:
   - include: pop_when_deindent__5
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__5
   - include: type
-  data_type_constructor_start_with_constraints__6:
+  data_type_constructor_start_existential_constraints__6:
   - include: pop_when_deindent__6
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__6
   - include: type
-  data_type_constructor_start_with_constraints__7:
+  data_type_constructor_start_existential_constraints__7:
   - include: pop_when_deindent__7
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__7
   - include: type
-  data_type_constructor_start_with_constraints__8:
+  data_type_constructor_start_existential_constraints__8:
   - include: pop_when_deindent__8
   - match: =>
     scope: keyword.operator.type.haskell
     set: data_type_constructor_start__8
   - include: type
-  data_type_constructor_start_with_constraints__9:
+  data_type_constructor_start_existential_constraints__9:
   - include: pop_when_deindent__9
   - match: =>
     scope: keyword.operator.type.haskell
@@ -1472,494 +2087,1355 @@ contexts:
   - include: pop_when_deindent__0
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__0
-    - data_type_constructor_start_with_constraints__0
-    branch_point: data_type_declaration__0
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__0
+    - branch:
+      - data_type_constructor_start_existential__0
+      - data_type_constructor_start__0
+      branch_point: data_type_declaration__0
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__1:
   - include: pop_when_deindent__1
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__1
-    - data_type_constructor_start_with_constraints__1
-    branch_point: data_type_declaration__1
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__1
+    - branch:
+      - data_type_constructor_start_existential__1
+      - data_type_constructor_start__1
+      branch_point: data_type_declaration__1
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__10:
   - include: pop_when_deindent__10
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__10
-    - data_type_constructor_start_with_constraints__10
-    branch_point: data_type_declaration__10
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__10
+    - branch:
+      - data_type_constructor_start_existential__10
+      - data_type_constructor_start__10
+      branch_point: data_type_declaration__10
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__11:
   - include: pop_when_deindent__11
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__11
-    - data_type_constructor_start_with_constraints__11
-    branch_point: data_type_declaration__11
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__11
+    - branch:
+      - data_type_constructor_start_existential__11
+      - data_type_constructor_start__11
+      branch_point: data_type_declaration__11
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__12:
   - include: pop_when_deindent__12
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__12
-    - data_type_constructor_start_with_constraints__12
-    branch_point: data_type_declaration__12
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__12
+    - branch:
+      - data_type_constructor_start_existential__12
+      - data_type_constructor_start__12
+      branch_point: data_type_declaration__12
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__13:
   - include: pop_when_deindent__13
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__13
-    - data_type_constructor_start_with_constraints__13
-    branch_point: data_type_declaration__13
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__13
+    - branch:
+      - data_type_constructor_start_existential__13
+      - data_type_constructor_start__13
+      branch_point: data_type_declaration__13
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__14:
   - include: pop_when_deindent__14
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__14
-    - data_type_constructor_start_with_constraints__14
-    branch_point: data_type_declaration__14
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__14
+    - branch:
+      - data_type_constructor_start_existential__14
+      - data_type_constructor_start__14
+      branch_point: data_type_declaration__14
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__15:
   - include: pop_when_deindent__15
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__15
-    - data_type_constructor_start_with_constraints__15
-    branch_point: data_type_declaration__15
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__15
+    - branch:
+      - data_type_constructor_start_existential__15
+      - data_type_constructor_start__15
+      branch_point: data_type_declaration__15
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__16:
   - include: pop_when_deindent__16
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__16
-    - data_type_constructor_start_with_constraints__16
-    branch_point: data_type_declaration__16
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__16
+    - branch:
+      - data_type_constructor_start_existential__16
+      - data_type_constructor_start__16
+      branch_point: data_type_declaration__16
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__17:
   - include: pop_when_deindent__17
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__17
-    - data_type_constructor_start_with_constraints__17
-    branch_point: data_type_declaration__17
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__17
+    - branch:
+      - data_type_constructor_start_existential__17
+      - data_type_constructor_start__17
+      branch_point: data_type_declaration__17
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__18:
   - include: pop_when_deindent__18
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__18
-    - data_type_constructor_start_with_constraints__18
-    branch_point: data_type_declaration__18
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__18
+    - branch:
+      - data_type_constructor_start_existential__18
+      - data_type_constructor_start__18
+      branch_point: data_type_declaration__18
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__19:
   - include: pop_when_deindent__19
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__19
-    - data_type_constructor_start_with_constraints__19
-    branch_point: data_type_declaration__19
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__19
+    - branch:
+      - data_type_constructor_start_existential__19
+      - data_type_constructor_start__19
+      branch_point: data_type_declaration__19
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__2:
   - include: pop_when_deindent__2
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__2
-    - data_type_constructor_start_with_constraints__2
-    branch_point: data_type_declaration__2
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__2
+    - branch:
+      - data_type_constructor_start_existential__2
+      - data_type_constructor_start__2
+      branch_point: data_type_declaration__2
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__20:
   - include: pop_when_deindent__20
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__20
-    - data_type_constructor_start_with_constraints__20
-    branch_point: data_type_declaration__20
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__20
+    - branch:
+      - data_type_constructor_start_existential__20
+      - data_type_constructor_start__20
+      branch_point: data_type_declaration__20
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__21:
   - include: pop_when_deindent__21
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__21
-    - data_type_constructor_start_with_constraints__21
-    branch_point: data_type_declaration__21
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__21
+    - branch:
+      - data_type_constructor_start_existential__21
+      - data_type_constructor_start__21
+      branch_point: data_type_declaration__21
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__22:
   - include: pop_when_deindent__22
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__22
-    - data_type_constructor_start_with_constraints__22
-    branch_point: data_type_declaration__22
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__22
+    - branch:
+      - data_type_constructor_start_existential__22
+      - data_type_constructor_start__22
+      branch_point: data_type_declaration__22
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__23:
   - include: pop_when_deindent__23
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__23
-    - data_type_constructor_start_with_constraints__23
-    branch_point: data_type_declaration__23
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__23
+    - branch:
+      - data_type_constructor_start_existential__23
+      - data_type_constructor_start__23
+      branch_point: data_type_declaration__23
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__24:
   - include: pop_when_deindent__24
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__24
-    - data_type_constructor_start_with_constraints__24
-    branch_point: data_type_declaration__24
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__24
+    - branch:
+      - data_type_constructor_start_existential__24
+      - data_type_constructor_start__24
+      branch_point: data_type_declaration__24
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__25:
   - include: pop_when_deindent__25
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__25
-    - data_type_constructor_start_with_constraints__25
-    branch_point: data_type_declaration__25
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__25
+    - branch:
+      - data_type_constructor_start_existential__25
+      - data_type_constructor_start__25
+      branch_point: data_type_declaration__25
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__26:
   - include: pop_when_deindent__26
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__26
-    - data_type_constructor_start_with_constraints__26
-    branch_point: data_type_declaration__26
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__26
+    - branch:
+      - data_type_constructor_start_existential__26
+      - data_type_constructor_start__26
+      branch_point: data_type_declaration__26
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__27:
   - include: pop_when_deindent__27
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__27
-    - data_type_constructor_start_with_constraints__27
-    branch_point: data_type_declaration__27
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__27
+    - branch:
+      - data_type_constructor_start_existential__27
+      - data_type_constructor_start__27
+      branch_point: data_type_declaration__27
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__28:
   - include: pop_when_deindent__28
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__28
-    - data_type_constructor_start_with_constraints__28
-    branch_point: data_type_declaration__28
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__28
+    - branch:
+      - data_type_constructor_start_existential__28
+      - data_type_constructor_start__28
+      branch_point: data_type_declaration__28
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__29:
   - include: pop_when_deindent__29
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__29
-    - data_type_constructor_start_with_constraints__29
-    branch_point: data_type_declaration__29
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__29
+    - branch:
+      - data_type_constructor_start_existential__29
+      - data_type_constructor_start__29
+      branch_point: data_type_declaration__29
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__3:
   - include: pop_when_deindent__3
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__3
-    - data_type_constructor_start_with_constraints__3
-    branch_point: data_type_declaration__3
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__3
+    - branch:
+      - data_type_constructor_start_existential__3
+      - data_type_constructor_start__3
+      branch_point: data_type_declaration__3
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__30:
   - include: pop_when_deindent__30
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__30
-    - data_type_constructor_start_with_constraints__30
-    branch_point: data_type_declaration__30
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__30
+    - branch:
+      - data_type_constructor_start_existential__30
+      - data_type_constructor_start__30
+      branch_point: data_type_declaration__30
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__31:
   - include: pop_when_deindent__31
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__31
-    - data_type_constructor_start_with_constraints__31
-    branch_point: data_type_declaration__31
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__31
+    - branch:
+      - data_type_constructor_start_existential__31
+      - data_type_constructor_start__31
+      branch_point: data_type_declaration__31
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__32:
   - include: pop_when_deindent__32
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__32
-    - data_type_constructor_start_with_constraints__32
-    branch_point: data_type_declaration__32
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__32
+    - branch:
+      - data_type_constructor_start_existential__32
+      - data_type_constructor_start__32
+      branch_point: data_type_declaration__32
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__33:
   - include: pop_when_deindent__33
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__33
-    - data_type_constructor_start_with_constraints__33
-    branch_point: data_type_declaration__33
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__33
+    - branch:
+      - data_type_constructor_start_existential__33
+      - data_type_constructor_start__33
+      branch_point: data_type_declaration__33
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__34:
   - include: pop_when_deindent__34
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__34
-    - data_type_constructor_start_with_constraints__34
-    branch_point: data_type_declaration__34
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__34
+    - branch:
+      - data_type_constructor_start_existential__34
+      - data_type_constructor_start__34
+      branch_point: data_type_declaration__34
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__35:
   - include: pop_when_deindent__35
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__35
-    - data_type_constructor_start_with_constraints__35
-    branch_point: data_type_declaration__35
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__35
+    - branch:
+      - data_type_constructor_start_existential__35
+      - data_type_constructor_start__35
+      branch_point: data_type_declaration__35
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__36:
   - include: pop_when_deindent__36
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__36
-    - data_type_constructor_start_with_constraints__36
-    branch_point: data_type_declaration__36
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__36
+    - branch:
+      - data_type_constructor_start_existential__36
+      - data_type_constructor_start__36
+      branch_point: data_type_declaration__36
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__37:
   - include: pop_when_deindent__37
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__37
-    - data_type_constructor_start_with_constraints__37
-    branch_point: data_type_declaration__37
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__37
+    - branch:
+      - data_type_constructor_start_existential__37
+      - data_type_constructor_start__37
+      branch_point: data_type_declaration__37
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__38:
   - include: pop_when_deindent__38
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__38
-    - data_type_constructor_start_with_constraints__38
-    branch_point: data_type_declaration__38
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__38
+    - branch:
+      - data_type_constructor_start_existential__38
+      - data_type_constructor_start__38
+      branch_point: data_type_declaration__38
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__39:
   - include: pop_when_deindent__39
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__39
-    - data_type_constructor_start_with_constraints__39
-    branch_point: data_type_declaration__39
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__39
+    - branch:
+      - data_type_constructor_start_existential__39
+      - data_type_constructor_start__39
+      branch_point: data_type_declaration__39
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__4:
   - include: pop_when_deindent__4
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__4
-    - data_type_constructor_start_with_constraints__4
-    branch_point: data_type_declaration__4
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__4
+    - branch:
+      - data_type_constructor_start_existential__4
+      - data_type_constructor_start__4
+      branch_point: data_type_declaration__4
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__40:
   - include: pop_when_deindent__40
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__40
-    - data_type_constructor_start_with_constraints__40
-    branch_point: data_type_declaration__40
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__40
+    - branch:
+      - data_type_constructor_start_existential__40
+      - data_type_constructor_start__40
+      branch_point: data_type_declaration__40
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__5:
   - include: pop_when_deindent__5
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__5
-    - data_type_constructor_start_with_constraints__5
-    branch_point: data_type_declaration__5
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__5
+    - branch:
+      - data_type_constructor_start_existential__5
+      - data_type_constructor_start__5
+      branch_point: data_type_declaration__5
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__6:
   - include: pop_when_deindent__6
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__6
-    - data_type_constructor_start_with_constraints__6
-    branch_point: data_type_declaration__6
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__6
+    - branch:
+      - data_type_constructor_start_existential__6
+      - data_type_constructor_start__6
+      branch_point: data_type_declaration__6
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__7:
   - include: pop_when_deindent__7
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__7
-    - data_type_constructor_start_with_constraints__7
-    branch_point: data_type_declaration__7
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__7
+    - branch:
+      - data_type_constructor_start_existential__7
+      - data_type_constructor_start__7
+      branch_point: data_type_declaration__7
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__8:
   - include: pop_when_deindent__8
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
-  - match: '{{lower_ident}}'
-    scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__8
-    - data_type_constructor_start_with_constraints__8
-    branch_point: data_type_declaration__8
-    match: '='
-    scope: keyword.control.definition.haskell
+    set:
+    - include: data_type_declaration_typevars__8
+    - branch:
+      - data_type_constructor_start_existential__8
+      - data_type_constructor_start__8
+      branch_point: data_type_declaration__8
+      match: '='
+      scope: keyword.control.definition.haskell
   data_type_declaration__9:
   - include: pop_when_deindent__9
   - match: '{{upper_ident}}'
     scope: storage.type.haskell
+    set:
+    - include: data_type_declaration_typevars__9
+    - branch:
+      - data_type_constructor_start_existential__9
+      - data_type_constructor_start__9
+      branch_point: data_type_declaration__9
+      match: '='
+      scope: keyword.control.definition.haskell
+  data_type_declaration_typevars__0:
+  - include: pop_when_deindent__0
   - match: '{{lower_ident}}'
     scope: variable.other.type.haskell
-  - branch:
-    - data_type_constructor_start__9
-    - data_type_constructor_start_with_constraints__9
-    branch_point: data_type_declaration__9
-    match: '='
-    scope: keyword.control.definition.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__0
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__1:
+  - include: pop_when_deindent__1
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__1
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__10:
+  - include: pop_when_deindent__10
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__10
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__11:
+  - include: pop_when_deindent__11
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__11
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__12:
+  - include: pop_when_deindent__12
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__12
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__13:
+  - include: pop_when_deindent__13
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__13
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__14:
+  - include: pop_when_deindent__14
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__14
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__15:
+  - include: pop_when_deindent__15
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__15
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__16:
+  - include: pop_when_deindent__16
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__16
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__17:
+  - include: pop_when_deindent__17
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__17
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__18:
+  - include: pop_when_deindent__18
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__18
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__19:
+  - include: pop_when_deindent__19
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__19
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__2:
+  - include: pop_when_deindent__2
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__2
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__20:
+  - include: pop_when_deindent__20
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__20
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__21:
+  - include: pop_when_deindent__21
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__21
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__22:
+  - include: pop_when_deindent__22
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__22
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__23:
+  - include: pop_when_deindent__23
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__23
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__24:
+  - include: pop_when_deindent__24
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__24
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__25:
+  - include: pop_when_deindent__25
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__25
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__26:
+  - include: pop_when_deindent__26
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__26
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__27:
+  - include: pop_when_deindent__27
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__27
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__28:
+  - include: pop_when_deindent__28
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__28
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__29:
+  - include: pop_when_deindent__29
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__29
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__3:
+  - include: pop_when_deindent__3
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__3
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__30:
+  - include: pop_when_deindent__30
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__30
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__31:
+  - include: pop_when_deindent__31
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__31
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__32:
+  - include: pop_when_deindent__32
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__32
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__33:
+  - include: pop_when_deindent__33
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__33
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__34:
+  - include: pop_when_deindent__34
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__34
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__35:
+  - include: pop_when_deindent__35
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__35
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__36:
+  - include: pop_when_deindent__36
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__36
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__37:
+  - include: pop_when_deindent__37
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__37
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__38:
+  - include: pop_when_deindent__38
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__38
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__39:
+  - include: pop_when_deindent__39
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__39
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__4:
+  - include: pop_when_deindent__4
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__4
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__40:
+  - include: pop_when_deindent__40
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__40
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__5:
+  - include: pop_when_deindent__5
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__5
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__6:
+  - include: pop_when_deindent__6
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__6
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__7:
+  - include: pop_when_deindent__7
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__7
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__8:
+  - include: pop_when_deindent__8
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__8
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+  data_type_declaration_typevars__9:
+  - include: pop_when_deindent__9
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \(
+    push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+    - include: data_type_declaration_typevars__9
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
+      - match: \)
+        pop: true
+        scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+      - match: '{{lower_ident}}'
+        scope: variable.other.type.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
   data_type_record:
   - meta_scope: meta.datatype.record.haskell
   - match: '{{lower_ident}}'
@@ -18664,7 +20140,9 @@ contexts:
     scope: 'punctuation.section.parens.begin.haskell
 
       keyword.other.type.haskell'
-  - include: type_forall
+  - match: \bforall{{post_non_ident}}
+    push: type_forall
+    scope: keyword.control.forall.haskell
   - captures:
       1: storage.module.haskell
       3: storage.type.haskell
@@ -19206,32 +20684,29 @@ contexts:
   - include: pop_when_deindent__9
   - include: function
   type_forall:
-  - match: \bforall{{post_non_ident}}
+  - match: '{{lower_ident}}'
+    scope: variable.other.type.haskell
+  - match: \.
+    pop: true
+    scope: keyword.control.forall.haskell
+  - match: \(
     push:
+    - match: \)
+      pop: true
+      scope: punctuation.section.parens.end.haskell
     - match: '{{lower_ident}}'
       scope: variable.other.type.haskell
-    - match: \.
-      pop: true
-      scope: keyword.control.forall.haskell
-    - match: \(
-      push:
+    - match: '::'
+      scope: keyword.control.kind_annotation.haskell
+      set:
       - match: \)
         pop: true
         scope: punctuation.section.parens.end.haskell
       - match: '{{lower_ident}}'
         scope: variable.other.type.haskell
-      - match: '::'
-        scope: keyword.control.kind_annotation.haskell
-        set:
-        - match: \)
-          pop: true
-          scope: punctuation.section.parens.end.haskell
-        - match: '{{lower_ident}}'
-          scope: variable.other.type.haskell
-        - match: '{{upper_ident}}'
-          scope: storage.type.haskell
-      scope: punctuation.section.parens.begin.haskell
-    scope: keyword.control.forall.haskell
+      - match: '{{upper_ident}}'
+        scope: storage.type.haskell
+    scope: punctuation.section.parens.begin.haskell
   type_list_body:
   - match: \]
     pop: true

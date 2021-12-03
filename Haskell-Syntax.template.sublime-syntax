@@ -275,17 +275,55 @@ contexts:
     - include: pop_when_deindent
     - match: '{{upper_ident}}'
       scope: storage.type.haskell
+      set:
+        - include: data_type_declaration_typevars
+        - match: '='
+          scope: keyword.control.definition.haskell
+          branch_point: data_type_declaration
+          branch:
+            - data_type_constructor_start_existential
+            - data_type_constructor_start
+        # TODO: GADTs
+
+  data_type_declaration_typevars:
+    - include: pop_when_deindent
     - match: '{{lower_ident}}'
       scope: variable.other.type.haskell
-    - match: '='
-      scope: keyword.control.definition.haskell
-      branch_point: data_type_declaration
-      branch:
-        - data_type_constructor_start
-        - data_type_constructor_start_with_constraints
-    # TODO: GADTs
+    - match: '\('
+      scope: punctuation.section.parens.begin.haskell keyword.other.type.haskell
+      push:
+        - match: '\)'
+          scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+          pop: true
+        - include: data_type_declaration_typevars
+        - match: '::'
+          scope: keyword.control.kind_annotation.haskell
+          set:
+            - match: '\)'
+              scope: punctuation.section.parens.end.haskell keyword.other.type.haskell
+              pop: true
+            - match: '{{lower_ident}}'
+              scope: variable.other.type.haskell
+            - match: '{{upper_ident}}'
+              scope: storage.type.haskell
 
-  data_type_constructor_start_with_constraints:
+  data_type_constructor_start_existential:
+    - include: pop_when_deindent
+    - match: '\bforall{{post_non_ident}}'
+      scope: keyword.control.forall.haskell
+      set:
+        - include: pop_when_deindent
+        - match: '\.'
+          scope: keyword.control.forall.haskell
+          branch_point: data_type_constructor
+          branch:
+            - data_type_constructor_start
+            - data_type_constructor_start_existential_constraints
+        - include: type_forall
+    - match: '\S'
+      fail: data_type_declaration
+
+  data_type_constructor_start_existential_constraints:
     - include: pop_when_deindent
     - match: '=>'
       scope: keyword.operator.type.haskell
@@ -301,7 +339,7 @@ contexts:
   data_type_constructor:
     - include: pop_when_deindent
     - match: '=>'
-      fail: data_type_declaration
+      fail: data_type_constructor
     - match: \|
       scope: keyword.control.definition.haskell
       set: data_type_constructor_start
@@ -719,7 +757,9 @@ contexts:
         punctuation.section.parens.begin.haskell
         keyword.other.type.haskell
       push: type_tuple_body
-    - include: type_forall
+    - match: '\bforall{{post_non_ident}}'
+      scope: keyword.control.forall.haskell
+      push: type_forall
     - match: '({{module_prefix}})({{upper_ident}})'
       captures:
         1: storage.module.haskell
@@ -728,32 +768,29 @@ contexts:
       scope: variable.other.type.haskell
 
   type_forall:
-    - match: '\bforall{{post_non_ident}}'
+    - match: '{{lower_ident}}'
+      scope: variable.other.type.haskell
+    - match: '\.'
       scope: keyword.control.forall.haskell
+      pop: true
+    - match: '\('
+      scope: punctuation.section.parens.begin.haskell
       push:
+        - match: '\)'
+          scope: punctuation.section.parens.end.haskell
+          pop: true
         - match: '{{lower_ident}}'
           scope: variable.other.type.haskell
-        - match: '\.'
-          scope: keyword.control.forall.haskell
-          pop: true
-        - match: '\('
-          scope: punctuation.section.parens.begin.haskell
-          push:
+        - match: '::'
+          scope: keyword.control.kind_annotation.haskell
+          set:
             - match: '\)'
               scope: punctuation.section.parens.end.haskell
               pop: true
             - match: '{{lower_ident}}'
               scope: variable.other.type.haskell
-            - match: '::'
-              scope: keyword.control.kind_annotation.haskell
-              set:
-                - match: '\)'
-                  scope: punctuation.section.parens.end.haskell
-                  pop: true
-                - match: '{{lower_ident}}'
-                  scope: variable.other.type.haskell
-                - match: '{{upper_ident}}'
-                  scope: storage.type.haskell
+            - match: '{{upper_ident}}'
+              scope: storage.type.haskell
 
   type_list_body:
     - match: '\]'
